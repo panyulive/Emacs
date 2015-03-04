@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <ctype.h>
+
+/* シーザー暗号の暗号化の鍵 (何文字ずらすか) */
+unsigned char key = 123;
+
+/* CBCモードの「初期化ベクトル」の値 */
+unsigned char initial_vector = 10;
+
+/* 平文を格納するための変数 */
+unsigned char plainText[256] = "ait-yakusa";
+
+/* 暗号文を格納するための変数 */
+unsigned char cipherText[256];
+
+// --- シーザー暗号による暗号化処理
+unsigned char encrypt(unsigned char x, unsigned char key) {
+  return((x + key) % 256);
+}
+
+unsigned char deencrypt(unsigned char x,unsigned char key,unsigned char tmp){
+  return(((x - key) % 256)^tmp);
+}
+
+unsigned char question[15] = {0xd3, 0x7d, 0xeb, 0x4f, 0xf8, 0x6a, 0xd1, 0x72, 0x2c, 0x10, 0x43, 0xf2, 0x64, 0xe3, 0x0}; 
+unsigned char hogehoge[256] = {0};
+
+// --- toplevel
+int main()
+{
+  int i, len;
+  unsigned char tmp;
+
+printf("Result of encryption:");
+  for(i = 0;plainText[i] != '\0';i++){
+	  printf("%4d,",plainText[i]);
+  }
+  printf("\n");
+
+  // 暗号化
+  tmp = initial_vector;
+  len = 0;
+  for(i = 0; plainText[i] != '\0'; i++) {
+    cipherText[i] = encrypt(tmp ^ plainText[i], key);
+    tmp = cipherText[i];
+    len++;
+	//printf("%c,",cipherText[i]);
+  }
+  //複合化
+  tmp = 103;
+  for (i = 0;i<15;i++){
+	hogehoge[i] = deencrypt(question[i],205,tmp);
+	tmp = question[i];
+  }
+
+  // 暗号化の結果表示：以下を表示する
+  //  - 文字列 (末尾のヌル文字も含む) の長さ
+  //  - 暗号文 (16進数の列として)
+  printf("Length of string: %d\n", len+1);
+  printf("Result of encryption: ");
+  for(i = 0; i <= len; i++) {
+    printf("%3d", cipherText[i]);
+    if(i < len) {
+      printf(", ");
+    }
+  }
+  printf("\n");
+  for (i=0;i<len;i++){
+	printf ("%c",hogehoge[i]);
+  }
+printf ("\n");
+  return 0;
+}

@@ -1,0 +1,133 @@
+//Written by JavaMaker
+//KeyTest.java
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class KeyTest extends Applet 
+	implements
+	KeyListener
+{
+	//TODO: この位置に変数の宣言をしてください
+	KeyInput key;
+	
+	public void init() {
+		//TODO: ここに初期化の処理を書いてください
+		key = new KeyInput();
+		
+		addKeyListener(this);
+		requestFocus();
+	}
+
+	public void paint(Graphics g) {
+		//TODO: ここに描画用のコードを書いてください
+		g.setFont(new Font("SansSerif",Font.BOLD,24));
+		if (key.isPressing(KeyEvent.VK_UP)) {
+			g.drawString("上",10,30);
+		}
+		if (key.isPressing(KeyEvent.VK_DOWN)) {
+			g.drawString("下",40,30);
+		}
+		if (key.isPressing(KeyEvent.VK_LEFT)) {
+			g.drawString("左",70,30);
+		}
+		if (key.isPressing(KeyEvent.VK_RIGHT)) {
+			g.drawString("右",100,30);
+		}
+		if (key.isPressing(KeyEvent.VK_A)) {
+			g.drawString("A",130,30);
+		}
+		
+	}
+
+	public void keyTyped(KeyEvent e) {
+		//TODO: キーがタイプされた時の処理を書いてください
+
+	}
+
+	public void keyPressed(KeyEvent e) {
+		//TODO: キーが押された時の処理を書いてください
+		key.keyPressed(e);
+		repaint();
+	}
+
+	public void keyReleased(KeyEvent e) {
+		//TODO: キーが離された時の処理を書いてください
+		key.keyReleased(e);
+		repaint();
+	}
+}
+
+//Writen by JavaMaker
+//KeyInput.java
+import java.awt.event.*;
+
+public class KeyInput
+
+{
+	//TODO: この位置に変数の宣言をしてください
+	private boolean isUP	 = false;
+	private boolean isDOWN	= false;
+	private boolean isLEFT	= false;
+	private boolean isRIGHT = false;
+	private boolean isA	 = false;
+	
+	public KeyInput() {
+	}
+
+	public boolean isPressing(int iKeyCode) {
+		switch (iKeyCode) {
+			case KeyEvent.VK_UP:
+				return isUP;
+			case KeyEvent.VK_DOWN:
+				return isDOWN;
+			case KeyEvent.VK_LEFT:
+				return isLEFT;
+			case KeyEvent.VK_RIGHT:
+				return isRIGHT;
+			case KeyEvent.VK_A:
+				return isA;
+		}
+		return false;
+	}
+	
+	public void keyPressed(KeyEvent e) {
+		switch (e.getKeyCode()) {
+			case KeyEvent.VK_UP:
+				isUP = true;
+				break;
+			case KeyEvent.VK_DOWN:
+				isDOWN = true;
+				break;
+			case KeyEvent.VK_LEFT:
+				isLEFT = true;
+				break;
+			case KeyEvent.VK_RIGHT:
+				isRIGHT = true;
+				break;
+			case KeyEvent.VK_A:
+				isA = true;
+				break;
+		}
+	}
+
+	public void keyReleased(KeyEvent e) {
+		switch (e.getKeyCode()) {
+			case KeyEvent.VK_UP:
+				isUP = false;
+				break;
+			case KeyEvent.VK_DOWN:
+				isDOWN = false;
+				break;
+			case KeyEvent.VK_LEFT:
+				isLEFT = false;
+				break;
+			case KeyEvent.VK_RIGHT:
+				isRIGHT = false;
+				break;
+			case KeyEvent.VK_A:
+				isA = false;
+				break;
+		}
+	}
+}

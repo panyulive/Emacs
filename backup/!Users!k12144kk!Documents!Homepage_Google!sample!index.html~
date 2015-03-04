@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>webdesign</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="wrapper">
+<div class="header_lin"></div>
+<div id="header">
+<div class="logo"><img src="image/logo.jpg" width="220" height="40" alt="logo" /></div><div class="menu"><img src="image/menu.jpg" width="90" height="20" alt="menu" /></div>
+</div>
+
+<div id="main_img">
+<img src="image/main_pic.gif" width="730" height="280" alt="main" />
+</div>
+<div id="content">
+  <div class="title"><img src="image/title.jpg" width="730" height="33" alt="title" /></div><div class="text">ねこって本当にかわいいです。<br />
+このサイトはそんなかわいいねこ達の写真集となってます。<br />
+どうぞごゆっくりしていってください。</div><div class="copy">Copyright (C) 2012 webdesign All Rights Reserved.</div>
+</div>
+</div>
+
+</body>
+</html>

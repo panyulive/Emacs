@@ -1,0 +1,6 @@
+= 
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
+/Applications/Processing.app/Contents/MacOS/JavaApplicationStub
+
+[2014-07-26 13:35] >>> ~/Dropbox/emacs/howm/2014/07/2014-07-24-061131.txt
+

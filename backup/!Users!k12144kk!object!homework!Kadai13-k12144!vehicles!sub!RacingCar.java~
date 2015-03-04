@@ -1,0 +1,34 @@
+package vehicles.sub;
+
+class RacingCar extends Car
+{
+	private static int Rcsum = 0; 
+	private int course;
+
+	public RacingCar(){
+		Rcsum++;
+		course = 0;
+		System.out.println("レーシングカーを作成しました");
+	}
+	public RacingCar(int n,double g,int c){	
+		super(n,g);
+		Rcsum++;
+		course = c;
+		System.out.println("コース番号"+course+"のレーシングカーを作成しました");
+	}
+	public void setCourse(int c){
+		course = c;
+		System.out.println("コース番号"+course+"にしました");
+	}
+
+	public void newShow(){
+		System.out.println("レーシングカーのナンバーは"+num+"です");
+		System.out.println("ガソリン量は"+gas+"です");
+		System.out.println("コース番号は"+course+"です");
+	}
+	public static void newShowSum(){
+		System.out.println("車は"+sum+"台作成され、レーシングカーは"+Rcsum+"台作成されました。");	
+}
+
+}
+

@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include <ctype.h>
+
+//unsigned char key = 0;
+
+unsigned char initial_vector = 103;
+
+unsigned char planeText[15] = {0};
+
+unsigned char question[15] = {0xd3, 0x7d, 0xeb, 0x4f, 0xf8, 0x6a, 0xd1, 0x72, 0x2c, 0x10, 0x43, 0xf2, 0x64, 0xe3, 0x0}; 
+
+unsigned char decryption(unsigned char x,unsigned char key,unsigned char tmp){
+  return (((x - key) % 256)^tmp);
+}
+
+int main(void){
+
+  int i,j;
+  int key;
+  int len = 15;
+  int tmp = initial_vector;
+  int count = 0; 
+  for (key = 0;key<256;key++){
+	tmp = initial_vector;
+	for (i=0; i<len ;i++){
+	  planeText[i] = decryption(question[i],key,tmp);
+	  tmp = question[i];
+	}
+	
+	count = 0;
+	printf ("%d : ",key);
+	for (i=0;i<len;i++){
+	  if( isprint(planeText[i]) != 0)printf ("%c",planeText[i]);;
+
+	}
+	printf ("\n");
+  }
+  
+  tmp = initial_vector;
+  for(i=0;i<len;i++){
+	planeText[i] = decryption(question[i],205,tmp);
+	tmp = question[i];
+  }
+ for(i=0;i<len;i++){
+	printf ("%c",planeText[i]);
+  }
+printf ("\n");
+  return 0;
+}

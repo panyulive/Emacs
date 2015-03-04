@@ -1,0 +1,6 @@
+<% unless @current_user -%>
+
+<%= render :partial => 'portal/common/login_form' %>
+
+<p class="information">共有のパソコンの場合は、「<%= t("activerecord.attributes.user.name") %>」を記憶することはおすすめできません。</p>
+<% end %>

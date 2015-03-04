@@ -1,0 +1,48 @@
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+
+int[] array0 = new int[0];
+int flag = 0;
+
+String str = "Bright";
+int input0;
+
+int i;
+int R,G,B;
+
+void setup(){
+	size(400, 230);
+	gainer = new Gainer(this);
+	myFont = loadFont("CourierNewPSMT-48.vlw");
+	textFont(myFont, 30);
+	frameRate(30);
+	R = 255;
+	B = 0;
+}
+
+void draw(){
+	background(120);
+	gainer.peekAnalogInput();
+	input0 = gainer.analogInput[0];
+	text(input0,40,40);
+	text(str,40,80);
+	fill(255);
+
+	if (input0 < 200){
+  G = 0;
+  R = 255;
+  B = 255;
+  str = "Dark";
+}else {
+ G = 255;
+R = 255;
+B = 0;
+str = "Bright";
+}
+
+	gainer.analogOutput(0,G);    //g
+	gainer.analogOutput(1,B);//b
+	gainer.analogOutput(3,R);//r
+	
+}

@@ -1,0 +1,4 @@
+alias rbenv  $*
+alias minecraft java -Xmx1024M -jar ~/Downloads/minecraft_server.1.7.9.jar nogui
+alias java java -Dfile.encoding=Shift_JIS $*
+alias javac javac -J-Dfile.encoding=Shift_JIS $*

@@ -1,0 +1,31 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Sample7 extends JApplet{
+	private JLabel lb;
+	private JButton bt;
+
+	private int n=0;
+
+	public void init(){
+		lb = new JLabel();
+		bt = new JButton();
+
+		bt = new JButton("非アクティブ!!");
+
+		add(bt,BorderLayout.SOUTH);
+
+		bt.addMouseListener(new SampleActionListener());
+
+	}
+
+	class SampleActionListener extends MouseAdapter{
+		public void mouseEntered(MouseEvent e){
+			bt.setText("アクティブ!!");
+		}
+		public void mouseExited(MouseEvent e){
+			bt.setText("非アクティブ!!");
+		}
+	}
+}

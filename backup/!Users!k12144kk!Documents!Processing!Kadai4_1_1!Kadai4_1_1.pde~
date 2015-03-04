@@ -1,0 +1,96 @@
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+String Label_0 = "array0";
+String Label_1 = "array1";
+String Label_2 = "array2";
+String Label_3 = "array3";
+
+int[] array0 = new int[0];
+int[] array1 = new int[0];
+int[] array2 = new int[0];
+int[] array3 = new int[0];
+int input0, input1, input2, input3;
+boolean isRecording = false;
+
+// setup Method
+
+void setup(){
+	size(600, 230);
+	gainer = new Gainer(this);
+	myFont = loadFont("CourierNewPSMT-48.vlw");
+	textFont(myFont, 30);
+	frameRate(30);
+	//gainer.ampGainAGND(0x4);
+}
+
+void draw(){
+	background(120);
+	gainer.peekAnalogInput();
+	input0 = gainer.analogInput[0];
+	input1 = gainer.analogInput[1];
+	input2 = gainer.analogInput[2];
+	input3 = gainer.analogInput[3];
+	// show analog input values
+	fill(255);
+	text( "Ain-0 = " + input0, 15, 30);
+	text( "Ain-1 = " + input1, 15, 60);
+	text( "Ain-2 = " + input2, 15, 90);
+	text( "Ain-3 = " + input3, 15, 120);
+	// visualise analog input values
+	noStroke();
+	rect( 235, 10, input0, 20);
+	rect( 235, 40, input1, 20);
+	rect( 235, 70, input2, 20);
+	rect( 235, 100, input3, 20);
+	stroke( 255, 0, 0);
+	line( 235, 5, 235, 125);
+	line( 490, 5, 490, 125);
+	if( isRecording ){
+		// If it's Recording, use array to store data.
+		array0 = append( array0, input0);
+		array1 = append( array1, input1);
+		array2 = append( array2, input2);
+		array3 = append( array3, input3);
+		// display it's recording
+		text( "Recording...", 40, 180);
+		text( "Press any key to End Recording", 40,210);
+		if( second()%2 ==1 ){
+			fill(255,0,0);
+			ellipse( 25, 170, 9,9);
+		}
+	}else {
+		text("Press Esc key to Exit",40,180);
+		text("Press any key to Record",40,210);
+	}
+}
+void keyPressed(){
+	if (isRecording){
+		String[] lines =  new String[array0.length+1];
+		lines[0] =  "Steps," + Label_0 + "," +Label_1+ "," +Label_2+ "," +Label_3;
+		for( int i = 0;i < array0.length;i++){
+			lines[i+1] =  (i+1) + "," + array0[i] + "," +array1[i] +","+array2[i]+","+array3[i];
+		}
+		String filename = "Rec_" + year();
+		if (month() < 10)filename += "0";
+		filename += month();
+		if(day() < 10) filename += "0";
+		filename += day() +"-";
+		if (hour()<10)filename += "0";
+		filename += hour() +"-";
+		if (minute() < 10 )filename += "0";
+		filename += minute() +"-";
+		if (second() < 10)filename += "0";
+		filename += second() +".csv";
+		//write file
+		saveStrings(filename,lines);
+		array0 = expand(array0,0);
+		array1 = expand(array1,0);
+		array2 = expand(array2,0);
+		array3 = expand(array3,0);
+		isRecording = false;
+	}else{
+		//switch on
+		isRecording = true;
+	}
+}

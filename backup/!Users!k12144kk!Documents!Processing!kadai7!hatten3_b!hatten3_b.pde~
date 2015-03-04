@@ -1,0 +1,123 @@
+//hatten3-a
+import processing.gainer.*;
+Gainer gainer1, gainer2;
+int cont=0;
+PFont myFont;
+int mat_A[]= {
+  0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0,15,15,15,15,0, 0, 
+  0, 0,15,15,15,15,0, 0, 
+  0, 0,15,15,15,15,0, 0, 
+  0, 0,15,15,15,15,0, 0, 
+  0, 0,15,15,15,15,0, 0
+};
+int mat_B[] = {
+  0, 0,15,15,15,15, 0, 0, 
+  0, 0,15,15,15,15, 0, 0, 
+  0, 0,15,15,15,15, 0, 0, 
+  0, 0,15,15,15,15, 0, 0, 
+  0, 0,15,15,15,15, 0, 0, 
+  0, 0,	0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0
+};
+int mat_show[]= {
+  0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0, 
+  0, 0, 0, 0, 0, 0, 0, 0
+};
+
+void setup() {
+  size(600, 600);
+  gainer1=new Gainer(this,"/dev/cu.usbmodemfd121",Gainer.MODE7);
+  gainer2=new Gainer(this,"/dev/cu.usbmodemfa131",Gainer.MODE7);
+
+  myFont=loadFont("TimesNewRomanPSMT-90.vlw");
+  textFont(myFont, 30);
+}
+
+void draw() {
+  background(120);
+
+text (cont,40,40);
+
+ //上の段の処理------------------------------------------
+  for (int i=0;i<64;i++) {
+    mat_show[i]=mat_A[i];
+  }
+
+  if(cont >= 8){
+  dereate_matrixB();
+  }
+  rotate_LEFT90();
+  gainer1.scanMatrix(mat_show);
+ //上の段の処理終了------------------------------------------
+
+ //下の段の処理----------------------------------------------
+  for (int i=0;i<64;i++) {
+	  mat_show[i]=mat_B[i];
+  } 
+  if (cont >= 8){
+	  // 下の段の上限は8だから、超えた場合に点灯させないための処理
+		  dereate_ALL();
+  }
+  else {
+	  dereate_matrixA();
+  }
+  rotate_LEFT90();
+  gainer2.scanMatrix(mat_show);
+  //下の段の処理終了------------------------------------------------------
+  
+}
+void rotate_LEFT90(){
+	int temp[]={
+	0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0
+  };
+  int fact =0;
+  for(int i=7;i!=-1;i--){
+    for( int j=i; j<64; j+=8){
+      temp[fact++] = mat_show[j];
+    }
+  }
+  for(int i=0; i<64; i++){
+    mat_show[i] = temp[i];
+  }
+  
+}
+void mousePressed(){
+	cont++;
+}
+
+void dereate_matrixA(){
+	//1行は8列なのでカウンタに8をかけて一番後ろの配列から消去している
+for (int i=0;i <0 + (cont*8);i++){
+	  mat_show[63 - i] = 0;
+  }
+}
+
+void dereate_matrixB(){
+	//上限が16だが処理に困るので初めに8減らして処理をしている
+	for (int i=0; i <0 +((cont-8)*8);i++){
+		mat_show[63 - i] = 0;
+	}
+}
+
+void dereate_ALL(){
+	for (int i=0;i<63;i++){
+		mat_show[i] = 0;
+	}
+}

@@ -1,0 +1,28 @@
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+int number = 1;
+int IntMatrix[][] = {
+  {0,0,1,1,0,0,0},//1
+  {0,1,1,1,1,0,1},//2
+  {1,1,1,1,1,1,1},//3
+};
+void setup(){
+  size(400,100);
+  gainer = new Gainer(this ,"/dev/cu.usbmodemfd121",Gainer.MODE4);
+ 
+	myFont = loadFont("CourierNewPSMT-48.vlw");
+	textFont(myFont, 30);
+	frameRate(30);
+	//gainer.ampGainAGND(0x4);
+}
+
+void draw(){
+	background(120);
+	gainer.peekAnalogInput();
+	input0 = gainer.analogInput[0];
+        text(input0,40,80);  
+	if (input0 >= 230){text("dark",40,40);}
+	else if (input0 < 230 && input0 > 150)text("gray",40,40);
+	else text("whiht",40,40);
+}

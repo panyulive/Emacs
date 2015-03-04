@@ -1,0 +1,148 @@
+import java.util.Random;
+import java.io.*;
+/*
+基本的に，
+Kadai5のSortクラスに修飾子の追加を行い，
+mainメソッドにあった処理をクラス内へ移動し，
+クラス変数及びクラスメソッドを定義するだけのはずです．
+ただし，講義資料とこのソースのコメントをよく読み，
+仕様にあったものにする事！！
+*/
+class Sort {
+
+	/*
+	int型配列numをインスタンス変数として宣言せよ．
+	ただし，クラス外からアクセス不可にする事．
+	*/
+
+
+	/*
+	int型変数sumをクラス変数として宣言せよ．
+	ただし，クラス外からアクセス不可にする事．
+	*/
+
+
+	/*
+	Sortクラスのコンストラクタを定義せよ．
+
+	～引数がint型3つの場合～
+	引数を個数，最小値，最大値の順に受け取り，
+	Kadai4_1やKadai5の前半のように，
+	最小値から最大値の範囲の指定された個数の乱数を配列numに用意し，
+	その内容を表示せよ．
+
+	～引数がint型2つの場合～	// 
+	引数を最小値，最大値の順に受け取り，
+	Kadai4_2やKadai5の後半のように，
+	最小値から最大値まで連続値を配列numに用意し，
+	その内容を表示せよ．
+
+	ただし，引数無しのコンストラクタを利用できなくする事．
+	つまり，new Sort()ではSortを使えないようにし，
+	numに何も用意されていないSortクラスを作れないようにする事．
+
+	また，Kadai5からあるメソッドを活用して極力簡潔に書くこと．
+
+	*/
+
+
+	/*
+	Kadai5からある，
+	makeRnd
+	makeSequence
+	bubbleGreater
+	bubbleLess
+	shuffle
+	show
+	getInd
+	getFirst
+	getLast
+	をインスタンスメソッドとして定義．
+	ただし，クラス外からアクセス不可にする事
+	*/
+
+
+	/*
+	昇順に並べ替え→numの表示→最小値及び最大値の表示
+	を行う，void型インスタンスメソッドGSortShowを定義せよ．
+	Kadai5からあるメソッドを活用する事．
+	最小値及び最大値の表示は，numへ直接アクセスしてはならない．更に，getIndも使ってはならない．
+	*/
+
+
+	/*
+	シャッフル→numの表示→降順に並べ替え→numの表示→最大値及び最小値の表示
+	を行う，void型インスタンスメソッドshuffleLSortShowを定義せよ．
+	Kadai5からあるメソッドを活用する事．
+	最大値及び最小値の表示は，numへ直接アクセスしてはならない．更に，getIndも使ってはならない．
+	*/
+
+
+	/*
+	クラス変数sumを表示する，
+	引数無し，void型のクラスメソッドsumShowを定義せよ．
+	*/
+
+}
+
+
+
+/*
+Kadai5同様，以下のmainメソッドは書き換え不可．
+ただし，「←このコンストラクタは…」の行のコメントを外した時に，
+コンパイルが通らなくなる事を確認しておくこと．
+*/
+class Kadai6 {
+	public static void main(String[] args) throws IOException
+	{
+		/* Sortクラスが生成された数を表示 */
+		Sort.sumShow();
+
+		/* BufferedReaderのインスタンス化 */
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+
+
+		/* 課題4_1に対応する部分開始 */
+		System.out.println("生成する乱数の個数を入力してください");
+		int n_max = Integer.parseInt(br.readLine());
+
+		System.out.println("生成する乱数の最小値を入力してください");
+		int r_min = Integer.parseInt(br.readLine());
+
+		System.out.println("生成する乱数の最大値を入力してください");
+		int r_max = Integer.parseInt(br.readLine());
+
+
+
+		/* Sortクラスをsort1としてインスタンス化 */
+//		Sort sort1 = new Sort();//←このコンストラクタは利用不可になるようにする
+		Sort sort1 = new Sort(n_max, r_min, r_max);
+
+		/* Sortクラスが生成された数を表示 */
+		Sort.sumShow();
+
+		/* ソートと結果表示 */
+		sort1.GSortShow();
+
+
+
+		/* 課題4_2に対応する部分開始 */
+		System.out.println("連続値の最小値を入力してください");
+		r_min = Integer.parseInt(br.readLine());
+
+		System.out.println("連続値の最大値を入力してください");
+		r_max = Integer.parseInt(br.readLine());
+
+
+		/* Sortクラスをsort2としてインスタンス化 */
+//		Sort sort2 = new Sort();//←このコンストラクタは利用不可になるようにする
+		Sort sort2 = new Sort(r_min, r_max);
+
+		/* Sortクラスが生成された数を表示 */
+		Sort.sumShow();
+
+		/* シャッフルとソートと結果表示 */
+		sort2.shuffleLSortShow();
+	}
+}

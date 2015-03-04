@@ -1,0 +1,61 @@
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+String Label_0 = "array0";
+
+int[] array0 = new int[0];
+int col;
+int i;
+
+int input0;
+void setup(){
+	size(600, 230);
+	gainer = new Gainer(this);
+	myFont = loadFont("CourierNewPSMT-48.vlw");
+	textFont(myFont, 30);
+	frameRate(30);
+	//gainer.ampGainAGND(0x4);
+}
+
+void draw(){
+	background(120);
+	gainer.peekAnalogInput();
+	input0 = gainer.analogInput[0];
+        text(input0,40,80);  
+        i = 0;
+	if (input0 >= 230){
+		text("dark",40,40);
+		if (col != 0){
+		gainer.analogOutput(0,255);
+		while(i++<2000)delay(1);
+		}
+		col = 0;
+		gainer.analogOutput(0,0);
+	}
+	else if (input0 < 230 && input0 > 200){
+		text("dark gray",40,40);
+		if (col != 1){
+		gainer.analogOutput(0,255);
+		while(i++<2000)delay(1);
+		}
+		gainer.analogOutput(0,0);
+		col = 1;
+	}else if (input0 <= 200 && input0 >=150){
+		text("light gray",40,40);
+		if(col != 2){
+		gainer.analogOutput(0,255);
+		while(i++<2000)delay(1);
+		}
+		gainer.analogOutput(0,0);
+		col = 2;
+	}
+	else {
+        text("whiht",40,40);
+		if (col != 3){
+        gainer.analogOutput(0,255);
+		while(i++<1000)delay(1);
+		}
+		gainer.analogOutput(0,0);
+		col = 3;
+	}
+}

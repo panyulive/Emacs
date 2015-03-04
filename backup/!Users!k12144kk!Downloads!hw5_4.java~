@@ -1,0 +1,25 @@
+class Circle{
+		private int x,y,r;
+		Circle(int px,int py,int pr){
+				x=px;
+				y=py;
+				r=pr;
+		}
+		void show(Circle[] a){
+				for(int i=0;i<5;i++){
+						System.out.println(i+" xÀ•W‚Í"+x+" yÀ•W‚Í"+y+" ”¼Œa‚Í"+r);
+				}
+		}
+}
+class K5_4
+{
+		public static void main (String[] args){
+				Circle[] a = new Circle[5];
+				for(int i=0;i<a.length;i++){
+						a[i]=new Circle(i,2*i,(int)(Math.random()*100));
+				}
+				Circle.show(a);
+				//				Circle.sort(a);
+				Circle.show(a);
+		}
+}

@@ -1,0 +1,8 @@
+public class Test {
+  public static void main(String[] args) {
+      String s1 = "AKB48";
+      String s2 = s1;
+      String s3 = "AKB" + "\u0034\u0038";
+      System.out.println(s2 == s3);
+  }
+}

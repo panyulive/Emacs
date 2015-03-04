@@ -1,0 +1,103 @@
+import processing.gainer.*;
+import processing.serial.*;
+Serial myPort;
+Gainer gainer;
+PFont myFont;
+
+int StatusFlag;
+
+int state;//タクトスイッチの押す組み合わせ
+int Button1, Button2, Button3, Button4;//タクトスイッチ
+
+
+void setup() {
+  size(400, 400);
+  myFont=loadFont("TimesNewRomanPSMT-90.vlw");
+  textFont(myFont, 30);
+
+  gainer=new Gainer(this);
+  gainer.beginDigitalInput();
+  //gainer.peekAnalogInput();
+
+  StatusFlag=0;
+  myPort=new Serial(this, Serial.list()[0], 9600);//ポートとスピードを設定して、Serialクラスを初期化
+
+  //初期化
+  state=0;
+  Button1=0;//タクトスイッチのデジタルポート番号
+  Button2=1;
+  Button3=2;
+  Button4=3;
+}
+
+
+void draw() {
+  //Button();
+  background(120);
+  fill(0);
+  text(gainer.analogInput[0],100,20);
+  text(,100,50);
+  text(,100,80);
+  text(,100,110);
+  text(state,100,140);
+  
+  myPort.clear(); //バッファ領域を空にする
+  myPort.write(state);//Arduinoへ読み込み完了の合図を送る
+}
+
+
+//距離センサメソッド
+int Distance(int analogValue) {
+  if (analogValue>=100) {
+    return(1);
+  }
+  else {
+    return(0);
+  }
+}
+
+
+//タクトスイッチメソッド
+//タクトスイッチを押した組み合わせを戻り値として返す
+//true=HIGH,false=LOW
+void Button() {
+  if ((gainer.digitalInput[Button1]==false)&&(gainer.digitalInput[Button2] ==false)&&(gainer.digitalInput[Button3] ==false)&&(gainer.digitalInput[Button4] == false)) {
+    state=0;
+  }
+  else if ((gainer.digitalInput[Button1]==true)&&(gainer.digitalInput[Button2] ==false)&&(gainer.digitalInput[Button3] ==false)&&(gainer.digitalInput[Button4] == false)) {
+    state=1;
+  }
+  else  if ((gainer.digitalInput[Button1]==false)&&(gainer.digitalInput[Button2] ==true)&&(gainer.digitalInput[Button3] ==false)&&(gainer.digitalInput[Button4] == false)) {
+    state=2;
+  }
+  else if ((gainer.digitalInput[Button1]==false)&&(gainer.digitalInput[Button2] ==false)&&(gainer.digitalInput[Button3] ==true)&&(gainer.digitalInput[Button4] == false)) {
+    state=3;
+  }
+  else  if ((gainer.digitalInput[Button1]==false)&&(gainer.digitalInput[Button2] ==false)&&(gainer.digitalInput[Button3] ==false)&&(gainer.digitalInput[Button4] == true)) {
+    state=4;
+  }
+  else  if ((gainer.digitalInput[Button1]==true)&&(gainer.digitalInput[Button2] ==true)&&(gainer.digitalInput[Button3] ==false)&&(gainer.digitalInput[Button4] == false)) {
+    state=5;
+  }
+  else if ((gainer.digitalInput[Button1]==true)&&(gainer.digitalInput[Button2] ==false)&&(gainer.digitalInput[Button3] ==true)&&(gainer.digitalInput[Button4] == false)) {
+    state=6;
+  }
+  else  if ((gainer.digitalInput[Button1]==true)&&(gainer.digitalInput[Button2] ==false)&&(gainer.digitalInput[Button3] ==false)&&(gainer.digitalInput[Button4] == true)) {
+    state=7;
+  }
+  else  if ((gainer.digitalInput[Button1]==true)&&(gainer.digitalInput[Button2] ==true)&&(gainer.digitalInput[Button3] ==true)&&(gainer.digitalInput[Button4] == false)) {
+    state=8;
+  }
+  else  if ((gainer.digitalInput[Button1]==true)&&(gainer.digitalInput[Button2] ==true)&&(gainer.digitalInput[Button3] ==true)&&(gainer.digitalInput[Button4] == true)) {
+    state=20;
+  }
+  else  if ((gainer.digitalInput[Button1]==false)&&(gainer.digitalInput[Button2] ==true)&&(gainer.digitalInput[Button3] ==true)&&(gainer.digitalInput[Button4] == false)) {
+    state=30;
+  }
+  else  if ((gainer.digitalInput[Button1]==false)&&(gainer.digitalInput[Button2] ==false)&&(gainer.digitalInput[Button3] ==true)&&(gainer.digitalInput[Button4] == true)) {
+    state=40;
+  }
+  else {
+  }
+}
+

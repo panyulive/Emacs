@@ -1,0 +1,23 @@
+import java.util.Random;
+import java.io.*;
+
+class Sample_random{
+		public static void main(String[] args) throws IOException
+		{
+				BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+				
+				System.out.println("¶¬‚·‚é—”‚ÌŒÂ”‚ğ“ü—Í");
+				String str_range = br.readLine();
+				System.out.println("¶¬‚·‚é—”‚ÌÅ‘å’l‚ğ‚É‚ã‚¤‚è‚å‚­");
+				String str_max = br.readLine();
+				
+				int num_max = Integer.parseInt(str_max);
+				int num_range = Integer.parseInt(str_range);
+
+				Random rnd = new Random();
+				for (int i = 0; i<num_max;i++){
+						int num_rnd = rnd.nextInt(num_range+1);
+						System.out.println(i+"”Ô–Ú‚Ì—”"+num_rnd);
+				}
+		}
+}

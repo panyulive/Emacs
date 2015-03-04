@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: BuffererdReader 
+# key: bufferedreader
+# binding: direct-keybinding
+# expand-env: ((some-var some-value))
+# type: command
+# --
+BufferdReader br = new BufferedReader(new InputStreamReader(System.in));
+${0}

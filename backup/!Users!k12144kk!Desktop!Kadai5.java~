@@ -1,0 +1,214 @@
+//K12117 丸山瑛之
+import java.util.Random;
+import java.io.*;
+
+
+class Sort {
+	/*
+	以降，…の部分にコードを書く．
+	「…」を全て消し，
+	戻り値が必要なメソッドに適当なreturn文を書けば，
+	とりあえずコンパイルは通るはず．
+	それから順にコードを記述し，コンパイル・実行を繰り返すと良い．
+	*/
+
+
+	//以降のメソッドが扱うフィールド
+	int [] num;
+
+
+	/*
+	num_max個の配列を作成(new)
+	range_min～range_maxまでの範囲の乱数を代入(Random)
+	*/
+	void makeRnd(int num_max, int range_min, int range_max){
+
+	    Random rnd = new Random();
+	    int num[] = new int[num_max];
+	    for(int i=0; i<num.length-1; i++){
+		num[i] = rnd.nextInt(range_max-range_min)+(range_min);
+
+	    }
+	}
+
+
+	//range_minからrange_maxまでの連続値の配列を作成(new)
+	void makeSequence(int range_min, int range_max){
+
+	    int num[] = new int[range_max-range_min];
+	    for(int i=range_min; i<range_max; i++){
+		num[i-range_min] = i;
+
+	    }
+	}
+
+
+	//numを昇順にバブルソート
+	void bubbleGreater(){
+
+	    for(int i=0; i<num.length; i++){
+		for(int j=num.length-1; j>i; j--){
+		    if(num[j] < num[j-1]){
+			int tmp = num[j];
+			num[j] = num[j-1];
+			num[j-1] = tmp;
+		    }
+		}
+	    }
+	}
+
+	//numを降順にバブルソート
+    void bubbleLess(){
+
+	for(int i=0; i<num.length; i++){
+	    for(int j=num.length-1; j>i; j--){
+		if(num[j] > num[j-1]){
+		    int tmp = num[j];
+		    num[j] = num[j-1];
+		    num[j-1] = tmp;
+		}
+	    }
+	}
+    }
+
+
+	//numをシャッフル(課題4同様，混ざれば何でも良い)
+    void shuffle(){
+
+	int n;
+	Random rnd1 = new Random();
+	Random rnd2 = new Random();
+
+	    int a = rnd1.nextInt(num.length);
+            int b = rnd2.nextInt(num.length);
+
+            n = num[a];
+            num[a] = num[b];
+            num[b] = n;
+	
+
+    }
+
+
+	/*
+	numの中身を表示．ただし，例のように最後の値の後ろに「,」は付けない
+	例：「61, 100, 12, 36, 45, 40, 84, 61, 98, 10」
+	*/
+    void show(){
+
+	for(int i=0; i<=num.length; i++){
+	    System.out.println(num[i] + ",");
+	}
+
+       
+    }
+
+
+	/*
+	numのind番目の値を戻り値とするメソッド
+	ここでの「ind番目」は「1番目」からとする(1番目がnum[0])
+	*/
+	int getInd(int ind){
+	    return 0;
+
+	}
+
+
+	/*
+	numの1番目の値を戻り値とするメソッド
+	ただし，上のgetIndを利用して実装する事
+	*/
+	int getFirst(){
+
+	    return 0;
+	}
+
+
+	/*
+	numの最後の値を戻り値とするメソッド
+	ただし，上のgetIndを利用して実装する事
+	*/
+	int getLast(){
+
+	    return 0;
+		
+	}
+}
+
+
+class Kadai5 {
+	public static void main(String[] args) throws IOException
+	{
+		/* BufferedReaderのインスタンス化 */
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+
+		/* Sortクラスをsort1としてインスタンス化 */
+		Sort sort1 = new Sort();
+
+		/* 課題4_1に対応する部分開始 */
+		System.out.println("生成する乱数の個数を入力してください");
+		int n_max = Integer.parseInt(br.readLine());
+
+		System.out.println("生成する乱数の最小値を入力してください");
+		int r_min = Integer.parseInt(br.readLine());
+
+		System.out.println("生成する乱数の最大値を入力してください");
+		int r_max = Integer.parseInt(br.readLine());
+
+
+		/* sort1のmakeRndを呼出 */
+		sort1.makeRnd(n_max, r_min, r_max);
+
+		System.out.println("生成した値は,");
+		sort1.show();
+		System.out.println("です.");
+
+		/* sort1のbubbleGreaterを呼出 */
+		sort1.bubbleGreater();
+		System.out.println("昇順にバブルソートした結果は,");
+		sort1.show();
+		System.out.println("です.");
+
+		/* 直接フィールドにアクセス */
+		System.out.println("最小値:" + sort1.num[0] + ", " +
+					n_max/2 + "番目の値:" + sort1.num[n_max/2-1] +
+					", 最大値:" + sort1.num[sort1.num.length-1] + "です.");
+
+
+
+		/* Sortクラスをsort2としてインスタンス化 */
+		Sort sort2 = new Sort();
+
+		/* 課題4_2に対応する部分開始 */
+		System.out.println("連続値の最小値を入力してください");
+		r_min = Integer.parseInt(br.readLine());
+
+		System.out.println("連続値の最大値を入力してください");
+		r_max = Integer.parseInt(br.readLine());
+
+		/* sort2のmakeSequenceを呼出 */
+		sort2.makeSequence(r_min, r_max);
+		System.out.println("配列に");
+		sort2.show();
+		System.out.println("を用意しました.");
+
+		/* sort2のshuffleを呼出 */
+		sort2.shuffle();
+		System.out.println("シャッフル結果は,");
+		sort2.show();
+		System.out.println("になりました.");
+
+		/* sort2のbubbleLessを呼出 */
+		sort2.bubbleLess();
+		System.out.println("降順にバブルソートした結果は,");
+		sort2.show();
+		System.out.println("です.");
+
+		/* メソッド経由でアクセス */
+		System.out.println("最大値:" + sort2.getFirst() + ", " +
+					(r_max-r_min+1)/2 + "番目の値:" + sort2.getInd((r_max-r_min+1)/2) +
+					", 最小値:" + sort2.getLast() + "です.");
+
+	}
+}

@@ -1,0 +1,88 @@
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.border.*;
+import java.awt.event.*;
+public class Sample2 extends JApplet{
+
+	String clickButton = "“ü—Í‘Ò‚¿";
+	private JLabel[] lb = new JLabel[3];
+	private JPanel[] pn = new JPanel[3];
+	private JButton[] bt = new JButton[9];
+	private JButton[] bt1= new JButton[2];
+
+	public void init(){
+		lb[0] = new JLabel("‘I‘ð‚µ‚½‚Ì‚Í");
+		lb[1] = new JLabel(clickButton);
+		lb[2] = new JLabel("‚Å‚·");
+
+		lb[1].setFont(new Font("Helvetica",Font.BOLD,20));
+		lb[1].setBorder(new EtchedBorder());
+
+		pn[0] = new JPanel();
+		pn[1] = new JPanel();
+		pn[2] = new JPanel();
+
+		for (int i=0;i<bt.length;i++){
+			bt[i] = new JButton(Integer.toString(i+1));
+		}
+
+		bt1[0] = new JButton("+");
+		bt1[1] = new JButton("-");
+			
+		lb[0].setHorizontalAlignment(JLabel.RIGHT );
+		lb[1].setHorizontalAlignment(JLabel.CENTER );
+		lb[2].setHorizontalAlignment(JLabel.LEFT );
+		
+		lb[0].setVerticalAlignment(JLabel.CENTER );
+		lb[1].setVerticalAlignment(JLabel.CENTER );
+		lb[2].setVerticalAlignment(JLabel.CENTER );
+
+		//		bt1[0].setHorizontalAlignment(bt[0].RIGHT);
+		//		bt1[1].setHorizontalAlignment(bt[1].LEFT);		
+
+		bt1[0].setVerticalAlignment(bt[0].TOP);
+		bt1[1].setVerticalAlignment(bt[1].TOP);
+
+
+
+		setLayout(new GridLayout(3,1));
+		pn[0].setLayout(new GridLayout(1,3));
+		pn[1].setLayout(new FlowLayout());
+		pn[2].setLayout(new GridLayout(3,3));
+
+
+		for (int i=0;i<lb.length;i++){
+			pn[0].add(lb[i]);
+		}
+		for (int i=0;i<bt1.length;i++){
+			pn[1].add(bt1[i]);
+		}
+		for (int i=0;i<bt.length;i++){
+			pn[2].add(bt[i]);
+		}
+		for (int i=0;i<pn.length;i++){
+			add(pn[i]);
+		}
+		bt1[0].addActionListener(new Sample2ActionListener());
+		bt1[1].addActionListener(new Sample2ActionListener());
+	}
+
+    class Sample2ActionListener 
+		implements 
+			ActionListener
+	{
+		public void actionPerformed(ActionEvent e){
+			String str = "";
+
+			if (e.getActionCommand() == "+"){
+				str = "+";
+			}else if (e.getActionCommand() == "-"){
+				str = "-";
+			}
+
+			lb[1].setText(str+"");
+			repaint();
+		}
+	}
+}
+

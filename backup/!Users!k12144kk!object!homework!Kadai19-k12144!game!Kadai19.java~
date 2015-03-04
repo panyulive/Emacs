@@ -1,0 +1,80 @@
+package game;
+
+import java.util.Random;
+
+
+class Kadai19 {
+	public static void main(String[] args)
+	{
+		/*
+		TrumpCardの例外処理等チェック部分
+		ここの動作を確認してから次へ進むべし
+		*/
+		trump.card.TrumpCard exCard;
+		
+		System.out.println("---TrumpCardの正常な動作の確認---");
+		for(int i=1;i<=13;i++){
+			exCard = new trump.card.TrumpCard(i%4+1, i, 1);
+			exCard.showS();
+			exCard.showN();
+			exCard.show();
+			System.out.println("作ったカードは[" + exCard + "]です.");
+		}
+		System.out.println("---例外動作の確認---");
+		exCard = new trump.card.TrumpCard(0, 1, 1);
+		exCard = new trump.card.TrumpCard(5, 1, 1);
+		exCard = new trump.card.TrumpCard(1, 0, 1);
+		exCard = new trump.card.TrumpCard(1, 14, 1);
+		
+
+		/*
+		TrumpCardの例外処理等チェック部分
+		ここの動作を確認してから次へ進むべし
+		*/
+		trump.card.MyTrumpCards mtc = new trump.card.MyTrumpCards(0);
+
+		System.out.println("---MyTrumpCardsの正常な動作の確認---");
+		for(int i=1;i<=13;i++){
+		        mtc.add(new trump.card.TrumpCard(i%4+1, i, 0));
+			mtc.show(i);
+		}
+		mtc.show(4,8);
+		mtc.show();
+
+
+
+
+
+
+
+
+		
+		
+		/*
+		～ルール～
+		1セットのトランプを作り，シャッフルする．
+		順に1枚ずつトランプを取る．
+		大富豪風に，2が一番強く，3が一番弱い順位で大小を判定して勝負．
+		数字が同じ場合，黒(スペードかダクラブ)の勝ち．
+		色も同じ場合，それぞれスペードとハートの勝ちとする．
+		ただし，取ったトランプは毎回戻すものとして良い(相手と同じトランプが出てきてもOK)．
+		
+		これを10回勝負する．
+		*/
+	     	System.out.println("---ゲーム開始---");
+	     	
+	     	/* トランプを1セット生成 */
+	     	mtc = new trump.card.MyTrumpCards(1);
+	     	System.out.println("トランプを1デッキ用意しました．");
+	     	
+	     	/* トランプをきる */
+	     	mtc.shuffle();
+	     	System.out.println("トランプをきりました．");
+
+
+		/* それぞれ10枚，計20枚引いて勝敗判定するプログラムを書け */
+		
+//		○○○
+
+	}
+}

@@ -1,0 +1,46 @@
+#include<stdio.h>
+
+void add(double,double,double,double);
+void sub(double,double,double,double);
+void mul(double,double,double,double);
+void div(double,double,double,double);
+
+int main(void){
+
+  double a,b,ai,bi;
+  printf("a =");scanf("%f",&a);
+  printf("b =");scanf("%f",&b);
+  printf("ai=");scanf("%f",&ai);
+  printf("bi=");scanf("%f",&bi);
+
+  add(a,b,ai,bi);
+  sub(a,b,ai,bi);
+  mul(a,b,ai,bi);
+  div(a,b,ai,bi);
+
+}
+
+void add(double x,double y,double xi,double yi){
+
+  printf ("%f + %fi = %f+%f + %f+%f\n",x+y,xi+yi,x,y,xi,yi);
+
+}
+
+
+void sub(double x,double y,double xi,double yi){
+
+  printf ("%f - %fi = %f-%f - %f-%f\n",x-y,xi-yi,x,y,xi,yi);
+
+}
+
+void mul(double x,double y,double xi,double yi){
+
+  printf ("%f * %fi = %f*%f * %f*%f\n",x*y,xi*yi,x,y,xi,yi);
+
+}
+
+void div(double x,double y,double xi,double yi){
+
+  printf ("%f / %fi = %f/%f / %f/%f\n",x/y,xi/yi,x,y,xi,yi);
+
+}

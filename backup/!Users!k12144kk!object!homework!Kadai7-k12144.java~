@@ -1,0 +1,25 @@
+import java.io.*;
+class Kadai7 {
+	public static void main(String[] args)throws IOException
+	{
+		BufferedReader br = new  BufferedReader(new InputStreamReader(System.in));
+
+		double n = Integer.parseInt(br.readLine());
+
+		System.out.println(n+"に一番小さい整数値は"+Math.rint(n)+"です");
+
+		System.out.println(n +"に一番小さい値は"+Math.abs(n)+"です");
+
+		System.out.println("sin("+((n/180)*Math.PI)+"("+n+"度))="+Math.sin((n/180)*Math.PI)"で");
+		System.out.println("cos("+((n/180)*Math.PI)+"("+n+"度))="+Math.cos((n/180)*Math.PI)"です");
+
+		do{
+
+		System.out.println("0.0以上の値を入力");
+		double num = Integer.parseInt(br.readLine());
+
+		}while(num < 0.0);
+
+		System.out.println(num + "の平方根は" +Math.sqrt(num)+ "です");
+	}
+}

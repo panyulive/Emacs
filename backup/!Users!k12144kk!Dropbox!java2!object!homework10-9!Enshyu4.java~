@@ -1,0 +1,49 @@
+
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Enshyu4 extends Applet implements ActionListener{
+	
+	Button bt;
+	int flag = 0;
+	public void init(){
+		bt = new Button("色を変更します");
+		add(bt);
+		bt.addActionListener(this);	
+	}
+	public void actionPerformed(ActionEvent ae){
+		bt.setLabel("色を変更しました");
+		flag = 1;
+		repaint();
+	}
+
+	public void paint(Graphics g){
+
+		g.drawString("Star!!",35,90);
+		if(flag == 1){
+			g.setColor(Color.red);
+		}
+		else{
+		g.setColor(Color.yellow);
+		}
+		int xPoints[] = {50,30,70};
+		int yPoints[] = {10,40,40};
+		g.fillPolygon(xPoints,yPoints,3);
+
+	
+		int xPoints2[] = {50,20,35};
+		int yPoints2[] = {70,80,40};
+		g.fillPolygon(xPoints2,yPoints2,3);
+
+		int xPoints2_2[] = {50,80,65};
+		int yPoints2_2[] = {70,80,40};
+		g.fillPolygon(xPoints2_2,yPoints2_2,3);
+	
+		int xPoints3[] = {50,10,90};
+		int yPoints3[] = {70,30,30};
+		g.fillPolygon(xPoints3,yPoints3,3);
+
+	}
+}

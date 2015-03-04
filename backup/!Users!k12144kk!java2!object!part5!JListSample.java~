@@ -1,0 +1,32 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class Sample2 extends JFrame{
+
+  public static void main(String[] args){
+    Sample2 test = new Sample2("Sample2");
+
+    /* 終了処理を変更 */
+    test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    test.setBounds( 10, 10, 500, 260);
+    test.setVisible(true);
+  }
+
+  Sample2(String title){
+    setTitle(title);
+
+    /* JListの初期データ */
+    String[] initData = {"Blue", "Green", "Red", "Whit", "Black"};
+    JList list = new JList(initData);
+
+    JScrollPane sp = new JScrollPane();
+    sp.getViewport().setView(list);
+    sp.setPreferredSize(new Dimension(200, 160));
+
+    JPanel p = new JPanel();
+    p.add(sp);
+
+    getContentPane().add(p, BorderLayout.CENTER);
+  }
+}

@@ -1,0 +1,101 @@
+import java.io.*;
+import java.util.*;
+
+
+interface iSuit{
+	int SPADE = 1;
+	int HEART = 2;
+	int CLUB = 3;
+	int DIA = 4;
+	void showS();
+}
+
+interface iMaterial{
+	void showM();
+}
+
+
+/*
+°iSuit‹y‚ÑiMaterial‚ðŽÀ‘•‚·‚é’ŠÛƒNƒ‰ƒXTrump‚Ì’è‹`°
+EƒtƒB[ƒ‹ƒh(public‚Í•s‰ÂII)
+ƒX[ƒg‚ð•\‚·intŒ^‚Ìsuit‹y‚Ñ”Žš‚ð•\‚·intŒ^‚Ìnum
+ÞŽ¿‚ð•\‚·StringŒ^‚Ìmat
+Eƒƒ\ƒbƒh
+’ŠÛƒƒ\ƒbƒhvoid show()‹y‚Ñ’ŠÛƒƒ\ƒbƒhvoid showN()
+*/
+
+
+/*
+°’ŠÛƒNƒ‰ƒXTrump‚ðŒp³‚·‚éƒNƒ‰ƒXTrumpCard‚Ì’è‹`°
+
+EƒRƒ“ƒXƒgƒ‰ƒNƒ^
+ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð—˜—p•s‰Â‚É‚·‚éŽ–D
+‘æ1‹y‚Ñ‘æ2ˆø”‚ªintŒ^C‘æ3ˆø”‚ªStringŒ^‚Ì3ˆø”‚ðŽæ‚èC
+‘æ1ˆø”‚ðƒX[ƒgC‘æ2ˆø”‚ð”ŽšC‘æ3ˆø”‚ðÞŽ¿‚Æ‚µ‚Ä‰Šú‰»‚·‚éƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ðŽÀ‘•D
+‚½‚¾‚µCŽŸ‚ÌsetT‹y‚ÑsetM‚ð—p‚¢‚ÄŠÈŒ‰‚É(2sH)‚ÅŽÀ‘•D
+
+Evoid setT(intŒ^2‚Â)
+‘æ1ˆø”‚ðƒX[ƒgC‘æ2ˆø”‚ð”Žš‚Æ‚µ‚ÄÝ’èD
+‚½‚¾‚µC‘æ1ˆø”‚ª1°4‚Å–³‚©‚Á‚½‚èC‘æ2ˆø”‚ª1°13‚Å‚È‚¢ê‡‚Í•\Ž¦Œ‹‰Ê—á‚Ì‚æ‚¤‚ÈƒƒbƒZ[ƒW‚ð•\Ž¦D
+
+Evoid setM(StringŒ^)
+ˆø”‚Ì•¶Žš—ñ‚ðmat‚ÖD
+
+EŠeŽíshow
+ƒI[ƒo[ƒ‰ƒCƒh•K{‚Èshow‹y‚ÑCmainƒƒ\ƒbƒh‚ðŽQl‚É•K—v‚Èshow‚ð’è‹`D
+
+EtoString()
+PAPER»‚Ìƒn[ƒg‚Ì1‚È‚çuPAPER»HAvC
+PAPER»‚ÌƒXƒy[ƒh‚Ì5‚È‚çuPAPER»S5vC
+PLASTIC»‚ÌƒNƒ‰ƒu‚Ì13‚È‚çuPLASTIC»CKv
+‚È‚Ç‚Ì•¶Žš—ñ‚ð•Ô‚·Ž–D
+
+‚à‚µŠeŽíshow‚âtoString‚Ì‚½‚ß‚É‚ ‚é‚Æ•Ö—˜‚Èƒƒ\ƒbƒh‚ª‚ ‚ê‚ÎC“K‹Xprivate‚Å’Ç‰Á‚µ‚Ä\‚í‚È‚¢D
+ƒX[ƒg‚Ì’ˆÓ“_‚Æ‚µ‚Ä‚ÍCƒCƒ“ƒ^ƒtƒF[ƒX‚Ì’è”‚ð—˜—p‚µ‚Ä”»’è‚·‚éŽ–(HEART‚È‚Ç‚Ì’è”‚ð—˜—p)D
+”Žš‚Ì’ˆÓ“_‚Æ‚µ‚Ä‚ÍCu1¨Avu11¨Jvu12¨Qvu13¨Kv‚Ì‚æ‚¤‚ÉCƒgƒ‰ƒ“ƒv‚ç‚µ‚­•\Ž¦‚·‚éŽ–D
+ƒNƒ‰ƒXƒ‰ƒCƒuƒ‰ƒŠ‚ÌƒŠƒtƒ@ƒŒƒ“ƒX«‚ðŽQl‚É‚·‚é‚ÆC‚æ‚èŠÈ’P‚ÉŽÀ‘•‚Å‚«‚é‚©‚àH
+http://java.sun.com/javase/ja/6/docs/ja/api/
+*/
+
+
+
+
+
+class Kadai14 {
+	public static void main(String[] args) throws IOException
+	{
+		/* BufferedReader‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‰» */
+      		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      		
+      		/* card1—pƒpƒ‰ƒ[ƒ^‚ðŽw’è */
+      		System.out.println("ƒgƒ‰ƒ“ƒv‚ÌƒX[ƒg‚ð“ü—Í : SPADE->1, HEART->2, CLUB->3, DIA->4");
+      		int suit = Integer.parseInt(br.readLine());
+      		System.out.println("ƒgƒ‰ƒ“ƒv‚Ì”Žš‚ð“ü—Í");
+      		int num = Integer.parseInt(br.readLine());
+      		System.out.println("ƒgƒ‰ƒ“ƒv‚ÌÞŽ¿‚ð“ü—Í");
+      		String mat = br.readLine();
+
+		/* TrumpCardƒNƒ‰ƒX‚ðcard1‚Æ‚µ‚ÄƒCƒ“ƒXƒ^ƒ“ƒX‰» */
+		TrumpCard cards1 = new TrumpCard(suit, num, mat);
+
+
+
+		/* ŠeŽíshow */
+		cards1.showS();
+		cards1.showN();
+		cards1.showM();
+		cards1.show();
+
+
+	     	/*
+	     	ƒ‰ƒ“ƒ_ƒ€‚É1–‡‚ÌTrumpCard card2‚ð¶¬
+	     	‚½‚¾‚µCÞŽ¿‚Í2/3‚ÌŠm—¦‚Å"PAPER"C1/3‚ÌŠm—¦‚Å"PLASTIC"‚Æ‚È‚é‚æ‚¤‚É‚·‚éŽ–
+	     	*/
+      		
+  	     	›››
+  	     	
+      		System.out.println("ƒ‰ƒ“ƒ_ƒ€‚É1–‡‚Ìƒgƒ‰ƒ“ƒv‚ðŽæ‚Á‚½Š, " + card2 + "‚Å‚µ‚½D");
+
+
+	}
+}

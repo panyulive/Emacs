@@ -1,0 +1,87 @@
+/*
+適切なpackage, importを記述!!
+
+*/
+package trump.card;
+import trump.card.*;
+import java.util.*;
+
+public class MyTrumpCards extends TrumpCards{
+
+
+/*
+ \
+コンストラクタ
+
+引数無し→使用不可にする事
+
+1引数(int fill)
+→fillが0であれば空のデッキ，
+それ以外(1でも10でも)であれば4スートそれぞれ1～13(つまり52枚)で構成されるデッキ
+を作れ．ただし，入ってる順番は問わない(数字で並んでいても柄で並んでいてもＯＫ)
+
+*/
+	ArrayList<String> num;
+
+	private MyTrumpCards(){}
+
+	public MyTrumpCards(int fill){
+		num = new ArrayList<String>();
+		if (fill == 0);
+		else {
+			for (int i=0;i<13;i++){
+				num.add(rnd(3)+rnd(12));
+			}
+		}
+	}
+
+/*
+public void shuffle()
+カードをシャッフルするクラスメソッド
+
+以前のシャッフルを流用すると楽だと思います．
+*/
+	public void shuffle(){
+
+	}
+
+/*
+各種show
+
+public void show(int ind)
+指定位置のカードを表示
+
+public void show(int ind1,int ind2)
+指定範囲のカードを表示
+
+public void show()
+全カードを表示
+
+*/
+	public void show(int ind){
+		System.out.println((num.get(ind)));
+	}
+
+	public void show(int ind1,int ind2){
+		for (int i=ind1 ; i<ind2 ;i++){
+			System.out.print(num.get(i)+",");
+		}
+		System.out.println(num.get(ind2));
+	}
+
+	public void show(){
+		for (int i=0;i<num.size()-1;i++){
+System.out.print(num.get(i));
+		}
+		System.out.println(num.get(num.size()));
+	}
+/*
+public MyTrumpCards pick(int ind1,int ind2)
+指定範囲のカードを取り出す．
+以前のpickをMyTrumpCardsにするだけ．
+
+public TrumpCard pick(int ind)
+指定位置のカードを取り出す．
+*/	
+
+}

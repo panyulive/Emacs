@@ -1,0 +1,93 @@
+# Configuration file
+
+####################
+# entity
+####################
+
+entity {
+    I:entityAdelbertID=213
+    I:entityAnthonyID=214
+    I:entityCandeloroID=192
+    I:entityCharlotte=217
+    I:entityClawID=227
+    I:entityCornoForteID=228
+    I:entityCutlassID=222
+    I:entityFireLanceID=230
+    I:entityGertrudID=212
+    I:entityGriefSeedID=210
+    I:entityHomuraID=251
+    I:entityJBID=202
+    I:entityJewelID=226
+    I:entityKirikaID=204
+    I:entityKriemhildGretchenID=211
+    I:entityKyoukoID=254
+    I:entityLightArrowID=220
+    I:entityMadokaID=250
+    I:entityMaidPuellaMagiID=193
+    I:entityMamiID=253
+    I:entityMusketID=223
+    I:entityOktaviaID=190
+    I:entityOrikoID=203
+    I:entityPrickleID=231
+    I:entityPyotrID=218
+    I:entityQBID=201
+    I:entitySayakaID=252
+    I:entityShadowPuellaMagiID=216
+    I:entitySpear2ID=225
+    I:entitySpearID=224
+    I:entityWalpurgisnachtID=215
+    I:entityWheelID=232
+    I:entityYumaID=205
+    I:entityYuriID=247
+}
+
+
+####################
+# item
+####################
+
+item {
+    I:homuraBowID=15023
+    I:homuraGemID=15020
+    I:homuraGun1ID=15021
+    I:homuraGun2ID=15022
+    I:homuraWeaponID=15024
+    I:incubatorID=15004
+    I:itemBulletID=15003
+    I:itemGriefSeedID=15001
+    I:itemLightArrowID=15002
+    I:kirikaClawID=15071
+    I:kirikaGemID=15070
+    I:kirikaWeaponID=15072
+    I:kyoukoGemID=15050
+    I:kyoukoSpearID=15051
+    I:madokaBowID=15011
+    I:madokaGem=15010
+    I:madokaRibbonID=15000
+    I:madokaWeaponID=15012
+    I:mamiGemID=15040
+    I:mamiGunID=15041
+    I:mamiTeaID=15042
+    I:orikoGemID=15060
+    I:sayakaCutlassID=15031
+    I:sayakaGemID=15030
+    I:yumaGemID=15080
+    I:yuriGemID=15160
+    I:yuriGunID=15161
+}
+
+
+####################
+# system
+####################
+
+system {
+    B:EasyMode=false
+    I:GSLightLevel=10
+    I:GSSpawning=20
+    B:HeightCorrection=true
+    B:SatelliteMode=false
+    B:canWalpurgisSpawn=true
+}
+
+

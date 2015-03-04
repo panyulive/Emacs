@@ -1,0 +1,45 @@
+
+
+
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+
+int[] array0 = new int[0];
+int flag = 0;
+
+int input0;
+int bright;
+int max = 0;
+
+// setup Method
+
+void setup(){
+	size(400, 230);
+	gainer = new Gainer(this);
+	myFont = loadFont("CourierNewPSMT-48.vlw");
+	textFont(myFont, 30);
+	frameRate(30);
+	//gainer.ampGainAGND(0xF);
+}
+
+void draw(){
+	background(120);
+	gainer.peekAnalogInput();
+	input0 = gainer.analogInput[0];
+	bright = gainer.analogInput[1];
+
+	// show analog input values
+	fill(255);
+	if (bright <= 200){
+		
+		if (max < input0){
+			max = input0;
+		}else if (max > input0 && input0 == 0){
+			if (flag == 0){flag = 1;}
+			else if (flag == 1){flag = 0;}
+			max = 0;
+		}
+	}
+	gainer.analogOutput(0,flag * 255);
+}

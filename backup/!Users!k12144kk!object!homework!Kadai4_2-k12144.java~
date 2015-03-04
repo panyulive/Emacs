@@ -1,0 +1,57 @@
+import java.util.Random;
+import java.io.*;
+
+class Sample_random{
+		public static void main(String[] args) throws IOException
+		{
+				BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+				
+				System.out.println("¶¬‚·‚é—”‚ÌŒÂ”‚ğ“ü—Í");
+				String rnd_num = br.readLine();
+				System.out.println("¶¬‚·‚é—”‚ÌÅ‘å’l‚ğ‚É‚ã‚¤‚è‚å‚­");
+				String rnd_max = br.readLine();
+				System.out.println("¶¬‚·‚é—”‚ÌÅ¬’l‚ğ“ü—Í");
+				String rnd_min = br.readLine();	
+		
+				int num_max = Integer.parseInt(rnd_max);
+				int num_min = Integer.parseInt(rnd_min);
+				int num_range = Integer.parseInt(rnd_num);
+
+				System.out.println("--------------");
+
+				int[] n= new int[num_range];
+
+				int i;
+				Random rnd = new Random();
+				for  (i = 0; i<num_range;i++){
+						int num_rnd = rnd.nextInt(num_max - num_min);
+						n[i] = num_rnd + num_min;
+				}
+
+				for (i = 0; i<num_range;i++){
+					System.out.print(n[i]+".");
+				}
+				System.out.println("‚ğ¶¬‚µ‚Ü‚µ‚½");
+				int change;
+				int j;
+				for (j = 0; j<num_range;j++){
+					for (i = 0; i<num_range-1;i++){
+						if (n[i] < n[i+1]){
+						}else {
+							change = n[i];
+							n[i]=n[i+1];
+							n[i+1] = change;
+						}
+					}
+				}
+				System.out.println("¸‡‚É‚µ‚½Œ‹‰Ê‚Í");
+				for (i = 0;i<num_range;i++){
+					System.out.print(n[i]+".");
+				}
+				System.out.println("‚Å‚·B");
+				
+
+		}
+
+}
+	

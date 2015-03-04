@@ -1,0 +1,80 @@
+package trump.card;
+
+public class TrumpCard extends trump.Trump{
+
+
+	String ssuit,snum;
+
+	public TrumpCard(int s,int n,int m){
+		setT(s,n);
+		setM(m);
+	}
+
+	public void setT(int s,int n){
+		if (1 <= s && s <= 4){
+			suit = s;
+		}else {
+			System.out.println("1引数の値が不正です。Suit外です");
+			suit = -1;
+		}
+		
+		if (1 <= n && n <= 13){
+		num = n;
+		}else {
+			System.out.println("2引数が存在しない数字です");
+			num = -1;
+		}
+	}
+	public void setM(int m){
+		mat = m;
+	}
+
+	public void show(){
+		System.out.println("このカードは["+mat+"]製"+ssuit+snum+"です");
+	}
+
+	public void showS(){
+		System.out.println("このカードのスートは"+makeSuit(suit)+"です");
+	}
+
+	public void showN(){
+		System.out.println("このカードの数字は"+makeNum(num)+"です");
+	}
+	public void showM(){
+		System.out.println("このカードの材質は"+mat+"です");
+	}
+	
+
+
+	public String makeSuit(int s){
+
+		String ss = "";
+		switch (s){
+		case 1: ss = "S";break; 	
+		case 2: ss = "H";break; 	
+		case 3: ss = "C";break; 	
+		case 4: ss = "D";break;
+		case -1: ss = "error";break; 
+			}		  		    	
+		ssuit = ss;
+		return ss;	
+	}
+	public String makeNum(int n){
+		String sn = "";
+		switch (n){
+		case 1:  sn = "A";break; 	
+		case 11: sn = "J";break; 	
+		case 12: sn = "Q";break; 	
+		case 13: sn = "K";break;
+		case -1: sn = "0";break;
+		default :sn = String.valueOf(n);break; 	
+		}		
+		snum = sn;   		    	
+		
+		return sn;
+	}
+
+	public String toString(){
+		return mat+"製"+makeSuit(suit) + makeNum(num);
+	}
+}

@@ -1,0 +1,29 @@
+class BikeCar extends Car
+{
+	private static int Bussum = 0; 
+	private String place;
+
+	public BusCar(){
+		Bussum++;
+		place = "";
+		System.out.println("バイクを作成しました");
+	}
+	public BusCar(int n,double g,String c){	
+		super(n,g);
+		Bussum++;
+		place = c;
+		System.out.println("目的地"+place+"行きのバイクを作成しました");
+	}
+	public void setPlace(String c){
+		place = c;
+		System.out.println("コース番号"+place+"にしました");
+	}
+
+	public void newShow(){
+		System.out.println("バスのナンバーは"+num+"です");
+		System.out.println("ガソリン量は"+gas+"です");
+		System.out.println("目的地は"+place+"です");
+	}
+	public static void newShowSum(){
+		System.out.println("車は"+sum+"台作成され、バイクは"+Bussum+"台作成されました。");	
+}

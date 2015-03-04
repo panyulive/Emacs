@@ -1,0 +1,37 @@
+import java.io.*;
+
+public class Scanf{
+
+	BufferedReader br;
+	public Scanf() throws IOException{
+		br = new BufferedReader(new InputStreamReader(System.in));
+	}
+
+	public int Scanf(int n){
+		try{
+			return Integer.parseInt(br.readLine());
+		}catch(IOException e){
+			System.out.println("—\Šú‚¹‚Ê‚à‚Ì‚ª“ü—Í‚³‚ê‚Ü‚µ‚½B" +e);
+			return -1;		
+		}
+	}
+	public double Scanf(double d){
+		try{
+			return Double.parseDouble(br.readLine());
+		}catch(IOException e){
+			System.out.println("—\Šú‚¹‚Ê‚à‚Ì‚ª“ü—Í‚³‚ê‚Ü‚µ‚½B" +e);
+			return -1;		
+		}
+	
+	}
+	public String Scanf(String s){
+		try{
+			return br.readLine();
+		}catch(IOException e){
+			System.out.println("—\Šú‚¹‚Ê‚à‚Ì‚ª“ü—Í‚³‚ê‚Ü‚µ‚½B" +e);
+			return -1;		
+		}
+		
+	}
+	
+}

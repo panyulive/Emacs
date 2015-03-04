@@ -1,0 +1,78 @@
+/*
+適切なパッケージ記述及びimport記述
+*/
+package game;
+import java.util.Random;
+
+public class Kadai15 {
+	public static void main(String[] args)
+	{
+		/*
+		例外処理等チェック部分
+		ここの動作を確認してから次へ進むべし
+		*/
+		trump.card.TrumpCard exCard;
+		System.out.println("---正常な動作の確認---");
+		for(int i=1;i<=13;i++){
+			exCard = new trump.card.TrumpCard(i%4+1, i, 1);
+			exCard.showS();
+			exCard.showN();
+			exCard.show();
+			System.out.println("作ったカードは[" + exCard + "]です.");
+		}
+		System.out.println("---例外動作の確認---");
+		exCard = new trump.card.TrumpCard(0, 1, 1);
+		exCard = new trump.card.TrumpCard(5, 1, 1);
+		exCard = new trump.card.TrumpCard(1, 0, 1);
+		exCard = new trump.card.TrumpCard(1, 14, 1);
+		
+		
+		
+		/*
+		�ｰルール�ｰ
+		ランダムに2枚のトランプを取る．
+		大富豪風に，2が一番強く，3が一番弱い順位で大小を判定して勝負．
+		スートは特に勝負に影響しない．
+		ただし，取ったトランプは毎回戻すものとして良い(相手と同じトランプが出てきてもOK)．
+		
+		これを10回勝負する．
+		(ランダムなので，入力を求める処理は要りません)
+		*/
+		int  END  = 10;
+		int  win  = 0;
+		int  rose = 0;
+		int  draw = 0;
+		trump.card.TrumpCard I,You;
+		for (int i = 0; i<END;i++){
+			Random rnd = new Random();
+
+			int I_rnum = rnd.nextInt(12) +1;
+			int Y_rnum = rnd.nextInt(12) +1;
+
+			int I_rsut = rnd.nextInt(3) +1;
+			int Y_rsut = rnd.nextInt(3) +1;
+
+			String I_S = exCard.makeCard(I_rsut,I_rnum);
+			String You_S = exCard.makeCard(Y_rsut,Y_rnum);
+
+			System.out.println("あなたの出したカードは["+I_S+"]です相手の出したカードは"+You_S+"です");
+
+			if (I_rnum == 1 || I_rnum == 2) I_rnum += 13;
+			if (Y_rnum == 1 || Y_rnum == 2) Y_rnum += 13;
+
+			if (I_rnum > Y_rnum){       
+				win++;
+				System.out.println("あなたの勝ちです。");
+			}else if (I_rnum < Y_rnum){  
+				rose++;
+				System.out.println("あなたの負けです。");
+			}else if (I_rnum == Y_rnum){ 
+				draw++;
+				System.out.println("引き分けです。");
+			}
+			System.out.println("現在"+win+"勝ち"+rose+"負け"+draw+"分けです");
+		}
+		System.out.println("最終結果は、"+win+"勝"+rose+"敗"+draw+"分けです.");
+
+	}
+}

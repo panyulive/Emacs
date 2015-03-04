@@ -1,0 +1,29 @@
+<% if @is_tile %>
+<%= render :partial => "tile" %>
+<% else %>
+<% if @is_home %>
+<%= render :partial => "home" -%>
+<% else %>
+<% level = @current_category.level %>
+<% if level == 0 || level ==  2 %>
+<div id="nav">
+<%= render :partial => "portal/common/category_vertical_list",
+           :locals => { :categories => @categories, :current_category => @current_category } -%>
+<!-- /nav --></div>
+
+<div id="contentWrapper">
+<div id="contentTop"></div>
+<div id="content">
+<% if @series -%>
+<%= render :partial => "series_list" -%>
+<% else -%>
+<%= render :partial => "content_list" -%>
+<% end -%>
+<!-- /content --></div>
+<div id="contentBottom"></div>
+<!-- /contentWrapper --></div>
+<% else %>
+<%= render :partial => "portal/common/error" -%>
+<% end %>
+<% end -%>
+<% end %>

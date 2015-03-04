@@ -1,0 +1,37 @@
+define 
+
+function check(){
+
+	var flag = 0;
+	// 設定開始（チェックする項目を設定してください）
+	if(document.form1.question1.length) { // 選択肢が複数ある場合
+		flag = 1;
+		var i;
+		for(i = 0; i < document.form1.question1.length; i ++){
+			if(document.form1.question1[i].checked){
+				flag = 0; break;
+			}
+		}
+	}
+	else{ // 選択肢が1つだけの場合
+		if(!document.form1.question1.checked){
+			flag = 1;
+		}
+	}
+
+	// 設定終了
+	ret;
+	check1 = document.form1.question1.checked;
+	check2 = document.form1.question2.checked;
+	check3 = document.form1.question3.checked;
+	if (check1 == true){
+		ret = "hogehoge";
+	}if else {
+		ret = "piyopiyo";
+	}if else {
+		ret = "pakapaka;"
+	}
+	URL = "http://make.dmm.com/item/";
+
+	window.location.herf = URL + ret +"/"; 
+}

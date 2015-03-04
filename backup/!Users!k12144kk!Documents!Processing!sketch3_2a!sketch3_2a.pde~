@@ -1,0 +1,55 @@
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+String Label_0 = "array0";
+
+int[] array0 = new int[0];
+
+int input0;
+boolean isRecording = false;
+
+// setup Method
+
+void setup(){
+	size(600, 230);
+	gainer = new Gainer(this);
+	myFont = loadFont("CourierNewPSMT-48.vlw");
+	textFont(myFont, 30);
+	frameRate(30);
+	//gainer.ampGainAGND(0xF);
+}
+
+void draw(){
+	background(120);
+	gainer.peekAnalogInput();
+	input0 = gainer.analogInput[0];
+
+	// show analog input values
+	fill(255);
+	text( "Ain-0 = " + input0, 15, 30);
+
+	// visualise analog input values
+	noStroke();
+
+	if (input0 >= 100){
+		text("distant",30,60);
+	}else{
+		text("close",30,60);
+	}
+
+	if( isRecording ){
+		// If it's Recording, use array to store data.
+		array0 = append( array0, input0);
+
+		// display it's recording
+		text( "Recording...", 40, 180);
+		text( "Press any key to End Recording", 40,210);
+		if( second()%2 ==1 ){
+			fill(255,0,0);
+			ellipse( 25, 170, 9,9);
+		}
+	}else {
+		text("Press Esc key to Exit",40,180);
+		text("Press any key to Record",40,210);
+	}
+}

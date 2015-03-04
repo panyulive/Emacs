@@ -1,0 +1,44 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Sample1 extends JApplet{
+	private JLabel lb;
+	private JPanel;
+	private JCheckBox ch1,ch2,ch3 ,tmp;
+
+	public void init(){
+		lb = new JLabel("チェックボックスにチェックしてください");
+		pn = new JPanel();
+		ch1 = new JCheckBox("8進数");
+		ch2 = new JCheckBox("10進数");
+		ch3 = new JCheckBox("16進数");
+
+		pn.add(ch1);
+		pn.add(ch2);
+		pn.add(ch3);
+
+		add(lb,BorderLayout.CENTER);
+		add(pn,BorderLayout.SOUTH);
+
+		ch1.addItemListener(new Sample1ItemListener());
+		ch2.addItemListener(new Sample1ItemListener());
+		ch3.addItemListener(new Sample1ItemListener());
+	}
+	class Sample1ItemListener implements ItemListener
+	{
+
+		public void itemStateChanged(ItemEvent e){
+			if(e.getStateChange() == ItemEvent.SELECTED){
+				tmp = (JCheckBox) e.getSource();
+				lb.setText(tmp.getText() +"を選びました");
+			}
+			else if(e.getStateChange() == ItemEvent.DESELECTED){
+				tmp = (JCheckBox) e.getSource();
+				lb.setText(tmp.getText()+"をやめました");
+			}
+		}
+		
+	}
+	
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=SHIFT_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-script-Type" content="text/javascript">
+<link rel="stylesheet" href="index.css" type="text/css">
+<title>サイトタイトル。</title>
+</head>
+<body>
+<h1>サイトタイトル</h1>
+
+<!--div id="main"の中の部分に本文を入れます。-->
+<div id="main">
+<div id="inbox">
+<h2>リンクページです。</h2>
+<p>
+<!--製作者表示。出来る限りココは消さないで下さいね-->
+<div class="ban"><a href="http://hide.kanari.info/" target="_blank"><img src="http://hide.kanari.info/img/minibana02.gif" width="88" height="31" border="0"></a></div>
+<p class="linktext">素材やサイト作成に役立つ情報を発信中。テンプレートも配布してます。</p>
+<!--ココまで製作者表示-->
+<div class="ban"><a href="http://www.yahoo.co.jp/" target="_blank"><!--バナーのアドレス--><img src="img/bunner.gif" width="88" height="31" border="0"><!--ココまでバナー--></a></div>
+<p class="linktext"><!--コメント-->&lt;p class=&quot;linktext&quot;&gt;の間に、サイト説明とかを簡潔に入れて下さいね。<!--コメントここまで--></p>
+<div class="ban"><a href="http://www.yahoo.co.jp/" target="_blank"><!--バナーのアドレス--><img src="img/bunner.gif" width="88" height="31" border="0"><!--ココまでバナー--></a></div>
+<p class="linktext"><!--コメント-->リンクを増やす場合は、&lt;div class=&quot;ban&quot;&gt;&lt;/div&gt;から&lt;p
+class=&quot;linktext&quot;&gt;&lt;/p&gt;の二行を増やします。<!--コメントここまで--></p>
+<div class="ban"><strong><a href="http://www.yahoo.co.jp/" target="_blank"><!--テキスト-->サイト名<!--テキストココまで--></a></strong></div>
+<p class="linktext"><!--コメント-->バナー無しの場合は、テキストリンクを貼りましょう～★。<!--コメントここまで--></p>
+
+</div></div>
+
+<!--ここはコンテンツの部分です。-->
+<div id="navi"><div id="home"><a href="index.html">HOME</a></div>
+<div id="profile"><a href="about.html">PROFILE</a></div>
+<div id="gallery"><a href="gallery.html">GALLERY</a></div>
+<div id="bbs">BBS</div>
+<div id="diary"><a href="diary.html">DIARY</a></div>
+<div id="link">LINK</div></div>
+
+<div id="by">This template made by<br><a href="http://hide.kanari.info/" target="_blank"><strong>素材屋HP素材のおすそわけ。</strong></a></div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+(require 'cl)
+(require 'yasnippet)
+;;å•Ã£Ã¥×“‚Ã£›ã‚è†‚¡çã„£Œ–
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(setq yas-snippet-dirs
+	  '("~/.emacs.d/snippets"
+		"~/.emacs.d/elpa/yasnippet-20130505.2115/snippets"))
+
+(yas-global-mode)
+
+(custom-set-variables '(yas-trigger-key "TAB"))
+
+;;æç‹¶¦snippetã‚ç¯œæˆã™ã‚‹ãƒãƒƒãƒ•ãÄ„ã‚’çõˆ‹—„Ã£™ã‚‹
+(define-key yas-minor-mode-map (kbd "C-x C-y C-n") 'yas-new-snippet)
+;;æâˆš­˜snippetã‚’éèš™¦§ç·¨é›Î³™ã‚‹
+(define-key yas-minor-mode-map (kbd "C-x C-y C-e") 'yas-visit-snippet-file)

@@ -1,0 +1,68 @@
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+
+int[] array0 = new int[0];
+
+int col;
+int i = 0;
+int j = 0;
+
+int input0;
+int input1;
+int input2;
+
+int[] n = new int[2];
+
+String str = "";
+
+int flag = 0;
+
+void setup(){
+	size(600, 600);
+	gainer = new Gainer(this);
+	myFont = loadFont("CourierNewPSMT-48.vlw");
+	textFont(myFont, 30);
+	frameRate(30);
+	//gainer.ampGainAGND(0x4);
+}
+
+void draw(){
+	background(120);
+	gainer.peekAnalogInput();
+	input0 = gainer.analogInput[0];
+	input1 = gainer.analogInput[1];
+	input2 = gainer.analogInput[2];
+
+	text("input 0 ="+input0,40,80);
+	text("input 1 ="+input1,40,120);
+	text("input 2 ="+input2,40,160);
+	text(str,200,200);
+
+	if (input0 >= 100 && input0 <= 200){
+		
+	} else if (input0 < 100){
+		str = "前";
+	}else if ( input0 > 200){
+		str = "後";
+	}
+
+	
+	if (input1 >= 90 && input0 <= 150){
+
+	}else if (input1 < 90){
+		str = "左";
+	}else if (input1 > 150){
+		str = "右";
+	}
+	
+	if (input2 >=170 && input2 <= 230){
+
+	}else if(input2 < 170){
+		str = "上";
+	}else if (input2 > 230){
+		str = "下";
+	}
+	
+	
+}

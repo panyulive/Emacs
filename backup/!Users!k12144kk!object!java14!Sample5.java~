@@ -1,0 +1,32 @@
+class Sample5{
+	public static void arraytest(){
+		try {
+			int[] test = new int[5];
+			System.out.println("配列10に代入します");
+			test[10] = 80;
+			System.out.println("配列10に80を代入しました。");
+		}
+		//		catch (/*ArrayIndexOutOfBoundsException*/ e){
+		catch (NumberFormatException e){
+		System.out.println("配列の大きさを超えています");
+		}
+		System.out.println("無事終了しました。");
+
+	}
+
+	public static void main(String[] args){
+
+		try {
+			arraytest();
+		}
+		catch (ArrayIndexOutOfBoundsException e){
+			System.out.println("hogehoge");
+		}
+		finally{
+			System.out.println("とおりました");
+			System.out.println(e + "という例外が発生しました");
+		}		
+
+		System.out.println("無事おわりー");
+	}
+}

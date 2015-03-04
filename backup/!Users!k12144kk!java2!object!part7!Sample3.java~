@@ -1,0 +1,45 @@
+import javax.swing.*;
+import java.io.File;
+import java.awt.BorderLayout;
+import java.awt.event.*;
+
+public class Sample3 extends JFrame implements ActionListener{
+
+  JLabel label;
+
+  public static void main(String[] args){
+    Sample3 frame = new Sample3();
+
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setBounds(10, 10, 300, 200);
+    frame.setTitle("Title");
+    frame.setVisible(true);
+  }
+
+  public void Sample3(){
+    JButton button = new JButton("file select");
+    button.addActionListener(this);
+
+    JPanel buttonPanel = new JPanel();
+    buttonPanel.add(button);
+
+    label = new JLabel();
+
+    JPanel labelPanel = new JPanel();
+    labelPanel.add(label);
+
+    getContentPane().add(labelPanel, BorderLayout.CENTER);
+    getContentPane().add(buttonPanel, BorderLayout.PAGE_END);
+  }
+
+  public void actionPerformed(ActionEvent e){
+    File dir = new File("~/Dropbox/java2/");
+    JFileChooser filechooser = new JFileChooser(dir);
+
+    int selected = filechooser.showOpenDialog(this);
+    if (selected == JFileChooser.APPROVE_OPTION){
+      File file = filechooser.getSelectedFile();
+      label.setText(filechooser.getName(file));
+    }
+  }
+}

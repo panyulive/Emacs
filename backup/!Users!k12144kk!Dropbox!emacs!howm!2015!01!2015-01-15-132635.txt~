@@ -1,0 +1,9 @@
+= railsメモ
+http://guides.rubyonrails.org/getting_started.html
+blog 5.5 Running a Migration
+
+$ bin/rake db:migrate
+
+でエラー
+[2015-01-15 13:26]
+

@@ -1,0 +1,23 @@
+= 物理レポート10
+fx = x^2y fy = y^2x
+(2)o - q - r
+(3)o - r
+Q(o,b)
+R(a,b)
+o(0,0) 
+
+(2)
+w1 = o-q{(fxdx+fydy) + q-r{(fxdx+fydy)  }}
+o-p上で x=0 dx = 0
+q-r上で y=b dy = 0
+
+q-r{bx^2dx
+b[x^3/3]0->a
+ba^3/3
+
+(3)
+w1 = o-r{(fxdx+fydy)
+y[x^3/3]0-a+x[y^3/3]0-b
+ya^3/3+xb^3/3
+[2013-07-18 12:42] 
+

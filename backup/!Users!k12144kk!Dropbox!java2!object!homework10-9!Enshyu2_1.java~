@@ -1,0 +1,2343 @@
+Welcome to the Emacs shell
+
+~/Dropbox/java2/object $ javac Sample1.java
+~/Dropbox/java2/object $ appletviewer java.html
+警告: AppletViewer プロパティファイルが読み込まれません: /Users/k12144kk/.hotjava/properties デフォルトを使用します。
+~/Dropbox/java2/object $ javac Sample2.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample2.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample3.java
+javac: ファイルが見つかりません: Sample3.java
+使い方: javac <options> <source files>
+使用可能なオプションのリストについては、-help を使用します
+~/Dropbox/java2/object $ javac Sample3.java
+Sample3.java:33: 構文解析中にファイルの終わりに移りました
+}
+ ^
+エラー 1 個
+~/Dropbox/java2/object $ javac Sample3.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample4.java
+Sample4.java:5: クラス Sample3 は public であり、ファイル Sample3.java で宣言しなければなりません。
+public class Sample3 extends JApplet{
+       ^
+Sample4.java:18: addMouseListener(java.awt.event.MouseListener) (java.awt.Component 内) を (Sample3.SampleActionListener) に適用できません
+		addMouseListener(new SampleActionListener());
+		^
+エラー 2 個
+~/Dropbox/java2/object $ javac Sample4.java
+Sample4.java:18: addMouseListener(java.awt.event.MouseListener) (java.awt.Component 内) を (Sample4.SampleActionListener) に適用できません
+		addMouseListener(new SampleActionListener());
+		^
+エラー 1 個
+~/Dropbox/java2/object $ javac Sample4.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample4.java
+~/Dropbox/java2/object $ javac Sample4.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample5.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample5.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample3-1.java
+Sample3-1.java:5: クラス Sample5 は public であり、ファイル Sample5.java で宣言しなければなりません。
+public class Sample5 extends JApplet{
+       ^
+Sample3-1.java:23: Sample5.SampleActionListener は abstract でなく、java.awt.event.ActionListener 内の abstract メソッド actionPerformed(java.awt.event.ActionEvent) をオーバーライドしません。
+	class SampleActionListener implements ActionListener{
+	^
+エラー 2 個
+~/Dropbox/java2/object $ javac Sample3-1.java
+Sample3-1.java:5: クラス Sample5 は public であり、ファイル Sample5.java で宣言しなければなりません。
+public class Sample5 extends JApplet{
+       ^
+Sample3-1.java:23: Sample5.SampleActionListener は abstract でなく、java.awt.event.ActionListener 内の abstract メソッド actionPerformed(java.awt.event.ActionEvent) をオーバーライドしません。
+	class SampleActionListener implements ActionListener{
+	^
+エラー 2 個
+~/Dropbox/java2/object $ javac Sample3-1.java
+Sample3-1.java:5: クラス Sample5 は public であり、ファイル Sample5.java で宣言しなければなりません。
+public class Sample5 extends JApplet{
+       ^
+Sample3-1.java:23: ここにインタフェースは必要ありません。
+	class SampleActionListener extends ActionListener{
+	                                   ^
+Sample3-1.java:19: addActionListener(java.awt.event.ActionListener) (javax.swing.AbstractButton 内) を (Sample5.SampleActionListener) に適用できません
+		bt.addActionListener(new SampleActionListener());
+		  ^
+エラー 3 個
+~/Dropbox/java2/object $ javac Sample3-1.java
+Sample3-1.java:5: クラス Sample5 は public であり、ファイル Sample5.java で宣言しなければなりません。
+public class Sample5 extends JApplet{
+       ^
+Sample3-1.java:23: ここにインタフェースは必要ありません。
+	class SampleActionListener extends ActionListener{
+	                                   ^
+Sample3-1.java:19: シンボルを見つけられません。
+シンボル: メソッド addActionListener(Sample5.SampleActionListener)
+場所    : Sample5 の クラス
+		addActionListener(new SampleActionListener());
+		^
+エラー 3 個
+~/Dropbox/java2/object $ javac Sample3-1.java
+Sample3-1.java:5: クラス Sample5 は public であり、ファイル Sample5.java で宣言しなければなりません。
+public class Sample5 extends JApplet{
+       ^
+Sample3-1.java:23: ここにインタフェースは必要ありません。
+	class SampleActionListener extends ActionListener{
+	                                   ^
+Sample3-1.java:19: addMouseListener(java.awt.event.MouseListener) (java.awt.Component 内) を (Sample5.SampleActionListener) に適用できません
+		addMouseListener(new SampleActionListener());
+		^
+エラー 3 個
+~/Dropbox/java2/object $ javac Sample3-1.java
+Sample3-1.java:5: クラス Sample5 は public であり、ファイル Sample5.java で宣言しなければなりません。
+public class Sample5 extends JApplet{
+       ^
+Sample3-1.java:23: ここにインタフェースは必要ありません。
+	class SampleActionListener extends ActionListener{
+	                                   ^
+Sample3-1.java:19: addMouseListener(java.awt.event.MouseListener) (java.awt.Component 内) を (Sample5.SampleActionListener) に適用できません
+		addMouseListener(new SampleActionListener());
+		^
+エラー 3 個
+~/Dropbox/java2/object $ javac Sample3-1.java
+Sample3-1.java:5: クラス Sample5 は public であり、ファイル Sample5.java で宣言しなければなりません。
+public class Sample5 extends JApplet{
+       ^
+エラー 1 個
+~/Dropbox/java2/object $ javac Sample3-1.java
+Sample3-1.java:5: '{' がありません。
+public class Sample3-1 extends JApplet{
+                    ^
+エラー 1 個
+~/Dropbox/java2/object $ javac Sample31.java
+javac: ファイルが見つかりません: Sample31.java
+使い方: javac <options> <source files>
+使用可能なオプションのリストについては、-help を使用します
+~/Dropbox/java2/object $ javac Sample6.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample6.java
+~/Dropbox/java2/object $ appletviewer java.html
+appletviewer java.html
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample7.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample8.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample9.java
+Sample9.java:5: クラス Sample8 は public であり、ファイル Sample8.java で宣言しなければなりません。
+public class Sample8 extends JApplet{
+       ^
+Sample9.java:29: シンボルを見つけられません。
+シンボル: 変数 VK_0
+場所    : Sample8.SampleActionListener の クラス
+			case VK_0:str = "0";break;
+			     ^
+Sample9.java:30: シンボルを見つけられません。
+シンボル: 変数 VK_1
+場所    : Sample8.SampleActionListener の クラス
+			case VK_1:str = "1";break;
+			     ^
+Sample9.java:31: シンボルを見つけられません。
+シンボル: 変数 VK_2
+場所    : Sample8.SampleActionListener の クラス
+			case VK_2:str = "2";break;
+			     ^
+Sample9.java:32: シンボルを見つけられません。
+シンボル: 変数 VK_3
+場所    : Sample8.SampleActionListener の クラス
+			case VK_3:str = "3";break;
+			     ^
+Sample9.java:33: シンボルを見つけられません。
+シンボル: 変数 VK_4
+場所    : Sample8.SampleActionListener の クラス
+			case VK_4:str = "4";break;
+			     ^
+Sample9.java:34: シンボルを見つけられません。
+シンボル: 変数 VK_5
+場所    : Sample8.SampleActionListener の クラス
+			case VK_5:str = "5";break;
+			     ^
+Sample9.java:35: シンボルを見つけられません。
+シンボル: 変数 VK_6
+場所    : Sample8.SampleActionListener の クラス
+			case VK_6:str = "6";break;
+			     ^
+Sample9.java:36: シンボルを見つけられません。
+シンボル: 変数 VK_7
+場所    : Sample8.SampleActionListener の クラス
+			case VK_7:str = "7";break;
+			     ^
+Sample9.java:37: シンボルを見つけられません。
+シンボル: 変数 VK_8
+場所    : Sample8.SampleActionListener の クラス
+			case VK_8:str = "8";break;
+			     ^
+Sample9.java:38: シンボルを見つけられません。
+シンボル: 変数 VK_9
+場所    : Sample8.SampleActionListener の クラス
+			case VK_9:str = "9";break;
+			     ^
+エラー 11 個
+~/Dropbox/java2/object $ javac Sample9.java
+Sample9.java:5: クラス Sample8 は public であり、ファイル Sample8.java で宣言しなければなりません。
+public class Sample8 extends JApplet{
+       ^
+エラー 1 個
+~/Dropbox/java2/object $ javac Sample9.java
+Sample9.java:29: シンボルを見つけられません。
+シンボル: 変数 K_0
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.K_0:str = "0";break;
+			             ^
+Sample9.java:30: シンボルを見つけられません。
+シンボル: 変数 K_1
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.K_1:str = "1";break;
+			             ^
+Sample9.java:31: シンボルを見つけられません。
+シンボル: 変数 K_2
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.K_2:str = "2";break;
+			             ^
+Sample9.java:32: シンボルを見つけられません。
+シンボル: 変数 K_3
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.K_3:str = "3";break;
+			             ^
+Sample9.java:33: シンボルを見つけられません。
+シンボル: 変数 K_4
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.K_4:str = "4";break;
+			             ^
+Sample9.java:34: シンボルを見つけられません。
+シンボル: 変数 K_5
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.K_5:str = "5";break;
+			             ^
+Sample9.java:35: シンボルを見つけられません。
+シンボル: 変数 K_6
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.K_6:str = "6";break;
+			             ^
+Sample9.java:36: シンボルを見つけられません。
+シンボル: 変数 K_7
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.K_7:str = "7";break;
+			             ^
+Sample9.java:37: シンボルを見つけられません。
+シンボル: 変数 K_8
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.K_8:str = "8";break;
+			             ^
+Sample9.java:38: シンボルを見つけられません。
+シンボル: 変数 K_9
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.K_9:str = "9";break;
+			             ^
+エラー 10 個
+~/Dropbox/java2/object $ javac Sample9.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample9.java
+Sample9.java:45: 変数 n は初期化されていない可能性があります。
+			lb2.setText("足し算の結果:"+n);
+			                      ^
+エラー 1 個
+~/Dropbox/java2/object $ javac Sample9.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample9.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample9.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample9.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample9.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample9.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample9.java
+Sample9.java:13: シンボルを見つけられません。
+シンボル: 変数 lb3
+場所    : Sample9 の クラス
+		lb3 = new JLabel();
+		^
+Sample9.java:17: シンボルを見つけられません。
+シンボル: 変数 lb3
+場所    : Sample9 の クラス
+		add(lb3);
+		    ^
+Sample9.java:45: シンボルを見つけられません。
+シンボル: 変数 lb3
+場所    : Sample9.SampleActionListener の クラス
+				lb3.setText("入力した数字は"+n);
+				^
+Sample9.java:46: シンボルを見つけられません。
+シンボル: 変数 sum
+場所    : Sample9.SampleActionListener の クラス
+				sum += n;
+				^
+Sample9.java:48: シンボルを見つけられません。
+シンボル: 変数 sum
+場所    : Sample9.SampleActionListener の クラス
+			lb2.setText("足し算の結果:"+sum);
+			                      ^
+エラー 5 個
+~/Dropbox/java2/object $ javac Sample9.java
+Sample9.java:10: <identifier> がありません。
+	private sum = 0;
+	           ^
+エラー 1 個
+~/Dropbox/java2/object $ javac Sample9.java
+Sample9.java:15: シンボルを見つけられません。
+シンボル: 変数 lb3
+場所    : Sample9 の クラス
+		lb3 = new JLabel();
+		^
+Sample9.java:19: シンボルを見つけられません。
+シンボル: 変数 lb3
+場所    : Sample9 の クラス
+		add(lb3);
+		    ^
+Sample9.java:47: シンボルを見つけられません。
+シンボル: 変数 lb3
+場所    : Sample9.SampleActionListener の クラス
+				lb3.setText("入力した数字は"+n);
+				^
+エラー 3 個
+~/Dropbox/java2/object $ javac Sample9.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample9.java
+~/Dropbox/java2/object $ appletviewer java.html
+load: クラス Sample10.class が見つかりません。
+java.lang.ClassNotFoundException: Sample10.class
+	at sun.applet.AppletClassLoader.findClass(AppletClassLoader.java:211)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.applet.AppletClassLoader.loadClass(AppletClassLoader.java:144)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at sun.applet.AppletClassLoader.loadCode(AppletClassLoader.java:662)
+	at sun.applet.AppletPanel.createApplet(AppletPanel.java:806)
+	at sun.applet.AppletPanel.runLoader(AppletPanel.java:713)
+	at sun.applet.AppletPanel.run(AppletPanel.java:369)
+	at java.lang.Thread.run(Thread.java:680)
+~/Dropbox/java2/object $ appletviewer java.html
+load: クラス Sample10.class が見つかりません。
+java.lang.ClassNotFoundException: Sample10.class
+	at sun.applet.AppletClassLoader.findClass(AppletClassLoader.java:211)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.applet.AppletClassLoader.loadClass(AppletClassLoader.java:144)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at sun.applet.AppletClassLoader.loadCode(AppletClassLoader.java:662)
+	at sun.applet.AppletPanel.createApplet(AppletPanel.java:806)
+	at sun.applet.AppletPanel.runLoader(AppletPanel.java:713)
+	at sun.applet.AppletPanel.run(AppletPanel.java:369)
+	at java.lang.Thread.run(Thread.java:680)
+~/Dropbox/java2/object $ javac Sample9.java
+~/Dropbox/java2/object $ appletviewer java.html
+load: クラス Sample10.class が見つかりません。
+java.lang.ClassNotFoundException: Sample10.class
+	at sun.applet.AppletClassLoader.findClass(AppletClassLoader.java:211)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.applet.AppletClassLoader.loadClass(AppletClassLoader.java:144)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at sun.applet.AppletClassLoader.loadCode(AppletClassLoader.java:662)
+	at sun.applet.AppletPanel.createApplet(AppletPanel.java:806)
+	at sun.applet.AppletPanel.runLoader(AppletPanel.java:713)
+	at sun.applet.AppletPanel.run(AppletPanel.java:369)
+	at java.lang.Thread.run(Thread.java:680)
+~/Dropbox/java2/object $ appletviewer java.html
+load: クラス Sample10.class が見つかりません。
+java.lang.ClassNotFoundException: Sample10.class
+	at sun.applet.AppletClassLoader.findClass(AppletClassLoader.java:211)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.applet.AppletClassLoader.loadClass(AppletClassLoader.java:144)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at sun.applet.AppletClassLoader.loadCode(AppletClassLoader.java:662)
+	at sun.applet.AppletPanel.createApplet(AppletPanel.java:806)
+	at sun.applet.AppletPanel.runLoader(AppletPanel.java:713)
+	at sun.applet.AppletPanel.run(AppletPanel.java:369)
+	at java.lang.Thread.run(Thread.java:680)
+~/Dropbox/java2/object $ javac Sample9.java
+~/Dropbox/java2/object $ appletviewer java.html
+load: クラス Sample10.class が見つかりません。
+java.lang.ClassNotFoundException: Sample10.class
+	at sun.applet.AppletClassLoader.findClass(AppletClassLoader.java:211)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.applet.AppletClassLoader.loadClass(AppletClassLoader.java:144)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at sun.applet.AppletClassLoader.loadCode(AppletClassLoader.java:662)
+	at sun.applet.AppletPanel.createApplet(AppletPanel.java:806)
+	at sun.applet.AppletPanel.runLoader(AppletPanel.java:713)
+	at sun.applet.AppletPanel.run(AppletPanel.java:369)
+	at java.lang.Thread.run(Thread.java:680)
+~/Dropbox/java2/object $ javac Sample10.java
+Sample10.java:12: <identifier> がありません。
+	private flag = 0;
+	            ^
+Sample10.java:24: ';' がありません。
+		add(lb4,BorderLayout.SOUTH)
+		                           ^
+Sample10.java:51: 文ではありません。
+			case KeyEvent.VK_PLUS:flag = 0;bleak;
+			                               ^
+Sample10.java:52: 文ではありません。
+			case KeyEvent.VK_MINUS:flag = 1 ;bleak;
+			                                 ^
+Sample10.java:53: 文ではありません。
+			case KeyEvent.VK_SLASH:flag = 2 ;bleak;
+			                                 ^
+Sample10.java:54: 文ではありません。
+			case KeyEvent.ASTERISK:flag =3;bleak;
+			                               ^
+エラー 6 個
+~/Dropbox/java2/object $ javac Sample10.java
+Sample10.java:13: <identifier> がありません。
+	private flag = 0;
+	            ^
+Sample10.java:25: ';' がありません。
+		add(lb4,BorderLayout.SOUTH)
+		                           ^
+エラー 2 個
+~/Dropbox/java2/object $ javac Sample10.java
+Sample10.java:13: <identifier> がありません。
+	private flag = 0;
+	            ^
+エラー 1 個
+~/Dropbox/java2/object $ javac Sample10.java
+Sample10.java:55: シンボルを見つけられません。
+シンボル: 変数 ASTERISK
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.ASTERISK:flag =3;break;
+			             ^
+エラー 1 個
+~/Dropbox/java2/object $ javac Sample10.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample10.java
+Sample10.java:19: シンボルを見つけられません。
+シンボル: 変数 lb2
+場所    : Sample10 の クラス
+		lb2 = new JLabel();
+		^
+Sample10.java:24: シンボルを見つけられません。
+シンボル: 変数 lb2
+場所    : Sample10 の クラス
+		add(lb2,BorderLayout.SOUTH);
+		    ^
+Sample10.java:55: シンボルを見つけられません。
+シンボル: 変数 ASTERISK
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.ASTERISK:flag =3;break;
+			             ^
+Sample10.java:57: シンボルを見つけられません。
+シンボル: 変数 lb2
+場所    : Sample10.SampleActionListener の クラス
+			default : lb2.setText("数字ではありません");break;
+			          ^
+Sample10.java:68: シンボルを見つけられません。
+シンボル: 変数 lb2
+場所    : Sample10.SampleActionListener の クラス
+			lb2.setText("計算の結果:"+sum);
+			^
+エラー 5 個
+~/Dropbox/java2/object $ javac Sample10.java
+Sample10.java:55: シンボルを見つけられません。
+シンボル: 変数 ASTERISK
+場所    : java.awt.event.KeyEvent の クラス
+			case KeyEvent.ASTERISK:flag =3;break;
+			             ^
+エラー 1 個
+~/Dropbox/java2/object $ javac Sample10.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample10.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ cd /Users/k12144kk/Dropbox/java2/object/javac Sample10.java
+Sample10.java:40: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case KeyEvent.VK_0:	n=0 ;i++;break;
+			                   	^
+Sample10.java:41: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case KeyEvent.VK_1:	n=1 ;i++;break;
+			                   	^
+Sample10.java:42: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case KeyEvent.VK_2:	n=2 ;i++;break;
+			                   	^
+Sample10.java:43: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case KeyEvent.VK_3:	n=3 ;i++;break;
+			                   	^
+Sample10.java:44: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case KeyEvent.VK_4:	n=4 ;i++;break;
+			                   	^
+Sample10.java:45: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case KeyEvent.VK_5:	n=5 ;i++;break;
+			                   	^
+Sample10.java:46: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case KeyEvent.VK_6:	n=6 ;i++;break;
+			                   	^
+Sample10.java:47: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case KeyEvent.VK_7:	n=7 ;i++;break;
+			                   	^
+Sample10.java:48: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case KeyEvent.VK_8:	n=8 ;i++;break;
+			                   	^
+Sample10.java:49: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case KeyEvent.VK_9:	n=9 ;i++;break;
+			                   	^
+Sample10.java:61: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case 0:sum += n;break;
+			              ^
+Sample10.java:62: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case 1:sum -= n;break;
+			              ^
+Sample10.java:63: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case 2:sum /= n;break;
+			              ^
+Sample10.java:64: シンボルを見つけられません。
+シンボル: 変数 n
+場所    : Sample10.SampleActionListener の クラス
+			case 3:sum *= n;break;
+			              ^
+エラー 14 個
+~/Dropbox/java2/object $ javac Sample10.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample10.java
+Sample10.java:63: : がありません。
+			case "+";sum += n;break;
+			        ^
+Sample10.java:64: : がありません。
+			case "-";sum -= n;break;
+			        ^
+Sample10.java:65: : がありません。
+			case "/";sum /= n;break;
+			        ^
+Sample10.java:66: : がありません。
+			case "*";sum *= n;break;
+			        ^
+エラー 4 個
+~/Dropbox/java2/object $ javac Sample10.java
+Sample10.java:62: 互換性のない型
+検出値  : java.lang.String
+期待値  : int
+			switch(flag){
+			       ^
+エラー 1 個
+~/Dropbox/java2/object $ cd /Users/k12144kk/Dropbox/java2/object/homework10-9/javac Sample10.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample10.java
+~/Dropbox/java2/object $ appletviewer java.html
+~/Dropbox/java2/object $ javac Sample10.java
+~/Dropbox/java2/object $ appletviewer java.html
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+~/Dropbox/java2/object $ appletviewer java.html
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.ArithmeticException: / by zero
+	at Sample10.access$236(Sample10.java:5)
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:64)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.ArithmeticException: / by zero
+	at Sample10.access$236(Sample10.java:5)
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:64)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.ArithmeticException: / by zero
+	at Sample10.access$236(Sample10.java:5)
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:64)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException
+	at Sample10$SampleActionListener.keyPressed(Sample10.java:68)
+	at java.awt.Component.processKeyEvent(Component.java:6372)
+	at java.awt.Component.processEvent(Component.java:6191)
+	at java.awt.Container.processEvent(Container.java:2083)
+	at java.awt.Component.dispatchEventImpl(Component.java:4776)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1856)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:722)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1000)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:865)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:686)
+	at java.awt.Component.dispatchEventImpl(Component.java:4648)
+	at java.awt.Container.dispatchEventImpl(Container.java:2141)
+	at java.awt.Component.dispatchEvent(Component.java:4604)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:717)
+	at java.awt.EventQueue.access$400(EventQueue.java:82)
+	at java.awt.EventQueue$2.run(EventQueue.java:676)
+	at java.awt.EventQueue$2.run(EventQueue.java:674)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:690)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:86)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:687)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Path substring '/Users/k12144kk/Dropbox/java2/object/homework10-9/javac' not found
+~/Dropbox/java2/object $ cd home*10*
+~/Dropbox/java2/object/homework10-9 $ javac Ensyu1.java
+javac: ファイルが見つかりません: Ensyu1.java
+使い方: javac <options> <source files>
+使用可能なオプションのリストについては、-help を使用します
+~/Dropbox/java2/object/homework10-9 $ javac Enshyu1.java
+Enshyu1.java:4: クラス Sample1 は public であり、ファイル Sample1.java で宣言しなければなりません。
+public class Sample1 extends Applet
+       ^
+エラー 1 個
+~/Dropbox/java2/object/homework10-9 $ javac Enshyu1.java
+Path substring '/Users/k12144kk/Dropbox/java2/object/javac' not found
+~/Dropbox/java2/object/homework10-9 $ appletviewer Enshyu1.html
+~/Dropbox/java2/object/homework10-9 $ 

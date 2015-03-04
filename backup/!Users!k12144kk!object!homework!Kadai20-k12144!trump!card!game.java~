@@ -1,0 +1,10 @@
+package trump.card;
+import java.util.*;
+
+public class game extends trump.card.TrumpCard{
+	ArrayList<String> mycard;
+	public void trump()
+	{
+	
+	}
+}

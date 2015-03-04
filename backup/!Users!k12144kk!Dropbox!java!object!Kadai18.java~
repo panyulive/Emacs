@@ -1,0 +1,121 @@
+import java.util.*;
+import java.awt.image.*;
+import java.io.*;
+
+class MySobel extends ToSobelMix2 implements Runnable{
+	BufferedImage bi;
+	public MySobel(String s){
+		System.out.println(s +"の画像を読み取りました。");
+		bi = readImage(s);
+	}
+	public void run(){
+		bi = sobelC(bi);
+	}
+	public void gSobelC(BufferedImage bis){
+		bi = sobelC(bis);
+	}
+	public void gSobelC(){
+		bi = sobelC(bi);
+	}
+
+}
+class Kadai18{
+	static int len = 0;
+	static int i;
+	static String[] text;
+	public static void main(String[] args){
+
+		if (args.length != 1){
+			System.out.println("ファイル名を正しく入力してください");
+			System.exit(0);
+		}		
+
+
+		try{
+			BufferedReader br = new BufferedReader(new FileReader(args[0]));
+			
+			String str;
+
+			while((str = br.readLine()) != null){
+				len++;
+			}
+			
+			br.close();
+			System.out.println("このファイルの行数は"+len+"行です");
+			
+			text = new String[len];
+
+			BufferedReader br2 = new BufferedReader(new FileReader(args[0]));
+				
+			for(i = 0;(str = br2.readLine()) != null ;i++){
+				text[i] = str;
+				System.out.println(str);
+			}
+		}catch(IOException e){
+			System.out.println("入出力エラーです");
+		}
+
+		//Todo 
+		long start = System.currentTimeMillis();
+		ToSobelMix2 tsm1 = new ToSobelMix2();
+		//ToSobelMix2 tsm2 = new ToSobelMix2();
+
+		BufferedImage[] bi = new BufferedImage[len];//,bi2;
+		for(i = 0; i<len;i++){
+		bi[i] = tsm1.sobelC(tsm1.readImage(text[i]));
+		//bi2 = tsm2.sobelC(tsm2.readImage("input2.jpg"));
+		}
+		long end = System.currentTimeMillis();
+
+		long time_single = end - start;
+		for (i=1;i<len;i++){
+			tsm1.writeImage(tsm1.imageAvg(bi[i],bi[i-1]),"out"+(i+1)+".jpg");
+		//tsm2.writeImage(tsm2.imagePlus(bi1,bi2),"input2_sobel_single.jpg");
+		}
+		
+		start = System.currentTimeMillis();
+		MySobel[] tsmm = new MySobel[len];
+		for (i = 0;i<len;i++){
+			tsmm[i] = new MySobel(text[i]);
+		}
+			Thread[] th = new Thread[len];
+		for(i=0;i<len-1;i++){
+
+			th[i] = new Thread(tsmm[0]);
+			th[i].start();
+		}
+
+		//		for (i=1;i<len;i++){
+			tsmm[len-1].gSobelC();
+			//	}
+			//th.start();
+		//		BufferedImage bi3 = tsm2m.sobelC(tsm2m.readImage("input2.jpg"));
+		try{
+			
+			//for(i=0;i<len-1;i++){
+			th[len-2].join();
+			//}
+		}catch(InterruptedException e){}
+
+		end = System.currentTimeMillis();
+		long time_muluti = end - start;
+		for (i=1;i<len;i++){
+			tsmm[i].writeImage(tsmm[i].imageAvg(tsmm[i].bi,tsmm[i-1].bi),"outM"+(i)+".jpg");
+			//tsm2m.writeImage(tsm2m.imageAvg(tsm1m.bi,bi3),"input_sobel_multi.jpg");
+		}
+		System.out.println("シングルスレッドでの時間は"+time_single / 1000.0 +"秒でした"	 );
+		System.out.println("マルチスレッドでの時間は"+time_muluti / 1000.0 +"秒でした"		 );
+		System.out.println(((float)time_single/(float)time_muluti)+"倍高速になりました。");
+		try{
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("Result_out.txt")));
+			pw.println("シングルスレッドでの時間は"+time_single / 1000.0 +"秒でした" );
+			pw.println("マルチスレッドでの時間は"+time_muluti / 1000.0 +"秒でした"	 );
+			pw.println(((float)time_single/(float)time_muluti)+"倍高速になりました。");
+			System.out.println("ファイルに書き込みました.");
+		}catch(IOException e){
+
+			System.out.println("ファイル出力に失敗しました。");
+		}
+	}
+	
+}

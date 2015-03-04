@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+class Mypage::IndexController < Mypage::ApplicationController
+
+  def index
+
+  end
+
+end

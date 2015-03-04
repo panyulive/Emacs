@@ -1,0 +1,376 @@
+import java.util.Random;
+import java.io.*;
+import java.util.*;
+/*
+基本的に，
+Kadai5のSortクラスに修飾子の追加を行い，
+mainメソッドにあった処理をクラス内へ移動し，
+クラス変数及びクラスメソッドを定義するだけのはずです．
+ただし，講義資料とこのソースのコメントをよく読み，
+仕様にあったものにする事！！
+*/
+class Sort {
+
+	/*
+	int型配列numをインスタンス変数として宣言せよ．
+	ただし，クラス外からアクセス不可にする事．
+	*/
+
+
+	/*
+	int型変数sumをクラス変数として宣言せよ．
+	ただし，クラス外からアクセス不可にする事．
+	*/
+
+
+	/*
+	Sortクラスのコンストラクタを定義せよ．
+
+	 引数がint型3つの場合 
+	引数を個数，最小値，最大値の順に受け取り，
+	Kadai4_1やKadai5の前半のように，
+	最小値から最大値の範囲の指定された個数の乱数を配列numに用意し，
+	その内容を表示せよ．
+
+	 引数がint型2つの場合 	// 
+	引数を最小値，最大値の順に受け取り，
+	Kadai4_2やKadai5の後半のように，
+	最小値から最大値まで連続値を配列numに用意し，
+	その内容を表示せよ．
+
+	ただし，引数無しのコンストラクタを利用できなくする事．
+	つまり，new Sort()ではSortを使えないようにし，
+	numに何も用意されていないSortクラスを作れないようにする事．
+
+	また，Kadai5からあるメソッドを活用して極力簡潔に書くこと．
+
+	*/
+
+
+	/*
+	Kadai5からある，
+	makeRnd
+	makeSequence
+	bubbleGreater
+	bubbleLess
+	shuffle
+	show
+	getInd
+	getFirst
+	getLast
+	をインスタンスメソッドとして定義．
+	ただし，クラス外からアクセス不可にする事
+	*/
+
+
+	/*
+	昇順に並べ替え→numの表示→最小値及び最大値の表示
+	を行う，void型インスタンスメソッドGSortShowを定義せよ．
+	Kadai5からあるメソッドを活用する事．
+	最小値及び最大値の表示は，numへ直接アクセスしてはならない．更に，getIndも使ってはならない．
+	*/
+
+
+	/*
+	シャッフル→numの表示→降順に並べ替え→numの表示→最大値及び最小値の表示
+	を行う，void型インスタンスメソッドshuffleLSortShowを定義せよ．
+	Kadai5からあるメソッドを活用する事．
+	最大値及び最小値の表示は，numへ直接アクセスしてはならない．更に，getIndも使ってはならない．
+	*/
+
+
+	/*
+	クラス変数sumを表示する，
+	引数無し，void型のクラスメソッドsumShowを定義せよ．
+	*/
+
+//}
+
+	//以降のメソッドが扱うフィールド
+	private ArrayList<Integer> num;
+	private int max_num;
+	private static int sum=0;
+	private Sort(){
+		sum++;
+	}
+	/*
+	  num_max個の配列を作成(new)
+	  range_min～range_maxまでの範囲の乱数を代入(Random)
+	*/
+	public Sort(int num_max,int min,int max){
+		this();
+		makeRnd(num_max,min,max);
+		System.out.println("生成した乱数は");		
+		show();
+		System.out.println("です");
+
+	}
+	public Sort(int min,int max){
+		this();
+		makeSequence(min,max);
+		System.out.println("生成した乱数は");		
+		show();
+		System.out.println("です");
+
+	}
+	public static void sumShow(){
+		System.out.println("Sortの数は"+sum+"です");	
+	}
+	public void GSortShow(){
+		bubbleGreater();
+		System.out.println("昇順にバブルソートした結果は");
+		show();
+		System.out.println("です");
+
+		System.out.println("最小値:" + getFirst() + ", " +
+						   "最大値:" + getLast() + "です.");
+
+	}
+	public void shuffleLSortShow(){
+		bubbleLess();
+		System.out.println("降順にバブルソートした結果は");
+		show();
+		System.out.println("です");
+
+		System.out.println("最小値:" + getLast() + ", " +
+						   "最大値:" + getFirst() + "です.");
+
+	}
+
+
+
+	public void makeRnd(int num_max, int range_min, int range_max){
+		
+	    Random rnd = new Random();
+		max_num = num_max;
+	    num = new ArrayList<Integer>(num_max);
+		int i;
+		for  (i = 0; i<num_max;i++){
+			int num_rnd = rnd.nextInt(range_max - range_min +1);
+			num.add(num_rnd + range_min);
+		}
+	}
+
+
+
+
+//range_minからrange_maxまでの連続値の配列を作成(new)
+	public void makeSequence(int range_min, int range_max){
+		
+	    num = new ArrayList<Integer>(range_max-range_min + 1);
+	    for(int i=0; i<range_max - range_min + 1; i++){
+			num.add(range_min + i);
+			
+	    }
+	}
+	
+	
+	//numを昇順にバブルソート
+	public void bubbleGreater(){
+
+		int i;
+		int j;
+		for (j = 0; j<num.size();j++){
+			for (i = 0; i<num.size()-1;i++){
+				if (num.get(i) < num.get(i+1)){
+				}else {
+					int tmp = num.get(i);
+					num.set(i,num.get(i+1));
+					num.set(i+1,tmp);	
+				}
+			}
+		}
+		
+		
+	}
+	
+	//numを降順にバブルソート
+	public void bubbleLess(){
+
+		for(int j=0; j<num.size(); j++){
+			for(int i=0;i<num.size()-1; i++){
+				if(num.get(i) < num.get(i+1)){
+					int tmp = num.get(i);
+					num.set(i,num.get(i+1));
+					num.set(i+1,tmp);
+				}
+			}
+		}
+    }
+	
+	
+	//numをシャッフル(課題4同様，混ざれば何でも良い)
+	public void shuffle(){
+		
+		int n;
+		Random rnd1 = new Random();
+		
+		int a = rnd1.nextInt(num.size());
+		for (int i=0;i<num.size();i++){		
+			a = rnd1.nextInt(num.size());
+
+			n = num.get(i);
+			num.set(i,num.get(a));
+			num.set(a,n);
+		}
+		
+	}
+public void addNum(int add_pos,int add_num){
+		int pos = add_pos-1; 
+		int anum = add_num; 
+
+
+		if (pos > num.size() || pos<0){
+			System.out.println("指定された位置"+(pos+1)+"は範囲外です");
+		}else{
+			num.add(pos,anum);
+		}	
+		
+	}
+	
+	
+	/*
+	numの中身を表示．ただし，例のように最後の値の後ろに「,」は付けない
+	例：「61, 100, 12, 36, 45, 40, 84, 61, 98, 10」
+	*/
+	public void show(){
+		int i;
+		for(i=0; i<num.size()-1; i++){
+			System.out.print(getInd(i)+",");
+		}
+		System.out.println(getLast());
+    }
+
+
+	/*
+	numのind番目の値を戻り値とするメソッド
+	ここでの「ind番目」は「1番目」からとする(1番目がnum[0])
+	*/
+	public int getInd(int ind){
+		return num.get(ind);
+	}
+
+
+	/*
+	numの1番目の値を戻り値とするメソッド
+	ただし，上のgetIndを利用して実装する事
+	*/
+	public int getFirst(){
+	    return getInd(0);
+	}
+
+
+	/*
+	numの最後の値を戻り値とするメソッド
+	ただし，上のgetIndを利用して実装する事
+	*/
+	public int getLast(){
+	    return getInd(num.size()-1);
+	   	}
+	
+
+
+}
+
+/*
+Kadai5同様，以下のmainメソッドは書き換え不可．
+ただし，「←このコンストラクタは…」の行のコメントを外した時に，
+コンパイルが通らなくなる事を確認しておくこと．
+*/class Kadai8 {
+	public static void main(String[] args) throws IOException
+	{
+		/* Sortクラスが生成された数を表示 */
+		Sort.sumShow();
+
+		/* BufferedReaderのインスタンス化 */
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+
+
+		/* 課題4_1に対応する部分開始 */
+		System.out.println("生成する乱数の個数を入力してください");
+		int n_max = Integer.parseInt(br.readLine());
+
+		System.out.println("生成する乱数の最小値を入力してください");
+		int r_min = Integer.parseInt(br.readLine());
+
+		System.out.println("生成する乱数の最大値を入力してください");
+		int r_max = Integer.parseInt(br.readLine());
+
+
+
+		/* Sortクラスをsort1としてインスタンス化 */
+//		Sort sort1 = new Sort();//←このコンストラクタは利用不可になるようにする
+		Sort sort1 = new Sort(n_max, r_min, r_max);
+
+		/* Sortクラスが生成された数を表示 */
+		Sort.sumShow();
+
+		/* sort1のbubbleGreaterを呼出 */
+		sort1.bubbleGreater();
+
+		System.out.println("昇順にバブルソートした結果は,");
+		sort1.show();
+		System.out.println("です.");
+
+		/* 値を追加 */
+		System.out.println("いくつ値を追加しますか？");
+		int add_max = Integer.parseInt(br.readLine());
+		for(int i=0;i<add_max;i++){
+			System.out.println("何番目に追加しますか？");
+			int add_pos = Integer.parseInt(br.readLine());
+			System.out.println("追加する値を入力してください");
+			int add_num = Integer.parseInt(br.readLine());
+			sort1.addNum(add_pos,add_num);
+
+			System.out.println("値を追加後のnumは，");
+			sort1.show();
+			System.out.println("です.");
+		}
+
+		/* sort1のbubbleGreaterを呼出 */
+		sort1.bubbleGreater();
+
+		System.out.println("再度昇順にバブルソートした結果は,");
+		sort1.show();
+		System.out.println("です.");
+
+		/* 最小値及び最大値の表示 */
+		System.out.println("最小値:" + sort1.getFirst() + 
+					", 最大値:" + sort1.getLast() + "です.");
+
+
+
+
+		/* 課題4_2に対応する部分開始 */
+		System.out.println("連続値の最小値を入力してください");
+		r_min = Integer.parseInt(br.readLine());
+
+		System.out.println("連続値の最大値を入力してください");
+		r_max = Integer.parseInt(br.readLine());
+
+
+		/* Sortクラスをsort2としてインスタンス化 */
+//		Sort sort2 = new Sort();//←このコンストラクタは利用不可になるようにする
+		Sort sort2 = new Sort(r_min, r_max);
+
+		/* Sortクラスが生成された数を表示 */
+		Sort.sumShow();
+
+		/* sort2のshuffleを呼出 */
+		sort2.shuffle();
+		System.out.println("シャッフル結果は,");
+		sort2.show();
+		System.out.println("になりました.");
+
+		/* sort2のbubbleLessを呼出 */
+		sort2.bubbleLess();
+		System.out.println("降順にバブルソートした結果は,");
+		sort2.show();
+		System.out.println("です.");
+
+		/* 最大値及び最小値の表示 */
+		System.out.println("最大値:" + sort2.getFirst() + 
+					", 最小値:" + sort2.getLast() + "です.");
+	}
+}

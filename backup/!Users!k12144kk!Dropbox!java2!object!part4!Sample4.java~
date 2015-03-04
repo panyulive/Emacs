@@ -1,0 +1,55 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Sample3 extends JApplet{
+	private JLabel lb;
+	private JPanel pn;
+	private JRadioButton ch1,ch2,ch3 ,tmp;
+	private ButtonGroup bg;
+	private JTextField tf,tf_tmp;
+
+	public void init(){
+		lb = new JLabel("チェックボックスにチェックしてください");
+		pn = new JPanel();
+		ch1 = new JRadioButton("8進数");
+		ch2 = new JRadioButton("10進数");
+		ch3 = new JRadioButton("16進数");
+		bg = new ButtonGroup();
+		tf = new JTextField();
+
+		pn.add(ch1);
+		pn.add(ch2);
+		pn.add(ch3);
+
+		bg.add(ch1);
+		bg.add(ch2);
+		bg.add(ch3);
+
+		add(tf,BorderLayout.CENTER);
+		add(lb,BorderLayout.NORTH);
+		add(pn,BorderLayout.SOUTH);
+
+		ch1.addActionListener(new Sample3ItemListener());
+		ch2.addActionListener(new Sample3ItemListener());
+		ch3.addActionListener(new Sample3ItemListener());
+
+		tf.addActionListener(new Sample3ActionListener());
+
+	}
+	class Sample3ItemListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e){
+			tmp = (JRadioButton) e.getSource();
+			lb.setText(tmp.getText() +"を選びました");
+		}
+		
+	}
+	class Sample3ActionListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e){
+			tf_tmp = (JTextField) e.getSource();
+			lb.setText(tf_tmp.getText() +"を入力しました");
+		}
+	}
+}

@@ -1,0 +1,66 @@
+# -*- coding: utf-8 -*-
+class Portal::LoginController < ::ApplicationController
+  layout 'portal/login'
+
+  def index
+    # ユーザー名が保存されていたらログインフォームで表示する。
+    # このときremember meにもチェックを入れる。
+    if cookies[:login_name].present?
+      flash[:login_name] = cookies[:login_name]
+      flash[:rememberme] = true
+    end
+  end
+
+  # ログイン
+  def login
+    login_name = params[:login_name]
+    password = params[:password]
+    request_url = params[:request_url] #戻り先URL
+    rememberme = params[:rememberme]
+
+    # 帰る先がなかったらとりあえずトップに飛ばす。
+    request_url = url_for({:controller => 'portal/index'}) if request_url.blank?
+
+    # ログイン名とパスワードで認証をかける
+    user = User.authenticate(login_name, password)
+    if user
+      session[:user_id] = user.id
+      
+      if rememberme.present? && rememberme == "true"
+        # クッキーにユーザーIDを保存する。
+        # ログイン名が一緒だったらそのまま。
+        if cookies[:login_name] != login_name
+          cookies[:login_name] = {
+            :value => login_name,
+            :expires => Time.now + 1.month, # 1ヵ月後まで保存
+            :domain => AppConfig[:basic][:domain] # 使用ドメインを制約。
+          }
+        end
+      else
+        # 保存したくないらしいので、削除する。
+        cookies[:login_name] = {
+          :value => "",
+          :expires => Time.at(0), # 過去を指定すれば削除される
+          :domain => AppConfig[:basic][:domain] # 登録したときと同じにしないと削除できない
+        }
+      end
+      redirect_to request_url
+    else
+      # 認証できなかった。
+      session[:user_id] = nil
+      flash[:request_url] = request_url
+      flash[:warning] = t('Fail to login')
+      flash[:login_name] = login_name
+      flash[:rememberme] = rememberme
+      redirect_to :controller => 'portal/login', :action => 'index'
+    end
+  end
+
+  # ログアウト
+  def logout
+    session[:user_id] = nil
+    flash[:request_url] = url_for({:controller => 'portal/index'})
+    redirect_to :controller => 'login', :action => 'index'
+  end
+
+end

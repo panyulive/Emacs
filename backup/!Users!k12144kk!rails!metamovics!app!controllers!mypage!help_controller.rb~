@@ -1,0 +1,5 @@
+class Portal::HelpController < Portal::ApplicationController
+  def index
+  end
+
+end

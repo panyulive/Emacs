@@ -1,0 +1,13 @@
+package positionedcircle;
+import circle.Circle;
+
+public class PositionedCircle extends Circle{
+    private int x,y;
+    public PositionedCircle(String pname,double pr,int px,int py){
+        super.setCircle(pname,pr);
+        x=px;
+        y=py;
+        System.out.println(Circle);
+        System.out.println("("+x+","+y+")");
+    }
+}

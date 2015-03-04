@@ -1,0 +1,92 @@
+class Car{
+	private	int num;
+	private double gas;
+	public static int sum = 0;
+
+	void show()
+	{
+		System.out.println("車のナンバーは" +num+ "です。");
+		System.out.println("ガソリン量は" +gas+ "です。");
+	}
+		void showCar(){
+			System.out.println("これから車の情報を表示します");
+			show();
+	}
+
+	void setNum(int n){
+		num = n;
+		System.out.println("ナンバーを" +num+ "にしました。");
+	}
+	void setGas(double g){
+		gas = g;
+		System.out.println("ガソリン量を"+gas+"にしました。");
+	}
+	public void setNumGas(int n,double g){
+		if (g > 0 && g < 1000){ 					num = n;
+			gas = g;
+			System.out.println("車のナンバーを" +num+"にガソリン量を"+gas+"にしました。");
+		}else {
+			System.out.println(g+"は...");
+			System.out.println("...を変更できません");
+		}
+	}
+	int getNum(){
+		System.out.println("ナンバーを調べました。");
+		return num;
+	}
+	
+	
+	double getGas(){
+		System.out.println("ガソリンを調べました。");
+		return gas;
+	}
+
+
+	/////////////////////////////////
+	//ここからjava9
+	//////////////////////////////////
+
+	public void setCar(int n){
+		num = n;
+		System.out.println("ナンバーを" +num+ "にしました。");
+	} 
+	public void setCar(double g){
+	gas = g;
+		System.out.println("ガソリン量を"+gas+"にしました。");
+} 
+	public void setCar(int n,double g){
+		if (g > 0 && g < 1000){ 		
+			num = n;
+			gas = g;
+			System.out.println("車のナンバーを" +num+"にガソリン量を"+gas+"にしました。");
+		}else {
+			System.out.println(g+"は...");
+			System.out.println("...を変更できません");
+		}
+	}
+	
+	//これでナンバーとガソリン量の無いCarは作れない
+	public Car(){
+		num = 0; 
+		gas = 0.0;
+		System.out.println("車を作成しました。");
+		sum++;
+	}
+	
+	public Car(int n,double g){
+		this();	
+		num = n;
+		gas = g;
+		System.out.println("ナンバーを"+num+"ガソリン量を"+gas+"で作成しました");
+	}
+		/////////////////////////////
+		//ここから別の授業の続き
+		////////////////////////////
+	
+	
+	public static void showSum(){
+		System.out.println("車は全部で"+sum+"台あります。");
+	}
+	
+
+}

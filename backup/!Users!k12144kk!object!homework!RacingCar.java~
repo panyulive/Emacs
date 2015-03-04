@@ -1,0 +1,12 @@
+class RacingCar extends Car
+{
+	private int cource;
+	public RacingCar(){
+		cource = 0;
+		System.out.println("レーシングカーを作成しました");
+	}
+	public void setCourse(int c){
+		cource = c;
+		System.out.println("コース\""+cource+"\"にしました");
+	}
+}

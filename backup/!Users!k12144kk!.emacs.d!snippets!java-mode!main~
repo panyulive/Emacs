@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: main(Java)
+# key: main
+pubulic static void main(Srtring[] args){
+$0
+}

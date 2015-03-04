@@ -1,0 +1,5 @@
+package spec;
+
+interface iMaterial{
+	void mShow();
+}

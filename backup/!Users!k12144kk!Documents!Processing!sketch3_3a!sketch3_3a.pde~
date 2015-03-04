@@ -1,0 +1,43 @@
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+String Label_0 = "array0";
+
+int[] array0 = new int[0];
+
+String str = "";
+
+int input0;
+boolean isRecording = false;
+
+// setup Method
+
+void setup(){
+	size(400, 230);
+	gainer = new Gainer(this);
+	myFont = loadFont("CourierNewPSMT-48.vlw");
+	textFont(myFont, 30);
+	frameRate(30);
+	//gainer.ampGainAGND(0xF);
+}
+
+void draw(){
+	background(120);
+	gainer.peekAnalogInput();
+	input0 = gainer.analogInput[0];
+
+	// show analog input values
+	fill(255);
+	if (input0 >= 50){
+            text("Strong = "+input0,30,60);
+delay(500);  
+}
+	else if (input0 >= 1 && input0 <= 49){
+  text("weak = "+ input0,30,60);
+delay(500);
+}
+  
+	else if (input0 == 0){
+	text("no Shock",30,60);
+}
+}

@@ -1,0 +1,94 @@
+
+class RacingCar extends Car
+{
+	private static int Rcsum = 0; 
+	private int course;
+
+	public RacingCar(){
+		Rcsum++;
+		course = 0;
+		System.out.println("レーシングカーを作成しました");
+	}
+	public RacingCar(int n,double g,int c){	
+		super(n,g);
+		Rcsum++;
+		course = c;
+		System.out.println("コース番号"+course+"のレーシングカーを作成しました");
+	}
+	public void setCourse(int c){
+		course = c;
+		System.out.println("コース番号"+course+"にしました");
+	}
+
+	public void newShow(){
+		System.out.println("レーシングカーのナンバーは"+num+"です");
+		System.out.println("ガソリン量は"+gas+"です");
+		System.out.println("コース番号は"+course+"です");
+	}
+	public static void newShowSum(){
+		System.out.println("車は"+sum+"台作成され、レーシングカーは"+Rcsum+"台作成されました。");	
+}
+
+}
+
+class BusCar extends Car
+{
+	private static int Bussum = 0; 
+	private String place;
+
+	public BusCar(){
+		Bussum++;
+		place = "";
+		System.out.println("バスを作成しました");
+	}
+	public BusCar(int n,double g,String c){	
+		super(n,g);
+		Bussum++;
+		place = c;
+		System.out.println("目的地"+place+"行きのバスを作成しました");
+	}
+	public void setPlace(String c){
+		place = c;
+		System.out.println("コース番号"+place+"にしました");
+	}
+
+	public void newShow(){
+		System.out.println("バスのナンバーは"+num+"です");
+		System.out.println("ガソリン量は"+gas+"です");
+		System.out.println("目的地は"+place+"です");
+	}
+	public static void newShowSum(){
+		System.out.println("車は"+sum+"台作成され、バスは"+Bussum+"台作成されました。");	
+}
+
+}class TruckCar extends Car
+{
+	private static int Trsum = 0; 
+	private double weight;
+
+	public TruckCar(){
+		Trsum++;
+		weight = 0;
+		System.out.println("トラックを作成しました");
+	}
+	public TruckCar(int n,double g,double c){	
+		super(n,g);
+		Trsum++;
+		weight = c;
+		System.out.println("最大積載量は"+weight+"tです。");
+	}
+	public void setWeight(double c){
+		weight = c;
+		System.out.println("最大積載量は"+weight+"にしました");
+	}
+
+	public void newShow(){
+		System.out.println("トラックのナンバーは"+num+"です");
+		System.out.println("ガソリン量は"+gas+"です");
+		System.out.println("最大積載量は"+weight+"tです");
+	}
+	public static void newShowSum(){
+		System.out.println("車は"+sum+"台作成され、トラックは"+Trsum+"台作成されました。");	
+}
+
+}

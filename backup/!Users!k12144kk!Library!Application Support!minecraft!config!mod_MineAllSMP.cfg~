@@ -1,0 +1,23 @@
+#MLProperties: name (type:default) min:max -- information
+#MLProp : DestroyUnder (boolean:true)
+#MLProp : Limiter (int:0)
+#MLProp : Key (int:50)
+#MLProp : StartMode (boolean:true)
+#MLProp : blockIds (java.lang.String:14, 15, 16, 21, 49, 56, 73, 74, 89, 129, 153)
+#MLProp : itemIds (java.lang.String:257, 270, 274, 278, 285)
+#MLProp : AutoCollect (boolean:false)
+#MLProp : channelName (java.lang.String:mod_MineAll)
+#MLProp : Durability (int:0)
+#MLProp : DropGather (boolean:false)
+#
+#Tue Jun 11 22:26:16 JST 2013
+itemIds=257, 270, 274, 278, 285
+StartMode=true
+blockIds=14, 15, 16, 21, 49, 56, 73, 74, 89, 129, 153
+AutoCollect=false
+Limiter=0
+DestroyUnder=true
+Durability=0
+DropGather=false
+channelName=mod_MineAll
+Key=50

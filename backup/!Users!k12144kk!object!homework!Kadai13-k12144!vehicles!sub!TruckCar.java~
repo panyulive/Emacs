@@ -1,0 +1,32 @@
+
+}class TruckCar extends Car
+{
+	private static int Trsum = 0; 
+	private double weight;
+
+	public TruckCar(){
+		Trsum++;
+		weight = 0;
+		System.out.println("トラックを作成しました");
+	}
+	public TruckCar(int n,double g,double c){	
+		super(n,g);
+		Trsum++;
+		weight = c;
+		System.out.println("最大積載量は"+weight+"tです。");
+	}
+	public void setWeight(double c){
+		weight = c;
+		System.out.println("最大積載量は"+weight+"にしました");
+	}
+
+	public void newShow(){
+		System.out.println("トラックのナンバーは"+num+"です");
+		System.out.println("ガソリン量は"+gas+"です");
+		System.out.println("最大積載量は"+weight+"tです");
+	}
+	public static void newShowSum(){
+		System.out.println("車は"+sum+"台作成され、トラックは"+Trsum+"台作成されました。");	
+}
+
+}

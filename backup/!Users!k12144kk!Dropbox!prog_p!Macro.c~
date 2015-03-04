@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+#define sqr1(in) ((in*in)+in)
+#define sqr2(in) (in*(in+i))
+
+int main(void){
+  int num = 10;
+
+  printf ("%d\n",sqr1(num));
+  printf ("%d\n",sqr2(num));
+}

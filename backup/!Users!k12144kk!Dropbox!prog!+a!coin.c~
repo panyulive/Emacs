@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int max = 0;
+int main(void){
+  unsigned long int i;
+  int rnd;
+  int resurut;
+  int coin;
+  static int sum = 0;
+
+  unsigned int val[101] = {0};
+	  srand((unsigned)time(NULL));
+	  resurut = 1;
+	  static int final = 1;
+	  for ( i = 0;i < 100000000; ++i) //4294967295 == unsigned long int
+		{
+		  do{  
+			  sum++;
+			  coin = rand() %2;
+		  }while(final == coin);
+			printf ("%d回\n",sum);
+			if (max<sum)
+			  {
+				max == sum;
+			  }	
+			if(sum > 11){
+			  val[sum]++;
+			}
+			sum = 0;
+		  }
+	  int j =0;
+	  printf ("result == %d\n",max);
+	  for (i = 0; i <= 90; i+=10)
+		{
+		  for (j = 1 + i; j <= 10+i; j++)
+			{
+			  printf ("%3d[%3d],",j,val[j]);
+			}
+		  printf ("\n");
+		}
+	  return 0;
+}
+
+

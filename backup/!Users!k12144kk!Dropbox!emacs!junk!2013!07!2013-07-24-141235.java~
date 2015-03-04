@@ -1,0 +1,12 @@
+import java.util.*;
+class test{
+	public static void main(String[] args){
+		ArrayList<Integer> j;
+		for (int i = 0;i<10;i++){
+			j.add(i);
+		}
+		for(int i=0;i<10;i++){
+			System.out.println(j.get(i));
+		}
+	}
+}

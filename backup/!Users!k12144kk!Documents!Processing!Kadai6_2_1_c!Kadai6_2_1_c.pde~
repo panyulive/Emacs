@@ -1,0 +1,71 @@
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+int number = 15;
+int input0;
+int cnt = 0;
+int IntMatrix[][] = {
+  {1,1,1,1,1,1,0},//0
+  {0,0,1,1,0,0,0},//1
+  {1,1,0,1,1,0,1},//2
+  {0,1,1,1,1,0,1},//3
+  {0,0,1,1,0,1,1},//4
+  {0,1,1,0,1,1,1},//5
+  {1,1,1,0,1,1,1},//6
+  {0,0,1,1,1,0,0},//7
+  {1,1,1,1,1,1,1},//8
+  {0,1,1,1,1,1,1},//9
+  {1,0,1,1,1,1,1},//a
+  {1,1,1,0,0,1,1},//b
+  {1,1,0,0,0,0,1},//c
+  {1,1,1,1,0,0,1},//d
+  {1,1,0,0,1,1,1},//e
+  {1,0,0,0,1,1,1},//f
+
+
+  
+};
+void setup(){
+  size(400,200);
+  gainer = new Gainer(this ,"/dev/cu.usbmodemfa131",Gainer.MODE4);
+ 
+	myFont = loadFont("CourierNewPSMT-48.vlw");
+	textFont(myFont, 30);
+	frameRate(30);
+	//gainer.ampGainAGND(0x4);
+}
+
+void draw(){
+	background(120);
+
+        gainer.peekAnalogInput();
+	input0 = gainer.analogInput[0];
+
+        fill(255);
+        
+        switch(input0/10){ 
+         case 25:number = 9;cnt++;break; 
+         case 24:number = 8;cnt++;break; 
+         case 23:number = 7;cnt++;break; 
+         case 22:number = 6;cnt++;break; 
+         case 21:number = 5;cnt++;break; 
+         case 19:number = 4;cnt++;break; 
+         case 17:number = 3;cnt++;break; 
+         case 15:number = 2;cnt++;break; 
+         case 13:number = 1;cnt++;break; 
+         case 11:number = 0;cnt++;break; 
+         default:break;      
+        }
+
+	String strNum = "Num =" + number;
+	text(strNum,15,50);
+        text("Count ="+cnt,15,100);
+        text("light ="+input0,15,150);
+        
+	for(int a=0;a<7;a++){
+		gainer.analogOutput(a,IntMatrix[number][a] * 255);
+	}
+
+
+
+}

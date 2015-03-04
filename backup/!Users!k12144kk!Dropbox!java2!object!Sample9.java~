@@ -1,0 +1,46 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Sample8 extends JApplet{
+	private JLabel lb1;
+	private JLabel lb2;
+	private JButton bt;
+
+	private int n=0;
+
+	public void init(){
+		lb1 = new JLabel("”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		lb2 = new JLabel();
+
+		add(lb1,BorderLayout.NORTH);
+		add(lb2,BorderLayout.SOUTH);
+
+		addKeyListener(new SampleActionListener());
+		setFocusable(true);
+	}
+
+	class SampleActionListener extends KeyAdapter{
+
+		public void keyPressed(KeyEvent e){
+			String str;
+			int k = e.getKeyCode();
+			switch(k){
+			case 0:str = "VK_0";break;
+			case 1:str = "VK_1";break;
+			case 2:str = "VK_2";break;
+			case 3:str = "VK_3";break;
+			case 4:str = "VK_4";break;
+			case 5:str = "VK_5";break;
+			case 6:str = "VK_6";break;
+			case 7:str = "VK_7";break;
+			case 8:str = "VK_8";break;
+			case 9:str = "VK_9";break;
+			default :str = "”š‚Å‚Í‚ ‚è‚Ü‚¹‚ñ";break;
+			}
+
+			lb2.setText(str);
+		}
+
+	}
+}

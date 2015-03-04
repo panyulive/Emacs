@@ -1,0 +1,34 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Sample3 extends JApplet{
+	private JLabel lb;
+	public void init(){
+		lb = new JLabel();
+
+		lb.setText("ようこそアプレットへ!!");
+
+		add(lb);
+
+		addMouseListener(new SampleMouseClick());
+
+	}
+
+	class SampleMouseClick extends MouseAdapter{
+		private int n=0;
+		public void mouseClicked(MouseEvent e){
+			
+			switch(n){
+			case 0:
+				lb.setText("マウスでクリックしました。");
+				n = 1;
+				break;
+			case 1:
+				lb.setText("ようこそアプレットへ!!");
+				n = 0;
+				break;
+			}
+		}
+	}
+}

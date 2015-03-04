@@ -1,0 +1,128 @@
+rbenv init -
+rbenv
+ls
+cd
+rbenv
+cd /var/folders/dx/jh78g2hn5dgb390w0dm9r_nh0000gp/t/ruby-build.20150202154246.3143/yaml-0.1.6/
+ls
+make
+make install
+ls
+cat README 
+.This project is developed for Python Software Foundation as a part of
+.configre
+./configre
+./configure
+make
+make install
+cat README 
+make install
+ls
+cat config.log 
+gcc -v
+cp settings_default.yml settings.yml
+ls
+cd /Users/k12144kk/rails/metamovics/config/
+cd ../../metamovics/config/
+ls
+cd /Users/k12144kk/rails/metamovics/
+bundle install
+rails g device:install
+cd /Users/k12144kk/rails/metamovics/app/views/portal/common/
+cd ./
+cd ./
+cd ../
+cd ../
+cd ../../
+cd config/
+ls
+cd initializers/
+ls
+cp devise.rb default_device.rb
+ls
+cd /Users/k12144kk/rails/metamovics/app/views/portal/login/
+cd ../
+cd ../
+cd ../
+ls
+cd views/
+ls
+cd devise/
+ls
+cd shared/
+ls
+cd ../
+ls
+ls
+cd mi
+cd mailer/
+ls
+cd ../
+ls
+cd sessions/
+ls
+cp new.html.erb _new.html.erb
+ls
+ls
+edit
+open _new.html.erb 
+cd /Users/k12144kk/rails/metamovics/app/views/portal/common/
+cd /Users/k12144kk/ruby/
+ls
+chmod u+ x Twitter.rb
+chmod u+x Twitter.rb
+Twitter.rb "Hello World!!"
+ruby Twitter.rb
+ruby Twitter.rb "Hello World!!"
+ruby Twitter.rb "Hello World!!"
+ruby Twitter.rb "Hello World!!"
+ruby Twitter.rb "Hello World!!"
+ruby Twitter.rb "Hello World!!"
+Twitter.rb "Hello World!!"
+rb Twitter.rb "Hello World!!"
+Ruby Twitter.rb "Hello World!!"
+Ruby Twitter.rb "Hello World!!"
+R\ruby Twitter.rb "Hello World!!"
+ruby Twitter.rb "Hello World!!"
+ruby Twitter.rb "Hello World!!"
+ruby Twitter.rb "Hello World!!"
+ruby Twitter.rb "Hello World!!"
+gem -l
+gem --help
+gem list
+gem list|grep twitter
+gem list|grep tw
+gem list|grep t
+ruby timer.rb 
+ruby timer.rb 
+cd ../
+git status
+git branch
+git log --decoraate --oneline
+git log --decorate --oneline
+open html_file.html 
+open html_file.html 
+open html_file.html 
+rm -rf portal
+ls
+cd /Users/k12144kk/rails/metamovics/app/views/mypage/index/
+cd ../
+cd ../
+cd ../
+cd ../
+cd public/
+ls
+cd bo*
+ls
+cd
+ls
+emacs --version
+emacs --help
+ls
+ls
+bash
+ls
+cd ../
+rails g controller mypage/devise
+cd /Users/k12144kk/rails/metamovics/app/controllers/mypage/Welcome to the Emacs shell
+cd /Users/k12144kk/rails/metamovics/app/controllers/mypage/

@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+class Mypage::ViewController < Mypage::ApplicationController
+  layout "portal/application", :only => [:index]
+
+  def index
+
+  end
+
+  def record_accesslog
+
+  end
+
+  def show_question
+
+  end
+
+  def answer
+
+  end
+
+
+end

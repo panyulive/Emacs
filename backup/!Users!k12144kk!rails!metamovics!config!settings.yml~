@@ -1,0 +1,77 @@
+default:
+  basic:
+    domain: libra.metamovics.jp
+
+  api:
+    authentication: false
+
+  video:
+    thumbnail:
+      timesec: 0
+      width: 224 # 16:9のときの幅(この大きさに収まるようにリサイズされる)
+      height: 126 # 16:9のときの高さ(この大きさに収まるようにリサイズされる)
+    video_path: "./videos/"
+    thumb_path: "./thumbs/"
+    upload_path: "./tmp/uploaded/"
+    video_url: "/videos/"
+    thumb_url: "/thumbs/"
+    uniq_check:
+      enable: false
+
+  uploader:
+    url: "/files/MetaMovicsUploader.zip"
+
+  portal:
+    display_unaccessible_category_in_home: false
+    require_login: false
+    list:
+      rows: 4
+    display_content_comment_in_view: false
+    rewrite: false
+    category_tile_view_level: 0
+    manual_template: true
+
+  # acl.enableをtrueにしたときは、
+  #忘れずにportal.require_loginもtrueにすること。
+  acl:
+    enable: true
+    enable_simple_ui: true
+
+  analytics:
+    show_detail_popup:
+      enable: true
+
+  group:
+    enable: true
+
+  category:
+    level: 4
+    content_only_leaf: true
+
+  question:
+    enable: true
+
+  resource:
+    access_controll: false
+
+  flash_player:
+    path: "./public/flash_player/"
+    distribution: false
+
+  player:
+    defalut:
+      variation_type: 1
+      skin: default
+      width: 430
+      height: 640
+
+development:
+  basic:
+    domain: localhost:3000
+
+test:
+  video:
+    video_path: "./tmp/test/videos/"
+    thumb_path: "./tmp/test/thumbs/"
+
+production:

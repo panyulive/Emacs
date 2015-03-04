@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(void){
+  int a,b,c;
+  scanf("%d",&a);
+  scanf("%d",&b);
+  scanf("%d",&c);
+
+  int n[3] = {0};
+  return 0;
+}

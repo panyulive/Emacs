@@ -1,0 +1,405 @@
+
+import java.util.Random;
+import java.io.*;
+import java.util.*;//ArrayList‚Ì‚½‚ß‚É’Ç‰Á
+
+/*
+u‹`Ž‘—¿‚Æ‚±‚Ìƒ\[ƒX‚ÌƒRƒƒ“ƒg‚ð‚æ‚­“Ç‚ÝC
+Žd—l‚É‚ ‚Á‚½‚à‚Ì‚É‚·‚éŽ–II
+*/
+
+
+/*
+°CardsƒNƒ‰ƒX‚ÌŽd—l(ƒNƒ‰ƒXŠO‚©‚çŒ©‚¦‚é‚à‚Ì)°
+”Žš‚Ì‘‚©‚ê‚½ƒJ[ƒh‚Ì‚æ‚¤‚ÈŠT”O‚ðŽ‚ÂƒNƒ‰ƒXD
+uƒJ[ƒhv‚È‚Ì‚ÅCˆÈ‰º‚Åà–¾‚·‚éuˆÊ’uv‚âu”ÍˆÍv‚È‚Ç‚Ì’l‚ÍC1–‡–Ú‚©‚ç”‚¦‚éD
+‚Â‚Ü‚èC0–‡–Ú‚Í‘¶Ý‚µ‚È‚¢D
+‚Ü‚½CˆÈ‰º‚Å‚Íà–¾‚µ‚È‚¢‚ªC”ÍˆÍŠO‚Ì’l‚ðŽó‚¯Žæ‚Á‚½ê‡‚ÍƒGƒ‰[‚ð•\Ž¦‚·‚éD
+
+
+Cards“à‚Å•ÛŽ‚·‚éƒJ[ƒhŒQnum
+(ArrayList<Integer>Œ^C‚½‚¾‚µprotected)
+
+==ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+ˆø”–³‚µ‚Ìê‡F—v‘f‚ðŽ‚½‚È‚¢num‚ð¶¬D
+ArrayList<Integer>Œ^‚Ì1ˆø”Fˆø”‚Ì—v‘f‚ðnum‚ÖƒRƒs[(‘ã“ü‚Å‚Í‚È‚¢)‚µ‚Ä¶¬D
+
+==add
+intŒ^1ˆø”‚Ìê‡Fnum‚ÌÅŒã‚Öˆø”‚Ì’l‚ð’Ç‰ÁD
+intŒ^2ˆø”‚Ìê‡F‘æˆêˆø”‚ÅŽw’è‚³‚ê‚½ˆÊ’u‚Ö‘æ“ñˆø”‚Ì’l‚ð’Ç‰ÁD
+
+==clear
+ˆø”–³‚µCnum‚ð‘SíœD
+
+==remove
+intŒ^1ˆø”‚Ìê‡Fˆø”‚Ì’l‚ÅŽw’è‚µ‚½ˆÊ’u‚Ì—v‘f‚ðíœD
+intŒ^2ˆø”‚Ìê‡FintŒ^2ˆø”‚ðŽó‚¯Žæ‚èC‘æˆêˆø”‚©‚ç‘æ“ñˆø”‚Ü‚Å‚Ì”ÍˆÍ‚ÌˆÊ’u‚Ì—v‘f‚ðíœD
+
+
+==getIndCgetFirstCgetLast
+¡‚Ü‚Å“¯—l‚Å‚·D
+
+==size
+ˆø”–³‚µC—v‘f”‚ð•Ô‚·D
+
+==sumShow
+ˆø”–³‚µC¶¬‚³‚ê‚½CardsƒNƒ‰ƒX‚Ì”‚ð•Ô‚·ƒNƒ‰ƒXƒƒ\ƒbƒhD
+
+*/
+
+
+/*
+‚±‚ÌƒNƒ‰ƒX‚Ìƒƒ\ƒbƒh‚Í‘S‚ÄƒNƒ‰ƒXƒƒ\ƒbƒh‚É‚·‚éŽ–D
+‚Â‚Ü‚èC‚Ç‚ê‚àShuffleSort.°‚ÅŒÄ‚Ño‚¹‚é‚æ‚¤‚É‚·‚éŽ–D
+*/
+class ShuffleSort{
+
+	/* 
+	ŒÂ”CÅ¬’lCÅ‘å’l‚ðŽó‚¯Žæ‚èCArrayList<Integer>Œ^‚ð•Ô‚·makeRnd
+	¡‚Ü‚Å’Ê‚èCÅ¬’l°Å‘å’l‚Ì”ÍˆÍ‚Ì—”‚ðŒÂ”•ª¶¬‚·‚éD
+	 */
+	public ArrayList<Integer> makeRnd(int num, int min, int max){
+		Random rnd = new Random();
+		ArrayList<Integer> n = new ArrayList<Integer>();
+		for (int i = 0; i<=num ;i++){
+			n.add(rnd.nextInt((max - min + 1))+min);
+		}
+		return n;
+	}
+
+	/* 
+	Å¬’lCÅ‘å’l‚ðŽó‚¯Žæ‚èCArrayList<Integer>Œ^‚ð•Ô‚·makeSequence
+	¡‚Ü‚Å’Ê‚èCÅ¬’l°Å‘å’l‚Ì”ÍˆÍ˜A‘±’l‚ð¶¬‚·‚éD
+	 */
+	public ArrayList<Integer> makeSequence(int min, int max){
+		ArrayList<Integer> n = new ArrayList<Integer>();
+		for (int i = 0;i<=max - min;i++){
+			n.add(min + i);
+		}	
+		return n;
+	}
+
+
+	/* 
+	ArrayList<Integer>Œ^‚ðŽó‚¯Žæ‚èC‚»‚ê‚ð¸‡‹y‚Ñ~‡ƒoƒuƒ‹ƒ\[ƒg‚·‚évoidŒ^‚ÌbubbleGreaterCbubbleLessC
+	“¯—l‚ÉƒVƒƒƒbƒtƒ‹‚·‚éshuffle
+	ƒNƒ‰ƒX‚ªˆø”‚È‚Ì‚ÅC‚»‚Ì‚Ü‚Üˆø”‚Ì•Ï”‚ð‚¢‚¶‚ê‚ÎOK‚Å‚·‚ËH
+	 */
+	public static void bubbleGreater(ArrayList<Integer> n){
+		for (int j = 0; j<n.size()  ;j++){
+			for (int i = 0; i<n.size()-1;i++){
+				if (n.get(i) > n.get(i+1)){
+					int tmp = n.get(i);
+					n.set(i,n.get(i+1));
+					n.set(i+1,tmp);
+				}
+			}
+		}
+	}
+
+	public static void bubbleLess(ArrayList<Integer> n){
+		for (int j = 0; j<n.size();  j++){
+			for (int i = 0; i<n.size()-1;i++){
+				if (n.get(i) < n.get(i+1)){
+					int tmp = n.get(i);
+					n.set(i,n.get(i+1));
+					n.set(i+1,tmp);
+				}
+			}
+		}
+	}
+
+	public static void shuffle(ArrayList<Integer> n){
+		Random rnd = new Random();
+		for (int i=0;i<n.size();i++){
+			int r = rnd.nextInt(n.size());
+			
+			int tmp = n.get(i);
+			n.set(i,n.get(r));
+			n.set(r,tmp);
+		}
+
+	}
+
+}
+
+
+//MyCardsƒNƒ‰ƒX‚ÍCCardsƒNƒ‰ƒX‚ðŒp³‚·‚é
+class MyCards extends Cards {
+	/*
+	intŒ^•Ï”mySum‚ðƒNƒ‰ƒX•Ï”‚Æ‚µ‚ÄéŒ¾‚¹‚æD
+	‚½‚¾‚µCƒNƒ‰ƒXŠO‚©‚çƒAƒNƒZƒX•s‰Â‚É‚·‚éŽ–D
+	MyCardsƒNƒ‰ƒX‚ª¶¬‚³‚ê‚é“x‚É1‰ÁŽZ‚·‚éŽ–D
+	*/
+
+	/*
+	MyCardsƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð’è‹`‚¹‚æD
+
+	°ˆø”–³‚µ‚Ìê‡°
+	1–‡‚àƒJ[ƒh‚ª‚È‚¢‚Ü‚Ü¶¬D
+	*/
+	private static int mySum = 0; 
+	public MyCards(){
+		//	num = new ArrayList<Integer>();
+		mySum++;
+	}
+	/*
+	°ˆø”‚ªintŒ^3‚Â‚Ìê‡°
+	ˆø”‚ðŒÂ”CÅ¬’lCÅ‘å’l‚Ì‡‚ÉŽó‚¯Žæ‚èC
+	Å¬’l‚©‚çÅ‘å’l‚Ì”ÍˆÍ‚ÌŽw’è‚³‚ê‚½ŒÂ”‚Ì—”‚ðƒX[ƒp[ƒNƒ‰ƒXCards“à‚É—pˆÓ‚µC‚»‚Ì“à—e‚ð•\Ž¦‚¹‚æD
+	‚½‚¾‚µCShuffleSortƒNƒ‰ƒX‚ÌƒNƒ‰ƒXƒƒ\ƒbƒh‚ðŠˆ—pII
+
+	°ˆø”‚ªintŒ^2‚Â‚Ìê‡°
+	ˆø”‚ðÅ¬’lCÅ‘å’l‚Ì‡‚ÉŽó‚¯Žæ‚èC
+	Kadai4_2‚âKadai5‚ÌŒã”¼‚Ì‚æ‚¤‚ÉC
+	Å¬’l‚©‚çÅ‘å’l‚Ü‚Å˜A‘±’l‚ðƒX[ƒp[ƒNƒ‰ƒXCards“à‚É—pˆÓ‚µC‚»‚Ì“à—e‚ð•\Ž¦‚¹‚æD
+	‚½‚¾‚µCShuffleSortƒNƒ‰ƒX‚ÌƒNƒ‰ƒXƒƒ\ƒbƒh‚ðŠˆ—pII
+
+	*/
+	public MyCards(int n,int min,int max){
+		this();
+		Random rnd = new Random();
+		for (int i=0;i<n;i++){
+			num.add(rnd.nextInt(max - min +1)+min);
+		}
+		this.show();
+	}
+
+	public MyCards(int min,int max){
+		this();
+		for (int i=0;i<=max - min;i++){
+			num.add(i+min);
+		}
+		this.show();
+	}
+
+	/*
+	voidŒ^‚ÌshuffleCbubbleGreaterCbubbleLess‚ð’è‹`‚¹‚æD
+	‚ÆŒ¾‚Á‚Ä‚àCShuffleSortƒNƒ‰ƒX‚ÌƒNƒ‰ƒXƒƒ\ƒbƒh‚É“n‚·‚¾‚¯D
+	*/
+	public void shuffle(){
+		ShuffleSort.shuffle(num);
+	}
+	public void bubbleGreater(){
+		ShuffleSort.bubbleGreater(num);
+	}
+	public void bubbleLess(){
+		ShuffleSort.bubbleLess(num);
+	}
+
+	/*
+	voidŒ^‚Ìshow‚ð3ƒpƒ^[ƒ“’è‹`‚¹‚æD
+	‚½‚¾‚µ‚¢‚¸‚ê‚Ìê‡‚àC—v‘f”‚ª0‚¾‚Á‚½ê‡‚Í
+	u—v‘f‚ª‚ ‚è‚Ü‚¹‚ñDv
+	‚Æ•\Ž¦‚·‚éŽ–D
+	
+	°ˆø”–³‚µ‚Ìê‡°
+	‘S‚Ä‚Ì—v‘f‚ð•\Ž¦D
+
+	°intŒ^1ˆø”‚Ìê‡°
+	Žw’è‚³‚ê‚½ˆÊ’u‚Ì—v‘f‚ð•\Ž¦D
+	‚½‚¾‚µCŽw’è‚µ‚½ˆÊ’u‚ª0ˆÈ‰º‚Å‚ ‚Á‚½‚èC—v‘f”‚æ‚è‘å‚«‚©‚Á‚½ê‡‚ÍC
+	uŽw’è‚³‚ê‚½ˆÊ’u›‚Í”ÍˆÍŠO‚Å‚·Dv
+	‚Æ•\Ž¦‚·‚éŽ–D
+
+	°intŒ^2ˆø”‚Ìê‡°
+	‘æˆêˆø”‚ð”ÍˆÍ‚Ì‰‚ßC‘æ“ñˆø”‚ð”ÍˆÍ‚ÌI‚í‚è‚Æ‚µC‚»‚Ì”ÍˆÍ‚Ì—v‘f‚ð•\Ž¦D
+	‚½‚¾‚µCŽw’è‚µ‚½ˆÊ’u‚ª0ˆÈ‰º‚Å‚ ‚Á‚½‚èC—v‘f”‚æ‚è‘å‚«‚©‚Á‚½‚èC‘æˆêˆø”>‘æ“ñˆø”‚¾‚Á‚½ê‡‚ÍC
+	uŽw’è‚³‚ê‚½ˆÊ’u›°›‚Í”ÍˆÍŠO‚Å‚·Dv
+	‚Æ•\Ž¦‚·‚éŽ–D
+	*/
+
+
+	public void show(){
+		if (num.size() != 0){
+		for (int i=0;i<num.size()-1;i++){
+			System.out.print(num.get(i)+",");
+		}
+		System.out.println(num.get(num.size()-1));
+		
+		}else {
+			System.out.println("—v‘f‚ª‚ ‚è‚Ü‚¹‚ñ");
+		}
+	}
+
+	public void show(int n){
+		if (num.size() <= n){
+			System.out.println("Žw’è‚³‚ê‚½—v‘f"+n+"‚Í”ÍˆÍŠO‚Å‚·");
+		}else {
+			System.out.println("Žw’è‚µ‚½—v‘f‚Í"+num.get(n-1)+"‚Å‚·");
+		}
+	}
+
+	public void show(int min,int max){
+		for (int i=min;i<max;i++){
+			System.out.print(num.get(i-1)+",");
+		}
+		System.out.println(num.get(max-1));
+	}
+	/*
+	intŒ^2ˆø”‚ðŽó‚¯Žæ‚èCMyCardsŒ^(‚Â‚Ü‚èŽ©ƒNƒ‰ƒX)‚ð•Ô‚·pick
+	‘æˆêˆø”‚ð”ÍˆÍ‚Ì‰‚ßC‘æ“ñˆø”‚ð”ÍˆÍ‚ÌI‚í‚è‚Æ‚µC‚»‚Ì”ÍˆÍ‚Ì—v‘f‚ðŽæ‚èo‚µ‚ÄV‚µ‚¢MyCardsŒ^ƒNƒ‰ƒX‚ð¶¬‚µC•Ô‚·
+	“–‘RCuŽæ‚èo‚·v‚Ì‚ÅCŽæ‚èo‚³‚ê‚½—v‘f‚Ííœ‚·‚éD
+	‚½‚¾‚µCŽ©ƒNƒ‰ƒX‚Ì—v‘f”‚ª0‚¾‚Á‚½ê‡‚Í
+	u—v‘f‚ª‚ ‚è‚Ü‚¹‚ñDvC
+	Žw’è‚µ‚½ˆÊ’u‚ª0ˆÈ‰º‚Å‚ ‚Á‚½‚èC—v‘f”‚æ‚è‘å‚«‚©‚Á‚½‚èC‘æˆêˆø”>‘æ“ñˆø”‚¾‚Á‚½ê‡‚ÍC
+	uŽw’è‚³‚ê‚½ˆÊ’u›°›‚Í”ÍˆÍŠO‚Å‚·Dv
+	‚Æ•\Ž¦‚·‚éŽ–D
+	*/
+	public MyCards pick(int first,int last){
+		MyCards card = new MyCards();
+		if (num.size() != 0){
+
+			if (first > 0 && last <=num.size()){
+
+				for (int i=0;i<num.size();i++){
+					if (i == first-1){
+						//i = last - 1;
+						card.add(num.get(i));
+						num.remove(i);
+					}else if (i >= last){
+						//card.num.add(num.get(i));
+						num.set(first-1+i,num.get(i));
+					}
+				}
+			}else {
+				System.out.println("Žw’è‚³‚ê‚½ˆÊ’u"+first+"-"+last+"‚Í”ÍˆÍŠO‚Å‚·");
+			}
+		}else{
+			System.out.println("—v‘f‚ª‘¶Ý‚µ‚Ü‚¹‚ñ");
+		}
+
+		return card;
+	}
+
+
+	/*
+	ƒNƒ‰ƒX•Ï”my_sum‚ð•\Ž¦‚·‚éC
+	ˆø”–³‚µCvoidŒ^‚ÌƒNƒ‰ƒXƒƒ\ƒbƒhmySumShow‚Ì’è‹`D
+	*/
+	public static void mySumShow(){
+		System.out.println("MyCards‚Í"+mySum+"‰ñŒÄ‚Î‚ê‚Ü‚µ‚½");
+	}
+}
+
+
+class Kadai10 {
+	public static void main(String[] args) throws IOException
+	{
+		/* MyCardsƒNƒ‰ƒX‚ª¶¬‚³‚ê‚½”‚ð•\Ž¦ */
+		MyCards.mySumShow();
+
+		/* BufferedReader‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‰» */
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+
+
+		/* ‰Û‘è4_1‚É‘Î‰ž‚·‚é•”•ªŠJŽn */
+		System.out.println("¶¬‚·‚é—”‚ÌŒÂ”‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		int n_max = Integer.parseInt(br.readLine());
+
+		System.out.println("¶¬‚·‚é—”‚ÌÅ¬’l‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		int r_min = Integer.parseInt(br.readLine());
+
+		System.out.println("¶¬‚·‚é—”‚ÌÅ‘å’l‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		int r_max = Integer.parseInt(br.readLine());
+
+
+
+		/* MyCardsƒNƒ‰ƒX‚ðcards1‚Æ‚µ‚ÄƒCƒ“ƒXƒ^ƒ“ƒX‰» */
+		MyCards mycards1 = new MyCards(n_max, r_min, r_max);
+
+		/* SortƒNƒ‰ƒX‚ª¶¬‚³‚ê‚½”‚ð•\Ž¦ */
+		MyCards.mySumShow();
+
+		/* cards1‚ÌbubbleGreater‚ðŒÄo */
+		mycards1.bubbleGreater();
+
+		System.out.println("¸‡‚Éƒoƒuƒ‹ƒ\[ƒg‚µ‚½Œ‹‰Ê‚Í,");
+		mycards1.show();
+		System.out.println("‚Å‚·.");
+
+		/* ’l‚ð’Ç‰Á */
+		System.out.println("‚¢‚­‚Â’l‚ð’Ç‰Á‚µ‚Ü‚·‚©H");
+		int add_max = Integer.parseInt(br.readLine());
+		for(int i=0;i<add_max;i++){
+			System.out.println("‰½”Ô–Ú‚É’Ç‰Á‚µ‚Ü‚·‚©H");
+			int add_pos = Integer.parseInt(br.readLine());
+			System.out.println("’Ç‰Á‚·‚é’l‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+			int add_num = Integer.parseInt(br.readLine());
+			mycards1.add(add_pos,add_num);
+
+			System.out.println("’l‚ð’Ç‰ÁŒã‚Ìmycards1‚ÍC");
+			mycards1.show();
+			System.out.println("‚Å‚·.");
+		}
+
+		/* cards1‚ÌbubbleGreater‚ðŒÄo */
+		mycards1.bubbleGreater();
+
+		System.out.println("Ä“x¸‡‚Éƒoƒuƒ‹ƒ\[ƒg‚µ‚½Œ‹‰Ê‚Í,");
+		mycards1.show();
+		System.out.println("‚Å‚·.");
+
+		/* ‚±‚±‚©‚çC */
+		System.out.println("‰½”Ô–Ú‚Ì’l‚ð’Ç‰Á‚µ‚Ü‚·‚©H");
+		int ind = Integer.parseInt(br.readLine());
+		mycards1.show(ind);
+
+		System.out.println("•\Ž¦‚·‚é”ÍˆÍ‚Ì‰‚ß‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		r_min = Integer.parseInt(br.readLine());
+		System.out.println("•\Ž¦‚·‚é”ÍˆÍ‚ÌI‚í‚è‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		r_max = Integer.parseInt(br.readLine());
+		mycards1.show(r_min,r_max);
+		/* ‚±‚±‚Ü‚Å‚ª”²‚¯‚Ä‚¢‚Ü‚µ‚½ */
+
+
+		/* ‰Û‘è4_2‚É‘Î‰ž‚·‚é•”•ªŠJŽn */
+		System.out.println("˜A‘±’l‚ÌÅ¬’l‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		r_min = Integer.parseInt(br.readLine());
+
+		System.out.println("˜A‘±’l‚ÌÅ‘å’l‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		r_max = Integer.parseInt(br.readLine());
+
+
+		/* MyCardsƒNƒ‰ƒX‚ðcards2‚Æ‚µ‚ÄƒCƒ“ƒXƒ^ƒ“ƒX‰» */
+		MyCards mycards2 = new MyCards(r_min, r_max);
+
+		/* SortƒNƒ‰ƒX‚ª¶¬‚³‚ê‚½”‚ð•\Ž¦ */
+		MyCards.mySumShow();
+
+		/* cards2‚Ìshuffle‚ðŒÄo */
+		mycards2.shuffle();
+		System.out.println("ƒVƒƒƒbƒtƒ‹Œ‹‰Ê‚Í,");
+		mycards2.show();
+		System.out.println("‚É‚È‚è‚Ü‚µ‚½.");
+
+		/* mycards2‚ÌbubbleLess‚ðŒÄo */
+		mycards2.bubbleLess();
+		System.out.println("~‡‚Éƒoƒuƒ‹ƒ\[ƒg‚µ‚½Œ‹‰Ê‚Í,");
+		mycards2.show();
+		System.out.println("‚Å‚·.");
+
+
+		/* mycards2‚Ìpick‚ðŒÄoCmycards3‚Ö“ü‚ê‚é */
+		System.out.println("Žæ‚èo‚·”ÍˆÍ‚Ì‰‚ß‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		r_min = Integer.parseInt(br.readLine());
+		System.out.println("Žæ‚èo‚·”ÍˆÍ‚ÌI‚í‚è‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		r_max = Integer.parseInt(br.readLine());
+
+		MyCards mycards3 = mycards2.pick(r_min,r_max);
+
+
+		System.out.println("Žæ‚èo‚³‚ê‚½mycards2‚ÍC");
+		mycards2.show();
+		System.out.println("‚Å‚·.");
+		System.out.println("Žæ‚èo‚µ‚½mycards3‚ÍC");
+		mycards3.show();
+		System.out.println("‚Å‚·.");
+
+
+		/* MyCardsƒNƒ‰ƒX‚ª¶¬‚³‚ê‚½”‚ð•\Ž¦ */
+		MyCards.mySumShow();
+
+	}
+}

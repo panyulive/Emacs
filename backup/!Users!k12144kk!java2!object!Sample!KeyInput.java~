@@ -1,0 +1,72 @@
+
+import java.awt.event.*;
+
+public class KeyInput
+
+{
+	//TODO: ‚±‚ÌˆÊ’u‚É•Ï”‚ÌéŒ¾‚ğ‚µ‚Ä‚­‚¾‚³‚¢
+	private boolean isUP	 = false;
+	private boolean isDOWN	= false;
+	private boolean isLEFT	= false;
+	private boolean isRIGHT = false;
+	private boolean isA	 = false;
+	
+	public KeyInput() {
+	}
+
+	public boolean isPressing(int iKeyCode) {
+		switch (iKeyCode) {
+			case KeyEvent.VK_UP:
+				return isUP;
+			case KeyEvent.VK_DOWN:
+				return isDOWN;
+			case KeyEvent.VK_LEFT:
+				return isLEFT;
+			case KeyEvent.VK_RIGHT:
+				return isRIGHT;
+			case KeyEvent.VK_A:
+				return isA;
+		}
+		return false;
+	}
+	
+	public void keyPressed(KeyEvent e) {
+		switch (e.getKeyCode()) {
+			case KeyEvent.VK_UP:
+				isUP = true;
+				break;
+			case KeyEvent.VK_DOWN:
+				isDOWN = true;
+				break;
+			case KeyEvent.VK_LEFT:
+				isLEFT = true;
+				break;
+			case KeyEvent.VK_RIGHT:
+				isRIGHT = true;
+				break;
+			case KeyEvent.VK_A:
+				isA = true;
+				break;
+		}
+	}
+
+	public void keyReleased(KeyEvent e) {
+		switch (e.getKeyCode()) {
+			case KeyEvent.VK_UP:
+				isUP = false;
+				break;
+			case KeyEvent.VK_DOWN:
+				isDOWN = false;
+				break;
+			case KeyEvent.VK_LEFT:
+				isLEFT = false;
+				break;
+			case KeyEvent.VK_RIGHT:
+				isRIGHT = false;
+				break;
+			case KeyEvent.VK_A:
+				isA = false;
+				break;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+;;ddskk設定
+(require 'skk)
+(require 'skk-autoloads)
+
+(global-set-key (kbd "C-x C-j") 'skk-mode)
+;;チュートリアルの場所設定
+(setq skk-tut-file "~/.emacs.d/lisp/skk/SKK.tut")
+;;辞書ファイルの位置
+(setq skk-large-jisyo "~/.emacs.d/lisp/skk/SKK-JISYO.L")

@@ -1,0 +1,129 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Sample10 extends JApplet{
+	private JLabel lb1;
+	private JLabel lb2;
+	private JLabel lb3;
+	private JLabel lb4;
+
+	private JButton bt;
+
+	private String flag = "+";
+
+	private int sum = 0;
+
+	public void init(){
+		lb1 = new JLabel("‘«‚µZ‚ğ‚µ‚Ü‚·.”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		lb2 = new JLabel();
+		//		lb3 = new JLabel();
+		lb4 = new JLabel(flag);
+
+		add(lb1,BorderLayout.NORTH);
+		add(lb2);
+		add(lb4,BorderLayout.SOUTH);
+		//add(lb3);
+
+		addKeyListener(new SampleActionListener());
+		setFocusable(true);
+	}
+
+	class SampleActionListener extends KeyAdapter{
+
+
+		/*public void keyPressed(KeyEvent e){
+			int i=0;
+			int n = 0;
+			//-----------
+			int keycode = e.getKeyCode();
+			presskey = e.getKeyText(keycode);
+			
+			int mod = e.getModifiersEx();
+			
+			if ((mod & InputEvent.SHIFT_DOWN_MASK) != 0){
+				Shift == true;
+			}else{
+				Shift == false;
+			}
+			//--------------
+			int k = e.getKeyCode();
+			if (Shift == false){
+				switch(k){
+				case KeyEvent.VK_0:	n=0 ;i++;break;
+				case KeyEvent.VK_1:	n=1 ;i++;break;
+				case KeyEvent.VK_2:	n=2 ;i++;break;
+				case KeyEvent.VK_3:	n=3 ;i++;break;
+				case KeyEvent.VK_4:	n=4 ;i++;break;
+				case KeyEvent.VK_5:	n=5 ;i++;break;
+				case KeyEvent.VK_6:	n=6 ;i++;break;
+				case KeyEvent.VK_7:	n=7 ;i++;break;
+				case KeyEvent.VK_8:	n=8 ;i++;break;
+				case KeyEvent.VK_9:	n=9 ;i++;break;
+				case KeyEvent.VK_MINUS:flag = "-" ;break;
+				case KeyEvent.VK_SLASH:flag = "/" ;break;
+				
+				}
+			}else if (Shift == true){
+				switch (k){
+				case KeyEvent.VK_:flag = "+";break;
+				case KeyEvent.VK_8:flag ="*";break;
+					
+				}
+			}
+			
+			//lb3.setText("“ü—Í‚µ‚½”š‚Í" +n);
+			
+			if (flag == "+") sum += n;
+			if (flag == "-") sum -= n;
+			if (flag == "/") sum /= n;
+			if (flag == "*") sum *= n;
+			lb1.setText("•¶šƒR[ƒh"+k); 
+			lb2.setText("ŒvZ‚ÌŒ‹‰Ê:"+sum);
+			lb3.setText(flag);
+		}
+		*/
+
+		int num = 0;
+		int sum = 0;
+
+		public void keyTyped(keyEvent e){
+			char key = e.getKeyChar();
+			if (checkKey(key) != -1){
+				switch (flag){
+				case 0:sum += checkKey(key) ;
+				case 1:sum -= checkKey(key) ;
+				case 2:sum /= checkKey(key) ;
+				case 3:sum *= checkKey(key) ;
+
+				}
+			}			
+
+			lb2.setText("ŒvZ‚ÌŒ‹‰Ê:"+sum);
+			lb3.setText(flag);
+			
+			repaint();
+		}
+		private int checkKey(char k){
+			switch (k){
+			case '0':return 0; break;
+			case '1':return 1; break;
+			case '2':return 2; break;
+			case '3':return 3; break;
+			case '4':return 4; break;
+			case '5':return 5; break;
+			case '6':return 6; break;
+			case '7':return 7; break;
+			case '8':return 8; break;
+			case '9':return 9; break;
+
+			case '+': flag = 0;return -1;break;
+			case '-': flag = 1;return -1;break;
+			case '/': flag = 2;return -1;break;
+			case '*': flag = 3;return -1;break;
+			default : break;
+			}
+		}
+
+	}
+}

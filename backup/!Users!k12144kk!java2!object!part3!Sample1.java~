@@ -1,0 +1,22 @@
+import java.awt.*;
+import java.swing.*;
+import java.swing.border.*;
+
+public class Sample1 extends JApplet{
+char clickButton = "“ü—Í‘Ò‚¿"
+	private JLabel[] lb = new JLabel[3];
+	
+	public void init(){
+		lb[0] = new JLabel("‘I‘ð‚µ‚½‚Ì‚Í");
+		lb[1] = new JLabel(clickButton);
+		lb[2] = new JLabel("‚Å‚·");
+		
+		lb[0].setHorizontalAlignment(JLabel.LEFT);
+		lb[1].setHorizontalAlignment(JLabel.CENTER);
+		lb[2].setHorizontalAlignment(JLabel.RIGHT);
+		
+		lb[0].setVarticalAlignment(JLabel.TOP);
+		lb[1].setVarticalAlignment(JLabel.TOP);
+		lb[2].setVarticalAlignment(JLabel.TOP);
+	}
+}

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: BuffererdReader 
+# key: bufferedreader
+# --
+BufferdReader br${1} = new BufferedReader(new InputStreamReader(System.in));
+${0}

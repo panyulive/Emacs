@@ -1,0 +1,45 @@
+;;候補をMoccurバッファが開かれ行も探してくれる
+;;M-x moccur RET
+;;Moccurで探された行を選択するとその行へ移動
+;;RETを押すとその行へジャンプ
+;;中断希望のときはqをおす
+
+;;Moccurバッファ上でrを押すと検索結果を編集できるmoccur-editモードに変更できる
+;; moccur-editモードではC-c C-u,C-x k,C-u C-kで編集を破棄
+;; 好きな箇所を編集した後C-c C-c かC-x C-sで編集内容がバッファへ保存される
+
+;;help
+;;http://d.hatena.ne.jp/IMAKADO/20080724/1216882563
+
+;;moccurの代表的なコマンド
+;; occur-by-moccur |　カレントバッファでmoccur
+;; moccur          |  すべてのバッファへmoccur
+;; dmoccur         |  指定ディレクトリに対してmoccur
+;; moccur-grep     |  moccurを使ったgrep検索
+;; moccur-grep-find|  moccurを使ったgreo-find
+
+(require 'color-moccur)
+(require 'moccur-edit)
+(require 'migemo)
+(require 'anything-c-moccur)
+
+(setq moccur-split-word t)
+(setq anything-c-moccur-anything-idle-delay 0.2
+			anything-c-moccur-highligt-info-line-flag t
+			anything-c-moccur-enable-auto-look-flag t
+			anything-c-moccur-enable-initial-pattern t)
+
+(global-set-key (kbd "M-o")  'anything-c-moccur-occur-by-moccur)
+(global-set-key (kbd "C-M-o")'anything-c-moccur-moccur-dmoccur)
+(add-hook 'dired-mode-hook
+					'(lambda ()
+						 (local-set-key (kbd "O") 'anything-c-moccur-dired-do-moccur-by-moccur)))
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+//dog move
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+int cont = 0;
+
+int mat_A[]={
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0,15,15, 0, 0, 0, 0, 0,
+ 15,15,15, 0, 0, 0,15, 0,
+  0, 0,15,15,15, 0, 0,15,
+  0, 0,15,15,15,15,15, 0,
+  0, 0,15,15,15,15,15, 0,
+  0,15, 0, 0, 0, 0,15, 0,
+ 15, 0, 0, 0, 0, 0, 0,15
+};
+int mat_B[] = {
+  0,15,15, 0, 0, 0,15, 0,
+ 15,15,15, 0, 0, 0, 0,15,
+  0, 0,15,15,15, 0, 0,15,
+  0, 0,15,15,15,15,15, 0,
+  0, 0,15,15,15,15,15, 0,
+  0, 0, 0,15, 0, 0,15, 0,
+  0, 0, 0, 0,15,15, 0, 0,
+  0, 0, 0,15, 0, 0, 0, 0
+};
+int mat_show[]= {
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0
+};
+void setup(){
+  size(600,600);
+  gainer=new Gainer(this,Gainer.MODE7);
+  myFont=loadFont("CourierNewPSMT-48.vlw");
+  textFont(myFont,30);
+}
+void draw(){
+  background(120);
+  /* if(second()%2==0){
+    for(int i=0;i<64;i++){
+      mat_show[i]=mat_A[i];
+    }
+  }else{
+    for(int i=0;i<64;i++){
+      mat_show[i]=mat_B[i];
+    }
+	}*/
+  for (int i=0;i<64;i++){
+	  if (i == cont){
+		  mat_show[i] = 15;
+	  }else {
+		  mat_show[i] = 0;
+	  }
+  }
+
+  if (cont == 64){
+	  cont = 0;
+  }else {
+   cont++; 
+  }
+  
+  //rotate_LEFT90();
+  gainer.scanMatrix(mat_show);
+}
+void rotate_LEFT90(){
+  int temp[]={
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0
+  };
+  int fact =0;
+  for(int i=7;i!=-1;i--){
+    for( int j=i; j<64; j+=8){
+      temp[fact++] = mat_show[j];
+    }
+  }
+  for(int i=0; i<64; i++){
+    mat_show[i] = temp[i];
+  }
+}
+
+

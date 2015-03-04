@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="stylesheet" type="text/css" href="CSS/SideMenu.css">
+<title>有限会社チャコール・フードシステム</title>
+<style type="text/css">
+<!--
+body{
+	margin-left : 10%;
+margin-right : 10%;
+background-color : rgb(209, 253, 254);
+}
+-->
+</style>
+</head>
+<body>
+<h1>有限会社チャコール・フードシステム</h1>
+<h1><font size="-1">since2005～</font></h1>
+<p style="color : teal;">飲食店の明るい未来を創造する会社</p>
+
+
+<div class="nav">
+
+<ul class="nl">
+<li><a href="#">メニュー項目1</a></li>
+<li><a href="#">メニュー項目2</a></li>
+<li><a href="#">メニュー項目3</a></li>
+<li><a href="#">メニュー項目4</a></li>
+<li><a href="#">メニュー項目5</a></li>
+</ul>
+
+</div>
+<ul>
+<li><a href="http://magic-taste.com/charcoal.html">チャコール</a>
+<li><a href="http://magic-taste.com/chojyu.html">鳥寿</a>
+<li><a href="http://magic-taste.com/soya.html">蕎野</a>
+<li><a href="http://magic-taste.com/jyojyo.html">上々</a>
+<li><a href="http://magic-taste.com/magic-taste.html">魔法の味</a>
+<li><a href="http://magic-taste.com/yakitoribrothers.html">焼鳥兄弟</a>
+<li>スタッフ募集
+<li>問い合わせ
+</ul>
+</body>
+</html>

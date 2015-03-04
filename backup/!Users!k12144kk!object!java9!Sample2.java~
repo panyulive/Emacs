@@ -1,0 +1,23 @@
+class Sample6
+{
+	public static void main(String[] args)
+	{
+		Car car1 = new Car();
+
+		//	int number = 1234;
+		//double gasoline = 20.5;
+		//コメントはSample5との差
+
+		car1.setNumGas(1234/*number*/,20.5/*gasoline*/);
+
+		int number = car1.getNum();
+		double gasoline = car1.getGas();
+
+		System.out.println("サンプルから車を調べたところ");
+		System.out.println("ナンバーは"+number+"ガソリン量は"+gasoline+"でした。");
+
+		car1.setNumGas(1234,-10);
+		car1.show();
+
+	}
+}

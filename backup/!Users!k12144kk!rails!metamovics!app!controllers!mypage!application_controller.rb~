@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+class Mypage::ApplicationController < ApplicationController
+  # ログイン
+  before_filter :resume_session
+  before_filter :block_non_users
+
+  private
+  # セッションの再開
+  def resume_session
+
+  end
+
+  def block_non_users
+
+  end
+
+  def index
+
+  end
+  
+end

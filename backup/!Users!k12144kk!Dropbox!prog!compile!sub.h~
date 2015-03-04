@@ -1,0 +1,13 @@
+#ifndef SUB_H
+#define SUB_H
+
+#define MAX 128
+
+extern char buffer[MAX];
+
+
+int main(void);
+void my_print(void);
+
+
+#endif

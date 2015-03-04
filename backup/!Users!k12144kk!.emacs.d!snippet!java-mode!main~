@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: main
+# key: main
+# binding: direct-keybinding
+# expand-env: ((some-var some-value))
+# type: command
+# --
+pubulic static void main(Srtring[] args){
+$0
+}

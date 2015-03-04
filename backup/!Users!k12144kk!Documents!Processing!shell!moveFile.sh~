@@ -1,0 +1,70 @@
+#/bin/sh
+##############################################################
+## ファイル名: moveFile.sh                                   ##
+##  処理内容 : 特定の拡張子のファイルを一か所にまとめる処理       ##
+##############################################################
+ 
+# 移動対象のファイル拡張子(*は取り除かないで)
+ext='*.pde'
+ 
+# 特定拡張子ファイルを指定ディレクトリに移動する関数
+move_file(){
+  motoDir=$1
+  sakiDir=$2
+ 
+  # 移動元ディレクトリの存在確認
+  if [ ! -d $motoDir ]; then
+    echo "移動元ディレクトリ[$motoDir]が存在しません。"
+    exit
+  fi
+ 
+  # 移動先ディレクトリの存在確認
+  if [ ! -d $sakiDir ]; then
+    echo "移動先ディレクトリ[$sakiDir]が存在しません。"
+    exit
+  fi
+ 
+  # シェルスクリプト内で対象ディレクトリへ移動
+  cd $motoDir
+ 
+  # 特定拡張子のファイル検索
+  for fName in `find . -name "$ext"`
+  do
+    # ファイル名取得
+    efName=`echo $fName | sed -e 's/^..*///'`
+    sakiFile=$sakiDir/$efName
+ 
+    # 移動前確認
+    if [ -f $sakiFile ]; then
+      echo "移動する前にファイル[$sakiDir]がすでに存在します。"
+      exit
+    fi
+ 
+    echo "[$fName]を[$sakiDir]に移動します。"
+    # ファイル移動
+    cp $fName $sakiFile
+ 
+    # 移動後確認
+    if [ ! -f $sakiFile ]; then
+      echo "移動した後のファイル[$sakiFile]が存在しません。"
+      exit
+    fi
+  done
+}
+ 
+echo "###############################################"
+echo "##                   START                   ##"
+echo "###############################################"
+echo ""
+ 
+# ファイルの移動関数呼び出し
+# move_file 移動元ディレクトリ 移動先ディレクトリ
+move_file /var/www/html/project/A /home/user/log
+move_file /var/www/html/project/B /home/user/log
+ 
+echo ""
+echo "###############################################"
+echo "##                    END                    ##"
+echo "###############################################"
+ 
+exit

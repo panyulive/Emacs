@@ -1,0 +1,44 @@
+abstract class Vehicle{
+
+	protected int speed;
+
+	public void setSpeed(int s){
+		speed = s;
+		System.out.println("速度を"+s+"に設定しました");
+	}
+
+	abstract void show();
+}
+
+class Car extends Vehicle{
+	private int num;
+	private double gas;
+
+	public Car(int n,int g){
+		num = n;
+		gas = g;
+		System.out.println("ナンバー"+n+"ガソリン量"+g+"の車を作成しました");
+	}
+
+	public void show(){
+
+		System.out.println("車のナンバーは"+num+"です。");
+		System.out.println("車の ガソリン量は"+gas+"です。");
+		System.out.println("車の速度は"+speed+"です。");
+	}
+}
+
+class Plane extends Vehicle{
+	private int flight;
+
+	public Plane(int f){
+		flight = f;
+		System.out.println("便"+flight+"を作成しました。");
+	}
+
+	public void show(){
+		System.out.println("飛行機の瓶は"+flight+"です");
+		System.out.println("速度は"+speed+"です");
+	}
+
+}

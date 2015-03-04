@@ -1,0 +1,44 @@
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+int number = 0;
+int IntMatrix[][] = {
+  {1,1,1,1,1,1,0},//0
+  {0,0,1,1,0,0,0},//1
+  {1,1,0,1,1,0,1},//2
+  {0,1,1,1,1,0,1},//3
+  {0,0,1,1,0,1,1},//4
+  {0,1,1,0,1,1,1},//5
+  {1,1,1,0,1,1,1},//6
+  {0,0,1,1,1,0,0},//7
+  {1,1,1,1,1,1,1},//8
+  {0,1,1,1,1,0,1},//9
+  {1,0,1,1,1,1,1},//a
+  {1,1,1,1,0,0,1},//b
+  {1,1,0,0,0,0,1},//c
+  {1,1,1,1,0,0,1},//d
+  {0,0,0,0,0,0,1},//e
+  {0,0,0,0,0,0,1},//f
+
+
+  
+};
+void setup(){
+  size(400,100);
+  gainer = new Gainer(this ,"/dev/cu.usbmodemfd121",Gainer.MODE4);
+ 
+	myFont = loadFont("CourierNewPSMT-48.vlw");
+	textFont(myFont, 30);
+	frameRate(30);
+	//gainer.ampGainAGND(0x4);
+}
+
+void draw(){
+	background(120);
+	String strNum = "Num =" + number;
+	text(strNum,15,50);
+	for(int a=0;a<7;a++){
+		gainer.analogOutput(a,IntMatrix[number][a] * 255);
+	}
+
+}

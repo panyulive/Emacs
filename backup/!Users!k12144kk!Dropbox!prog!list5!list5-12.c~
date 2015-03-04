@@ -1,0 +1,22 @@
+#include<stdio.h>
+#define NUMBER 5
+main(void)
+{
+  int i;
+  int tensu[NUMBER];
+  int succs[NUMBER];
+  int snum=0;
+  puts("点数を入力してください。");
+  for (i=0;i<NUMBER;i++){
+    printf("%2d番:",i+1);
+    scanf("%d",&tensu[i]);
+    if (tensu[i]>=60)
+      succs[snum++] = i;
+  }
+
+  puts("合格者");
+  puts("-------");
+  for(i=0;i<snum;i++)
+    printf("%2d番(%3d点)\n",succs[i]+1,tensu[succs[i]]);
+  return 0;
+}

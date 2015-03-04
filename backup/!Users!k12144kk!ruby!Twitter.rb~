@@ -1,0 +1,8 @@
+#!/usr/bin/ruby
+require 'twitter'
+@client = Twitter::Client.new(
+      :consumer_key       => "",
+      :consumer_secret    => "",
+      :oauth_token        => "",
+      :oauth_token_secret => "")
+@client.update ARGV[0]

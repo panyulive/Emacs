@@ -1,0 +1,13 @@
+class Sample8{
+	public static void main(String[] args){
+		Car.show.sum();
+
+		Car car1 = new Car();
+		car1.setCar(1234,12.5);
+		Car.showSum();
+
+		Car car2 = new Car();
+		car2.setCar(2345,30.5);
+		Car.showSum();
+	}
+}

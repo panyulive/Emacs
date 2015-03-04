@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=SHIFT_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-script-Type" content="text/javascript">
+<link rel="stylesheet" href="index.css" type="text/css">
+<title>愛知工業大学洋弓部HP</title>
+</head>
+<body>
+
+<h1></h1>
+
+<!--mainの中の部分に本文を入れます。-->
+<div id="main">
+<div id="inbox">
+
+<h2>愛知工業大学 洋弓部 HP</h2>
+
+このホームームページは愛知工業大学洋弓部のHPです。<br>
+<a href="What_Archery.html">アーチェリーとは</a><br>
+<img src="./pic/IMG_1520.jpg" alt="集合写真" width="500" height="350"><br>
+
+<!--
+スタイルシートでレイアウトしたデザインです。CSSにて擬似インラインフレーム使用。適用されたイメージは、<a href="gallery.html">ギャラリーのページ</a>をご参照ください。<br>
+テンプレート＃44から、htmlを少し見直しています。ので、＃44以前のテンプレートとの互換性はありません。ご了承ください。
+<p>改造はやり難いかもしれません。同一フォルダに「index.css」がありますのでそれを書き換えて下さい。画像は「img」フォルダに入っています。左の画像はオマケです。</p>
+<p>編集については<a href="http://hide.kanari.info/howtotemp.php" target="_blank">HTMLテンプレートの編集方法。</a>にて解説してます。<br>
+基本的にサイト作成のご質問等のサポートはしてません。<a href="http://kanari.info/b/227.html" target="_blank">ホームページを持ちたい方へ。</a>の記事や、初心者をサポートするサイトで調べてみて下さいね。</p>
+-->
+
+<!--ここまで本文。-->
+
+</div>
+</div>
+
+<!--ここはコンテンツの部分です。-->
+<div id="navi"><div id="home">HOME</div>
+<div id="profile"><a href="What_Archery.html">What?</a></div>
+<div id="gallery"><a href="profile.html">Profile</a></div>
+<div id="bbs">Photo</div>
+<div id="diary"><a href="diary.html">Record</a></div>
+<div id="link"><a href="link.html">Link</a></div>
+
+</div>
+
+<div id="by">This template made by<br><a href="http://hide.kanari.info/" target="_blank"><strong>素材屋HP素材のおすそわけ。</strong></a></div>
+
+</body>
+</html>

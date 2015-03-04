@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=SHIFT_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-script-Type" content="text/javascript">
+<link rel="stylesheet" href="index.css" type="text/css">
+<title>サイトタイトル。</title>
+</head>
+<body>
+<h1>サイトタイトル</h1>
+
+<!--div id="main"の中の部分に本文を入れます。-->
+<div id="main">
+<div id="inbox">
+<h2>日記ページです。</h2>
+<p>
+
+
+<dl>
+<dt>05/05/11</dt>
+<dd>日記用のテンプレートですが、blogを使ったほうが早いと思います（苦笑）。<a href="http://hide.kanari.info/hikaku.php#blog" target="_blank">サイト作成</a>のページにオススメブログを紹介してますので♪</dd>
+<dt>05/05/11</dt>
+<dd>ソースの&lt;dt&gt;&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;を足していくと日記記入欄が増えます。</dd>
+</dl>
+</div></div>
+
+<!--ここはコンテンツの部分です。-->
+<div id="navi"><div id="home"><a href="index.html">HOME</a></div>
+<div id="profile"><a href="about.html">PROFILE</a></div>
+<div id="gallery"><a href="gallery.html">GALLERY</a></div>
+<div id="bbs">BBS</div>
+<div id="diary">DIARY</div>
+<div id="link"><a href="link.html">LINK</a></div></div>
+
+<div id="by">This template made by<br><a href="http://hide.kanari.info/" target="_blank"><strong>素材屋HP素材のおすそわけ。</strong></a></div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+import processing.gainer.*;
+Gainer gainer;
+PFont myFont;
+
+String[] str =  
+// setup Method
+
+void setup(){
+	size(600, 230);
+	gainer = new Gainer(this);
+	myFont = loadFont("CourierNewPSMT-48.vlw");
+	textFont(myFont, 30);
+	frameRate(30);
+	//gainer.ampGainAGND(0xF);
+}
+
+void draw(){
+        background(255);
+        
+}
+

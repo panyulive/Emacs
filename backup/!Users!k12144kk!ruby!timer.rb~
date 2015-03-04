@@ -1,0 +1,14 @@
+def timer sec
+  while sec > 0 do
+    sleep 1
+    sec -= 1
+  end
+  puts "時間です"
+end
+
+begin
+print "秒数を入力してください"
+sec = gets.to_1
+end until sec > 0
+
+timer sec

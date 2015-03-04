@@ -1,0 +1,121 @@
+import java.io.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Enshyu2 extends JFrame{
+	
+	private JPanel pn;
+	private JLabel lb;
+	private JTextArea ta;
+	private JScrollPane sp;
+	//private JButton bt1,bt2;
+
+	private JMenuBar mb;
+	private JMenu mn,mn1,mn2;
+	private JToolBar tl; 
+
+	private Icon[] ic = new Icon[5];
+
+	private JMenuItem[] mi = new JMenuItem[4];
+	private JCheckBoxMenuItem jc;
+
+	public static void main(String[] args){
+		Enshyu2 sm = new Enshyu2();
+	}
+	
+	public Enshyu2(){
+		//タイトルの設定
+		super("演習1");
+		
+		//コンポーネントの作成
+		lb = new JLabel("ファイルを選択してください");
+		ta = new JTextArea(25,25);
+		sp = new JScrollPane(ta);
+		mb = new JMenuBar();
+		
+		ic[0]=new ImageIcon(getImage(getDocumentBase(),"new_file.PNG"));
+		ic[1]=new ImageIcon(getImage(getDocumentBase(),"open.PNG"));
+		ic[2]=new ImageIcon(getImage(getDocumentBase(),"save.PNG"));
+		ic[3]=new ImageIcon(getImage(getDocumentBase(),"return_b.PNG"));
+		ic[4]=new ImageIcon(getImage(getDocumentBase(),"return_y.PNG"));
+																						
+		mn = new JMenu("ファイル");
+		mn1 = new JMenu("機能");
+
+		mi[0] = new JMenuItem("新規作成");
+		mi[1] = new JMenuItem("読み込み"); 
+		mi[2] = new JMenuItem("保存"); 
+		mi[3] = new JMenuItem("終了"); 
+		
+		jc = new JCheckBoxMenuItem("折り返し");
+		
+		for(int i=0;i<3;i++){
+			mn.add(mi[i]);
+		}
+
+		mn1.add(jc);
+		
+		mb.add(mn);
+		mb.add(mn1);
+
+		add(lb,BorderLayout.SOUTH);
+		add(sp,BorderLayout.CENTER);
+		add(mb,BorderLayout.NORTH);
+
+		//リスナの登録(割り込み処理)
+		for (int i=0;i<3;i++){
+		mi[i].addActionListener(new SamopleActionListener());
+		}
+		jc.addActionListener(new SamopleActionListener());
+		addWindowListener(new SampleWindowListener());
+
+		//フレーム設定
+		setSize(300,300);
+		setVisible(true);
+	}
+	class SamopleActionListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			Container cnt = getContentPane();
+			JFileChooser fc = new JFileChooser();
+			try {
+				if(e.getSource() == mi[1]){
+					int res = fc.showOpenDialog(cnt);
+					if(res == JFileChooser.APPROVE_OPTION){
+						File fl = fc.getSelectedFile();
+						BufferedReader br = new BufferedReader(new FileReader(fl));
+						ta.read(br,null);
+						br.close();
+					}
+					
+				}else if(e.getSource() == mi[2]){
+					int res = fc.showSaveDialog(cnt);
+					if (res == JFileChooser.APPROVE_OPTION){
+						File fl = fc.getSelectedFile();
+						BufferedWriter bw = new BufferedWriter(new FileWriter(fl));
+						ta.write(bw);
+						bw.close();
+					}
+				}else if(e.getSource() == mi[3]){
+					int res = JOptionPane.showConfirmDialog (cnt, "プログラムを終了しますか？", "確認", JOptionPane.YES_NO_OPTION);
+					
+					if(res == JOptionPane.YES_OPTION) {
+						System.exit(0);
+					}
+				}
+				else if(e.getSource() == jc){
+					ta.setLineWrap(jc.getState());
+				}
+			}catch (Exception ex){
+				ex.printStackTrace();
+			}
+		}
+	}
+
+	class SampleWindowListener extends WindowAdapter{
+		public void windowClosing(WindowEvent e){
+			System.exit(0);
+		}
+	}
+}
+

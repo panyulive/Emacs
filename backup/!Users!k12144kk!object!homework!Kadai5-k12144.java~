@@ -1,0 +1,164 @@
+import java.util.Random;
+import java.io.*;
+
+
+class Sort {
+	/*
+	�ȍ~�C�c�̕����ɃR�[�h�������D
+	�u�c�v���S�ď����C
+	�߂��l���K�v�ȃ��\�b�h�ɓK����return���������΁C
+	�Ƃ肠�����R���p�C���͒ʂ��͂��D
+	���ꂩ�珇�ɃR�[�h���L�q���C�R���p�C���E���s���J���Ԃ��Ɨǂ��D
+	*/
+
+
+	//�ȍ~�̃��\�b�h�������t�B�[���h
+	int [] num;
+
+
+	/*
+	num_max�̔z�����쐬(new)
+	range_min�`range_max�܂ł͈̗̔͂���������(Random)
+	*/
+	void makeRnd(int num_max, int range_min, int range_max){
+		�c
+	}
+
+
+	//range_min����range_max�܂ł̘A���l�̔z�����쐬(new)
+	void makeSequence(int range_min, int range_max){
+		�c
+	}
+
+
+	//num�������Ƀo�u���\�[�g
+	void bubbleGreater(){
+		�c
+	}
+
+
+	//num���~���Ƀo�u���\�[�g
+	void bubbleLess(){
+		�c
+	}
+
+
+	//num���V���b�t��(�ۑ�4���l�C�������Ή��ł��ǂ�)
+	void shuffle(){
+		�c
+	}
+
+
+	/*
+	num�̒��g���\���D�������C���̂悤�ɍŌ��̒l�̌����Ɂu,�v�͕t���Ȃ�
+	���F�u61, 100, 12, 36, 45, 40, 84, 61, 98, 10�v
+	*/
+	void show(){
+		�c
+	}
+
+
+	/*
+	num��ind�Ԗڂ̒l���߂��l�Ƃ��郁�\�b�h
+	�����ł́uind�Ԗځv�́u1�Ԗځv�����Ƃ���(1�Ԗڂ�num[0])
+	*/
+	int getInd(int ind){
+		�c
+	}
+
+
+	/*
+	num��1�Ԗڂ̒l���߂��l�Ƃ��郁�\�b�h
+	�������C����getInd�𗘗p���Ď������鎖
+	*/
+	int getFirst(){
+		�c
+	}
+
+
+	/*
+	num�̍Ō��̒l���߂��l�Ƃ��郁�\�b�h
+	�������C����getInd�𗘗p���Ď������鎖
+	*/
+	int getLast(){
+		�c
+	}
+}
+
+
+class Kadai5 {
+	public static void main(String[] args) throws IOException
+	{
+		/* BufferedReader�̃C���X�^���X�� */
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+
+		/* Sort�N���X��sort1�Ƃ��ăC���X�^���X�� */
+		Sort sort1 = new Sort();
+
+		/* �ۑ�4_1�ɑΉ����镔���J�n */
+		System.out.println("�������闐���̌������͂��Ă�������");
+		int n_max = Integer.parseInt(br.readLine());
+
+		System.out.println("�������闐���̍ŏ��l�����͂��Ă�������");
+		int r_min = Integer.parseInt(br.readLine());
+
+		System.out.println("�������闐���̍ő��l�����͂��Ă�������");
+		int r_max = Integer.parseInt(br.readLine());
+
+
+		/* sort1��makeRnd���ďo */
+		sort1.makeRnd(n_max, r_min, r_max);
+
+		System.out.println("���������l��,");
+		sort1.show();
+		System.out.println("�ł�.");
+
+		/* sort1��bubbleGreater���ďo */
+		sort1.bubbleGreater();
+		System.out.println("�����Ƀo�u���\�[�g�������ʂ�,");
+		sort1.show();
+		System.out.println("�ł�.");
+
+		/* ���ڃt�B�[���h�ɃA�N�Z�X */
+		System.out.println("�ŏ��l:" + sort1.num[0] + ", " +
+					n_max/2 + "�Ԗڂ̒l:" + sort1.num[n_max/2-1] +
+					", �ő��l:" + sort1.num[sort1.num.length-1] + "�ł�.");
+
+
+
+		/* Sort�N���X��sort2�Ƃ��ăC���X�^���X�� */
+		Sort sort2 = new Sort();
+
+		/* �ۑ�4_2�ɑΉ����镔���J�n */
+		System.out.println("�A���l�̍ŏ��l�����͂��Ă�������");
+		r_min = Integer.parseInt(br.readLine());
+
+		System.out.println("�A���l�̍ő��l�����͂��Ă�������");
+		r_max = Integer.parseInt(br.readLine());
+
+		/* sort2��makeSequence���ďo */
+		sort2.makeSequence(r_min, r_max);
+		System.out.println("�z����");
+		sort2.show();
+		System.out.println("���p�ӂ��܂���.");
+
+		/* sort2��shuffle���ďo */
+		sort2.shuffle();
+		System.out.println("�V���b�t�����ʂ�,");
+		sort2.show();
+		System.out.println("�ɂȂ��܂���.");
+
+		/* sort2��bubbleLess���ďo */
+		sort2.bubbleLess();
+		System.out.println("�~���Ƀo�u���\�[�g�������ʂ�,");
+		sort2.show();
+		System.out.println("�ł�.");
+
+		/* ���\�b�h�o�R�ŃA�N�Z�X */
+		System.out.println("�ő��l:" + sort2.getFirst() + ", " +
+					(r_max-r_min+1)/2 + "�Ԗڂ̒l:" + sort2.getInd((r_max-r_min+1)/2) +
+					", �ŏ��l:" + sort2.getLast() + "�ł�.");
+
+	}
+}

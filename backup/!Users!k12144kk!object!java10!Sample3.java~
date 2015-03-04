@@ -1,0 +1,8 @@
+import java.io.*;
+class Sample3{
+	public static void main(String args)throws IOException{
+		System.out.println("•¶š—ñ‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+
+		BufferdReader br = new BufferdReader(new InputStreamReader(System.in));
+		String str1 = br.readLine();
+		System.out.println(//PDF java5 page 96

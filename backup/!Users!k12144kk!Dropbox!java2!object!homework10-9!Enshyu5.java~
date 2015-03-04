@@ -1,0 +1,55 @@
+
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+
+public class Enshyu3 extends Applet implements MouseListener{
+	int x = 0;
+	int y = 0;
+	public void init(){
+		addMouseListener(this);
+	}
+	public void mouseClicked(MouseEvent e){
+
+	}
+	public void mouseEntered(MouseEvent e){
+
+	}
+	public void mouseExited(MouseEvent e){
+
+	}
+	public void mousePressed(MouseEvent e){
+
+		x = e.getX()-50;
+		y = e.getY()-50;
+		repaint();
+	}
+	public void mouseReleased(MouseEvent e){
+
+	}
+
+	public void paint(Graphics g){
+
+		g.drawString("Star!!",35,90);
+
+		g.setColor(Color.yellow);
+		int xPoints[] = {50+x,30+x,70+x};
+		int yPoints[] = {10+y,40+y,40+y};
+		g.fillPolygon(xPoints,yPoints,3);
+
+	
+		int xPoints2[] = {50+x,20+x,35+x};
+		int yPoints2[] = {70+y,80+y,40+y};
+		g.fillPolygon(xPoints2,yPoints2,3);
+
+		int xPoints2_2[] = {50+x,80+x,65+x};
+		int yPoints2_2[] = {70+y,80+y,40+y};
+		g.fillPolygon(xPoints2_2,yPoints2_2,3);
+	
+		int xPoints3[] = {50+x,10+x,90+x};
+		int yPoints3[] = {70+y,30+y,30+y};
+		g.fillPolygon(xPoints3,yPoints3,3);
+
+	}
+}

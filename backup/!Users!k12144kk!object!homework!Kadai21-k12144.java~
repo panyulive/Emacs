@@ -1,0 +1,109 @@
+import java.util.*;
+
+//簡易カードクラス
+class Cards
+{
+	private int ind = 0;//一番上のカードが何番目か(0の時はカード無し，1枚目から)
+	private int c[];//カード群
+	
+	private Cards(){}//デフォルトコンストラクタ使用不可
+	
+	/* 引数の枚数のカード群を生成 */
+	public Cards(int num){
+		//長さnumの配列を生成
+		c = new int[num];
+		//一番上はnum
+		ind = num;
+		
+		//1～numの値を代入
+		for(int i=0;i<c.length;i++){
+			c[i] = i+1;
+		}
+		
+		//シャッフル!!
+		Random rnd = new Random();
+		for(int i=0;i<c.length-1;i++){
+			int to = rnd.nextInt(c.length-i-1) + i + 1;
+			int temp = c[i];
+			c[i] = c[to];
+			c[to] = temp;
+		}
+	}
+	
+	/* 一番上のカードを引く */
+	public int get(){
+		if(ind==0){//カードが無い場合
+			System.out.println("カードがありません．");
+			return -1;
+		}
+		
+		int now_ind=ind;//現在の一番上が何枚目か
+
+		try{
+			Thread.sleep(2);
+		}
+		catch(InterruptedException e){
+			System.out.println(e);
+		}
+
+		int rt = c[now_ind-1];//一番上のカードの番号
+		ind=now_ind-1;//一番上が無くなるのでnow_ind-1
+		return rt;//番号を返す
+	}
+}
+
+
+//プレーヤークラス
+class Player extends Thread
+{
+	private Cards deck;//引くカード群
+	public int sum;//番号の合計
+
+	public Player(Cards d){
+		deck = d;
+		sum=0;
+	}
+	public void run(){
+		int num;
+		//カードを取れる限り数字を合計に加算
+		while(0<(num=deck.get())){
+			sum+=num;
+			
+			//調整用にちょっと乱数でsleep
+			try{
+				Random rnd = new Random();
+				Thread.sleep(rnd.nextInt(2));
+			}
+			catch(InterruptedException e){
+				System.out.println(e);
+			}
+		}
+	}
+}
+
+class Kadai21{
+	public static void main(String[] args){
+	//1～20，20枚のカードを生成
+	Cards cards = new Cards(20);
+
+	//cardsを引くプレーヤー×2
+	Player ply1 = new Player(cards);
+	Player ply2 = new Player(cards);
+	
+	
+	//2人とも引きまくる
+	ply1.start();
+	ply2.start();
+	
+	try{
+		ply1.join();
+		ply2.join();
+	}
+	catch(InterruptedException e){}
+	
+	
+	//合計数表示
+	System.out.println("プレーヤー1の合計は" + ply1.sum + "です．");
+	System.out.println("プレーヤー2の合計は" + ply2.sum + "です．");
+   }
+}

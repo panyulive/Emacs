@@ -1,0 +1,9 @@
+= rbenv ruby-1.9.3以下のファイルダウンロードについて
+rbenv ruby-1.9.3以下のファイルをダウンロードするにはapple-gcc42を使わなければならない
+
+$brew install https://raw.github.com/Homebrew/homebrew-dupes/master/apple-gcc42.rb
+
+そうすると以下のコマンドが使える為
+
+[2015-02-02 17:05] 
+

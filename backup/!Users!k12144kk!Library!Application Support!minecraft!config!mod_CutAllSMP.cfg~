@@ -1,0 +1,27 @@
+#MLProperties: name (type:default) min:max -- information
+#MLProp : Key (int:46)
+#MLProp : leavesRange (int:3)
+#MLProp : nondestructiveItemIDs (java.lang.String:)
+#MLProp : itemIds (java.lang.String:258, 271, 275, 279, 286)
+#MLProp : DestroyUnder (boolean:false)
+#MLProp : Limiter (int:0)
+#MLProp : channelName (java.lang.String:mod_CutAll)
+#MLProp : leavesIds (java.lang.String:)
+#MLProp : blockIds (java.lang.String:17, 99, 100)
+#MLProp : StartMode (boolean:true)
+#MLProp : Durability (int:0)
+#MLProp : DropGather (boolean:true)
+#
+#Tue Jun 11 22:16:22 JST 2013
+leavesRange=3
+itemIds=258, 271, 275, 279, 286
+StartMode=true
+blockIds=17, 99, 100
+Limiter=0
+DestroyUnder=false
+leavesIds=
+Durability=0
+DropGather=true
+nondestructiveItemIDs=
+channelName=mod_CutAll
+Key=46

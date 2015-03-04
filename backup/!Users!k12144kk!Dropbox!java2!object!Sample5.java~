@@ -1,0 +1,30 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Sample4 extends JApplet{
+	private JLabel lb;
+	private JButton bt;
+
+	private int n=0;
+
+	public void init(){
+		lb = new JLabel();
+		bt = new JButton();
+
+		lb.setText("クリック回数:"+n);
+		bt = new JButton("クリックしてください");
+
+		add(lb,BorderLayout.NORTH);
+		add(bt,BorderLayout.SOUTH);
+
+		bt.addActionListener(new SampleActionListener());
+
+	}
+
+	class SampleActionListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			n++;		
+		}
+	}
+}

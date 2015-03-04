@@ -1,0 +1,83 @@
+import java.io.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Sample4 extends JFrame{
+
+	private JPanel pn;
+	private JLabel lb;
+	private JTestarea ta;
+	private JScrollPane sp;
+	private JButton bt1,bt2;
+
+	public static void main(void){
+		Sample4 sm = new Samople4();
+	}
+
+	public Sample4(){
+		//タイトルの設定
+		super("Sample");
+
+		//コンポーネントの作成
+		lb = new JLabel("ファイルを選択してください");
+		ta = new JTestarea();
+		sp = new JScrollPane(ta);
+
+		pn = new JPanel();
+		bt1 = new JButton("読込");
+		bt2 = new JButton("保存");
+
+		//コンテナへ追加
+		pn.add(bt1);
+		pn.add(bt2);
+
+		add(lb,BorderLayout.NORTH);
+		add(sp,BorderLayout.CENTER);
+		add(pn,BorderLayout.SOUTH);
+
+		//リスナの登録(割り込み処理)
+		bt1.addActionListener(new SamopleActionListener());
+		bt2.addActionListener(new SamopleActionListener());
+		addWindowListener(new SampleWindowListener());
+
+		//フレーム設定
+		setSize(300,300);
+		setVisible(true);
+	}
+	class SamopleActionListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			Container cnt = getContentPane();
+			JFileChooser fc = new JFileChooser();
+			try {
+				if(e.getSource() == bt1){
+					int res = fc.showOpenDialog(cnt);
+					if(res == JFileChooser.APPROVE_OPTION){
+						File fl = fc.getSelectedFile();
+						BufferdReader br1 = new BufferedReader(new InputStreamReader(System.in));
+						ta.read(br1,null);
+						br.close();
+					}
+					
+				}else if(e.getSource() == bt2){
+					int res = fc.showSaveDialog(cnt);
+					if (res == JFileChooser.APPROVE_OPTION){
+						File fl = fc.getSelectedFile();
+						BufferedWriter bw = new BufferedWriter(new FileWriter(fl));
+						ta.write(bw);
+						bw.close();
+					}
+				}
+			}catch (Exception ex){
+				ex.printStackTrace();
+			}
+		}
+	}
+
+	class SampleWindowListener extends WindowAdapter{
+		public void windowClosing(WindowEvent e){
+			System.exit(0);
+		}
+	}
+}
+

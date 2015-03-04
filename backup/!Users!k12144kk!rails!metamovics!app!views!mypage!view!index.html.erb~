@@ -1,0 +1,85 @@
+<%= content_for :head do %>
+<%= javascript_include_tag "player.js" %>
+<% end %>
+<div id="nav">
+<%= render :partial => "portal/common/category_vertical_list",
+           :locals => { :categories => @categories, :current_category => @current_category } -%>
+<!-- /nav --></div>
+
+<div id="contentWrapper">
+<div id="contentTop"></div>
+
+<% 
+   div_class_name = %w(process point)
+   tag = @content.tags[0]
+   if tag.level == 4
+     div_content_class = div_class_name[@content.tags[0].position.to_i] rescue ''
+   else 
+     div_content_class = ''
+   end
+%>
+<div id="content" class="<%= div_content_class %>">
+<h2><%= @content.title %></h2>
+
+<div class="view">
+<%
+   # TODO: USER_AGENTによるプレーヤーの判断
+   ua = get_useragent
+   is_ipad = (ua[:browser] == :ipad ||
+              ua[:browser] == :iphone ||
+              ua[:browser] == :ipod)
+   category_name = @content.tags[0].name
+   if (@content.videos[0].blank? || @content.videos[0].video_files.blank?) === false
+%>
+<% if is_ipad %>
+<%= render "player_for_ipad" -%>
+<% elsif ua[:browser] == :android %>
+<%= render "player_for_android" -%>
+<% else %>
+<%= render "player_for_pc" -%>
+<% end %>
+<% end %>
+
+<%
+if AppConfig[:portal][:display_content_comment_in_view] &&
+   @content.comment.present?
+%>
+<div class="comment">
+<pre>
+<%= @content.comment %>
+</pre>
+</div>
+<% end %>
+
+<div class="buttonsWrapper">
+<p class="btnBack"><%= link_to_index raw("&#171; ページ一覧へ戻る"), {}, { :title => raw("&#171; ページ一覧へ戻る"), :class => "button" } %></p>
+<ul class="btnSeries">
+<% if prev_content = @content.prev(@current_user, request.remote_ip) -%>
+<li class="btnPrev">
+<%= link_to_view prev_content, raw("&#171; 前の#{h(category_name)}へ"), {}, { :title => raw("&#171; 前の#{h(category_name)}へ"), :class => "button" } -%>
+</li>
+<% else -%>
+<li class="btnPrev disabled">
+<%= raw("&#171; 前の#{h(category_name)}へ") -%>
+</li>
+<% end -%>
+<% if next_content = @content.next(@current_user, request.remote_ip) -%>
+<li class="btnNext">
+<%= link_to_view next_content, raw("次の#{h(category_name)}へ &#187;"), {}, { :title => raw("次の#{h(category_name)}へ &#187;"), :class => "button" } -%>
+</li>
+<% else -%>
+<li class="btnNext disabled">
+<%= raw("次の#{h(category_name)}へ &#187;") -%>
+</li>
+<% end -%>
+</ul>
+<!-- /buttonsWrapper --></div>
+<!-- /view --></div>
+<% if @question_flag then %>
+<div id="question">
+<%= render "portal/common/question" -%>
+</div>
+<% end %>
+<!-- /content --></div>
+<div id="contentBottom"></div>
+<!-- /contentWrapper --></div>

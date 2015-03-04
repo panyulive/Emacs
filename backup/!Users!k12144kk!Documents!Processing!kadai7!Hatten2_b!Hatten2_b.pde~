@@ -1,0 +1,132 @@
+//dog move
+import processing.gainer.*;
+Gainer gainer1,gainer2;
+PFont myFont;
+int cont = 0;
+
+
+int input0,input1,input2;
+
+int mat_A[]={
+  0, 0, 0,15,15, 0, 0, 0,
+  0, 0,15,15,15,15, 0, 0,
+  0,15, 0,15,15, 0,15, 0,
+ 15, 0, 0,15,15, 0, 0,15,
+  0, 0, 0,15,15, 0, 0,15,
+  0, 0, 0,15,15, 0, 0, 0,
+  0, 0, 0,15,15, 0, 0, 0,
+  0, 0, 0,15,15, 0, 0, 0
+};
+int mat_B[] = {
+  0, 0, 0,15, 0, 0, 0, 0,
+  0, 0,15, 0, 0, 0, 0, 0,
+  0,15, 0, 0, 0, 0, 0, 0,
+ 15,15,15,15,15,15,15,15,
+ 15,15,15,15,15,15,15,15,
+  0,15, 0, 0, 0, 0, 0, 0,
+  0, 0,15, 0, 0, 0, 0, 0,
+  0, 0, 0,15, 0, 0, 0, 0
+};
+
+int mat_C[] = {
+	0, 0, 0,15,15, 0, 0, 0,
+	0, 0, 0,15,15, 0, 0, 0,
+	0, 0, 0,15,15, 0, 0, 0,
+	0, 0, 0,15,15, 0, 0, 0,
+   15, 0, 0,15,15, 0, 0,15,
+	0,15, 0,15,15, 0,15, 0,
+	0, 0,15,15,15,15, 0, 0,
+	0, 0, 0,15,15, 0, 0, 0
+};
+int mat_D[] = {
+	0, 0, 0, 0,15, 0, 0, 0,
+	0, 0, 0, 0, 0,15, 0, 0,
+	0, 0, 0, 0, 0, 0,15, 0,
+   15,15,15,15,15,15,15,15,
+   15,15,15,15,15,15,15,15,
+	0, 0, 0, 0, 0, 0,15, 0,
+	0, 0, 0, 0, 0,15, 0, 0,
+	0, 0, 0, 0,15, 0, 0, 0
+};
+
+int mat_show[]= {
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0
+};
+void setup(){
+  size(600,600);
+
+
+  gainer1=new Gainer(this,"/dev/cu.usbmodemfa131",Gainer.MODE7);
+  gainer2=new Gainer(this,"/dev/cu.usbmodemfd121",Gainer.MODE1);
+
+
+  myFont=loadFont("CourierNewPSMT-48.vlw");
+  textFont(myFont,30);
+}
+void draw(){
+	background(120);
+
+
+	gainer2.peekAnalogInput();
+	input0 = gainer2.analogInput[0];
+	input1 = gainer2.analogInput[1];
+
+	text("input 0 ="+input0,40,80);
+	text("input 1 ="+input1,40,120);
+
+      if (input0<141) {
+	  for(int i=0;i<64;i++){  
+			mat_show[i]=mat_A[i];  //up
+		}
+  }
+  else if (input0>161) {
+	 for(int i=0;i<64;i++){
+			mat_show[i]=mat_C[i]; //left
+		}
+  }else if (input1<118) {
+	for (int i=0;i<64;i++){
+			mat_show[i] = mat_B[i]; //under
+		}
+  }
+  else if (input1>158) {
+	 for (int i=0;i<64;i++){
+			mat_show[i] = mat_D[i]; // right
+		}
+  }else {
+   for (int i=0;i<64;i++){
+    mat_show[i] = 0;
+   } 
+  }
+  
+	rotate_LEFT90();
+	gainer1.scanMatrix(mat_show);
+}
+void rotate_LEFT90(){
+	int temp[]={
+	0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0
+  };
+  int fact =0;
+  for(int i=7;i!=-1;i--){
+    for( int j=i; j<64; j+=8){
+      temp[fact++] = mat_show[j];
+    }
+  }
+  for(int i=0; i<64; i++){
+    mat_show[i] = temp[i];
+  }
+}
+

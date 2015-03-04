@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>3Dプリント篠笛</title>
+
+<script type="text/javascript" src="3DPrint.js"> 
+
+</script>
+
+</head>
+<body>
+
+<form method="POST" action="example.cgi" name="form1" onSubmit="return check()">
+
+<p>
+<input type="radio" name="question1" value="yes">はい
+<input type="radio" name="question1" value="no">いいえ
+<input type="radio" name="question1" value="other">その他
+</p>
+
+<p><input type="submit" value="送信"></p>
+
+</form>
+
+</body>
+</html>

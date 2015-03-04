@@ -1,0 +1,24 @@
+class Car{
+	private int num;
+	private double gas;
+
+	public Car(){
+		num = 0;
+		gas = 0;
+		System.out.println("車を作成しました");
+	}
+	public void setCar(int n,int g)throws CarExeption{
+		if (g<0){
+			CarExeption e = new CarExeption();
+			throw e;
+		}else {
+			num = n;
+			gas = g;
+			System.out.println("ナンバーを"+num+"にガソリン量を"+gas+"にしました");
+		}
+	}
+	public void show(){
+		System.out.println("車のナンバーは"+num+"です");
+		System.out.println("ガソリン量は"+gas+"です");
+	}
+}

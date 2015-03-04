@@ -1,0 +1,42 @@
+/*
+適切なパッケージ記述及びimport記述
+*/
+
+
+class Kadai15 {
+	public static void main(String[] args)
+	{
+		/*
+		例外処理等チェック部分
+		ここの動作を確認してから次へ進むべし
+		*/
+		trump.card.TrumpCard exCard;
+		System.out.println("---正常な動作の確認---");
+		for(int i=1;i<=13;i++){
+			exCard = new trump.card.TrumpCard(i%4+1, i, 1);
+			exCard.showS();
+			exCard.showN();
+			exCard.show();
+			System.out.println("作ったカードは[" + exCard + "]です.");
+		}
+		System.out.println("---例外動作の確認---");
+		exCard = new trump.card.TrumpCard(0, 1, 1);
+		exCard = new trump.card.TrumpCard(5, 1, 1);
+		exCard = new trump.card.TrumpCard(1, 0, 1);
+		exCard = new trump.card.TrumpCard(1, 14, 1);
+		
+		
+		
+		/*
+		～ルール～
+		ランダムに2枚のトランプを取る．
+		大富豪風に，2が一番強く，3が一番弱い順位で大小を判定して勝負．
+		スートは特に勝負に影響しない．
+		ただし，取ったトランプは毎回戻すものとして良い(相手と同じトランプが出てきてもOK)．
+		
+		これを10回勝負する．
+		(ランダムなので，入力を求める処理は要りません)
+		*/
+
+	}
+}

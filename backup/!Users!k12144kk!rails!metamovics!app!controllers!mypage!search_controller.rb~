@@ -1,0 +1,10 @@
+class Mypage::SearchController < Mypage::ApplicationController
+  def index
+
+  end
+
+private
+  def filter_by_query(query)
+
+  end
+end

@@ -1,0 +1,55 @@
+import java.util.*;
+import java.awt.image.*;
+
+class MySobel extends ToSobelMix implements Runnable{
+	BufferedImage bi;
+	public MySobel(String s){
+		System.out.println(s +"の画像を読み取りました。");
+		bi = readImage(s);
+	}
+	public void run(){
+		sobelC(bi);
+	}
+
+}
+class Kadai17{
+	public static void main(String[] args){
+		long start = System.currentTimeMillis();
+		ToSobelMix tsm1 = new ToSobelMix();
+		ToSobelMix tsm2 = new ToSobelMix();
+
+		BufferedImage bi1,bi2;
+		bi1 = tsm1.sobelC(tsm1.readImage("input1.jpg"));
+		bi2 = tsm2.sobelC(tsm2.readImage("input2.jpg"));
+
+		long end = System.currentTimeMillis();
+
+		long time_single = end - start;
+
+		tsm1.writeImage(tsm1.imageAvg(bi1,bi2),"input1_sobel_single.jpg");
+		tsm2.writeImage(tsm2.imagePlus(bi1,bi2),"input2_sobel_single.jpg");
+
+		start = System.currentTimeMillis();
+		MySobel tsm1m = new MySobel("input1.jpg");
+		ToSobelMix tsm2m = new ToSobelMix();
+
+		Thread th = new Thread(tsm1m);
+		th.start();
+
+		BufferedImage bi3 = tsm2m.sobelC(tsm2m.readImage("input2.jpg"));
+		try{
+			th.join();
+		}catch(InterruptedException e){}
+
+		end = System.currentTimeMillis();
+		long time_muluti = end - start;
+
+		tsm2m.writeImage(tsm2m.imageAvg(tsm1m.bi,bi3),"input_sobel_multi.jpg");
+		tsm2m.writeImage(tsm2m.imageAvg(tsm1m.bi,bi3),"input_sobel_multi.jpg");
+
+		System.out.println("シングルスレッドでの時間は"+time_single / 1000.0 +"秒でした");
+		System.out.println("マルチスレッドでの時間は"+time_muluti / 1000.0 +"秒でした");
+		System.out.println(((float)time_single/(float)time_muluti)+"倍高速になりました。");
+	}
+	
+}

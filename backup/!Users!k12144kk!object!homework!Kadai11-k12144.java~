@@ -1,0 +1,196 @@
+import java.io.*;
+
+//車クラス
+class Car
+{
+   protected int num;
+   protected double gas;
+   protected static int sum=0;
+   
+   public Car()
+   {
+      num = 0;
+      gas = 0.0;
+      System.out.println("車を作成しました．");
+      sum++;
+   }
+   public Car(int n, double g)
+   {
+      num = n;
+      gas = g;
+      System.out.println("ナンバー" + num + ",ガソリン量" + gas + "の車を作成しました．");
+      sum++;
+   }
+   public void setCar(int n, double g)
+   {
+      num = n;
+      gas = g;
+      System.out.println("ナンバーを" + num + "に,ガソリン量を" + gas + "にしました．");
+   }
+   public void show()
+   {
+      System.out.println("車のナンバーは" + num + "です．");
+      System.out.println("ガソリン量は" + gas + "です．");
+   }
+   public static void showSum()
+   {
+      System.out.println("車は全部で" + sum + "台あります．");
+   }
+   public String toString()
+   {
+      String str = "ナンバー:" + num + "ガソリン量:" + gas;
+      return str;
+   }
+}
+
+//レーシングカークラス
+class RacingCar extends Car
+{
+	int Course;
+	static int RacingCarSum = 0;
+
+	public RacingCar(int n,double g,int c)
+	{
+		super(n,g);
+		setCourse(c);
+		this.show();
+			
+		RacingCarSum++;
+	}
+	public void setCourse(int co){
+		Course = co;
+		System.out.println("コース番号"+Course+"を作成しました.");
+	}
+	public void show(){
+		super.show();
+		System.out.println("コース番号は"+Course+"です");
+	}
+
+	public static void showSum(){
+		System.out.println("車は"+sum+"台ありそのうちレーシングカーは"+RacingCarSum+"台です。");
+	}
+}
+
+//バスクラス
+class BusCar extends Car
+{
+
+	int Root;
+	static int BusCarSum = 0;
+
+	public BusCar(int n,double g,int r)
+	{
+		super(n,g);
+		setroot(r);
+		this.show();
+			
+		BusCarSum++;
+	}
+	public void setroot(int ro){
+		Root = ro;
+		System.out.println("行き先が"+Root+"の車を作成しました.");
+	}
+	public void show(){
+		super.show();
+		System.out.println("行き先は"+Root+"です");
+	}
+
+	public static void showSum(){
+		System.out.println("車は"+sum+"台ありそのうちバスは"+BusCarSum+"台です。");
+	}
+}
+
+//トラッククラス
+class TruckCar extends Car
+{
+
+	int Height;
+	static int TruckCarSum = 0;
+
+	public TruckCar(int n,double g,int t)
+	{
+		super(n,g);
+		setheight(t);
+		this.show();
+			
+		TruckCarSum++;
+	}
+	public void setheight(int to){
+		Height = to;
+		System.out.println("最大積載量"+Height+"tの車を作成しました.");
+	}
+public void show(){
+		super.show();
+		System.out.println("最大積載量は"+Height+"です");
+	}
+
+	public static void showSum(){
+		System.out.println("車は"+sum+"台ありそのうちトラックは"+TruckCarSum+"台です。");
+	}
+}
+
+class Kadai11
+{
+   public static void main(String[] args) throws IOException
+   {
+      /* Carクラスが生成された数を表示 */
+      Car.showSum();
+
+      /* BufferedReaderのインスタンス化 */
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+      /* 台数指定 */
+      System.out.println("入力台数を入力してください");
+      int n_max = Integer.parseInt(br.readLine());
+      
+      /* Carの配列を生成 */
+      Car[] cars = new Car[n_max];
+
+      for(int i=0;i<n_max;i++){
+         /* 入力車種の指定 */
+         int type;
+         do{
+            System.out.println("入力車種を入力してください(1:Racing, 2:Bus, 3:Truck)");
+            type = Integer.parseInt(br.readLine());
+         }while(type<1 || 3<type);
+
+         /* 車種別に入力・追加(switch文？) */
+
+		System.out.println("ナンバーを入力してください。");
+		int n = Integer.parseInt(br.readLine());	
+		System.out.println("ガソリン量を入力してください。");	
+		double g = Double.parseDouble(br.readLine());
+
+         switch (type){
+		 case 1:
+			 System.out.println("コース番号を入力してください。");	
+			 int c = Integer.parseInt(br.readLine());
+			 cars[i] = new RacingCar(n,g,c);
+			 break;		 
+		 case 2: 
+			 System.out.println("ルートを入力してください。");	
+			 int r = Integer.parseInt(br.readLine());
+			 cars[i] = new BusCar(n,g,r);
+			 break;
+		 case 3: 
+			 System.out.println("最大積載量を入力してください。");	
+			 int t = Integer.parseInt(br.readLine());
+			 cars[i] = new TruckCar(n,g,t);
+			 break;
+		 }		 
+         
+         System.out.println(cars[i].toString() + "を追加しました．");
+
+         RacingCar.showSum();
+         BusCar.showSum();
+         TruckCar.showSum();
+      }
+
+      /* とてもシンプルにshow() */
+      for(int i=0;i<cars.length;i++){
+         cars[i].show();
+      }
+
+
+   }
+}

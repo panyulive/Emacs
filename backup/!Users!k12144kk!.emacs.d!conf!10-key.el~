@@ -1,0 +1,13 @@
+;;1行コピー
+(global-set-key (kbd "C-y") 'duplicate-line)
+
+(global-set-key (kbd "C-;") 'anything)
+
+;;バッファ全体をインデント
+(global-set-key (kbd "s-;") 'indent-whole-buffer) 
+
+;;C-hでバックスペース
+(global-set-key (kbd "C-h") 'backward-delete-char)
+
+;;C-z無効化
+(global-unset-key "\C-z")

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=SHIFT_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-script-Type" content="text/javascript">
+<link rel="stylesheet" href="index.css" type="text/css">
+<title>サイトタイトル。</title>
+</head>
+<body>
+<h1>サイトタイトル</h1>
+
+<!--div id="main"の中の部分に本文を入れます。-->
+<div id="main">
+<div id="inbox">
+<h2>ギャラリーページです。</h2>
+<p>今回は、アフィリエイトのページにしてみました。楽天アフィリエイトにぴったりのサイズです。</p>
+
+
+<p class="gimg"><img src="http://hide.kanari.info/photo/plate/bace/029.gif" border="0" width="128" height="128"></p>
+<p class="gtxt"><strong>■タイトル</strong> <br><br>
+左側に画像リンク、右側にテキストリンクを入れます。<br>
+コレはレイアウトの一例なので、お好きなようにデザインして下さいね。</p>
+
+<p class="gimg"><img src="http://hide.kanari.info/photo/plate/bace/029.gif" border="0" width="128" height="128"></p>
+<p class="gtxt"><strong>■タイトル</strong> <br><br>
+テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+<p class="gimg"><img src="http://hide.kanari.info/photo/plate/bace/029.gif" border="0" width="128" height="128"></p>
+<p class="gtxt"><strong>■タイトル</strong> <br><br>テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+<p class="gimg"><img src="http://hide.kanari.info/photo/plate/bace/029.gif" border="0" width="128" height="128"></p>
+<p class="gtxt"><strong>■タイトル</strong> <br><br>テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+<!--ここまで本文です。-->
+</div>
+</div>
+
+<!--ここはコンテンツの部分です。-->
+<div id="navi"><div id="home"><a href="index.html">HOME</a></div>
+<div id="profile"><a href="about.html">PROFILE</a></div>
+<div id="gallery">GALLERY</div>
+<div id="bbs">BBS</div>
+<div id="diary"><a href="diary.html">DIARY</a></div>
+<div id="link"><a href="link.html">LINK</a></div>
+</div>
+
+<div id="by">This template made by<br><a href="http://hide.kanari.info/" target="_blank"><strong>素材屋HP素材のおすそわけ。</strong></a></div>
+
+</body>
+</html>

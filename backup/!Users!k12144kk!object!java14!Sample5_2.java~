@@ -1,0 +1,13 @@
+class Sample5_1{
+	public static void main(String[] args){
+		Car car1 = new Car();
+
+		try{
+			car1.setCar(1234,-10.0);
+		}
+		catch(CarExeption e){
+			System.out.println(e+"‚ª‘—o‚³‚ê‚Ü‚µ‚½");
+		}
+		car1.show();
+	}
+}

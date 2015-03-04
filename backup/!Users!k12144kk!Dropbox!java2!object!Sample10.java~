@@ -1,0 +1,55 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Sample9 extends JApplet{
+	private JLabel lb1;
+	private JLabel lb2;
+	private JLabel lb3;
+	private JButton bt;
+
+	private int sum = 0;
+
+	public void init(){
+		lb1 = new JLabel("‘«‚µŽZ‚ð‚µ‚Ü‚·.”Žš‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+		lb2 = new JLabel();
+		lb3 = new JLabel();
+
+		add(lb1,BorderLayout.NORTH);
+		add(lb2,BorderLayout.SOUTH);
+		add(lb3);
+
+		addKeyListener(new SampleActionListener());
+		setFocusable(true);
+	}
+
+	class SampleActionListener extends KeyAdapter{
+
+		public void keyPressed(KeyEvent e){
+			int n=0;
+			int i=0;
+
+			int k = e.getKeyCode();
+			do{
+				switch(k){
+				case KeyEvent.VK_0:	n=0 ;i++;break;
+				case KeyEvent.VK_1:	n=1 ;i++;break;
+				case KeyEvent.VK_2:	n=2 ;i++;break;
+				case KeyEvent.VK_3:	n=3 ;i++;break;
+				case KeyEvent.VK_4:	n=4 ;i++;break;
+				case KeyEvent.VK_5:	n=5 ;i++;break;
+				case KeyEvent.VK_6:	n=6 ;i++;break;
+				case KeyEvent.VK_7:	n=7 ;i++;break;
+				case KeyEvent.VK_8:	n=8 ;i++;break;
+				case KeyEvent.VK_9:	n=9 ;i++;break;
+					
+				default : lb2.setText("”Žš‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");break;
+				}
+				lb3.setText("“ü—Í‚µ‚½”Žš‚Í"+n);
+				sum += n;
+			}while(i >= 2);
+			lb2.setText("‘«‚µŽZ‚ÌŒ‹‰Ê:"+sum);
+		}
+
+	}
+}

@@ -1,0 +1,34 @@
+<% user_t = t("activerecord.attributes.user") %>
+<% if flash[:warning] %>
+<ul id="warning" class="error">
+  <li>
+	<%= flash[:warning] -%>
+  </li>
+</ul>
+<% end %>
+
+<% if false %>
+<% end %>
+
+ <% if user_signed_in? %> 
+      <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
+      <!-- *_path はUserモデルを作成したときに、
+        deviseにより自動で作成されてますので、rake routesで確認できます -->
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to 'プロフィール変更', edit_user_registration_path %> |
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <% else %>
+      <%= link_to "サインイン", new_user_registration_path %> |
+      <%= link_to "ログイン", new_user_session_path %>
+    <% end %>
+
+
+<%= form_tag :controller => "portal/login", :action => "login", :method => "post" do %>
+<%= hidden_field_tag "request_url", flash[:request_url] %>
+<p><label for="login_name"><%= user_t[:name] %></label>
+<%= text_field_tag "login_name", flash[:login_name] -%></p>
+<p><label for="password"><%= user_t[:password] %></label>
+<%= password_field_tag "password" -%></p>
+<p><%= check_box_tag "rememberme", true, flash[:rememberme].present?, {:id => "rememberMe", :class => "checkbox"} %><label class="rememberMe" for="rememberMe"><%= user_t[:name] %>を記憶する</label></p>
+<p class="btnSubmit"><%= submit_tag "ログイン", class: "button" -%></p>
+<% end %>

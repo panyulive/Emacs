@@ -1,0 +1,23 @@
+package trump;
+
+interface iSuit{
+	int SPADE = 1;
+	int HEART = 2;
+	int CLUB = 3;
+	int DIA = 4;
+	void showS();
+}
+
+interface iMaterial{
+	void showM();
+}
+
+public abstract class Trump implements trump.iSuit,trump.iMaterial{
+
+	protected int suit,num;
+	protected int mat;
+
+	abstract void show();
+	abstract void showN();
+
+}
