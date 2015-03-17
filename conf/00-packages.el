@@ -5,11 +5,11 @@
 
 ; Initialize
 (package-initialize)
-
+(fset 'package-desc-vers 'package--ac-desc-version)
 ; melpa.el
-(require 'melpa)
+;(require 'melpa)
 
-(require 'auto-install)
-(setq auto-install-directry "~/.emacs.d/auto-install/")
-(auto-install-update-emacswiki-package-name t)
-(auto-install-compatibility-setup)
+;(require 'auto-install)
+;(setq auto-install-directry "~/.emacs.d/auto-install/")
+;(auto-install-update-emacswiki-package-name t)
+;(auto-install-compatibility-setup)

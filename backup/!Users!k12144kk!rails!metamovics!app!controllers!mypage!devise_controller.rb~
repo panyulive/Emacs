@@ -1,2 +1,6 @@
-class Mypage::DeviseController < ApplicationController
+class Mypage::DeviseController < Mypage::Application_controller
+
+  def index
+  end
+  
 end

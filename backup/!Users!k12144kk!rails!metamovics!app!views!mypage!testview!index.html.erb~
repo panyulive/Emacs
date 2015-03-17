@@ -1,0 +1,7 @@
+<h1>Mypage::Testview#index</h1>
+<p>Find me in app/views/mypage/testview/index.html.erb</p>
+<body>
+<%= link_to "Sign out", destroy_mypage_user_session_path, :method => :delete %>
+
+</body>
+

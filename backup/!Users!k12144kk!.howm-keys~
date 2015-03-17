@@ -8,3 +8,4 @@ DEN
 NOR
 Norway
 booking
+$_bin/rake_db:migrate
