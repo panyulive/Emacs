@@ -1,7 +1,5 @@
-define 
-
 function check(){
-
+/*
 	var flag = 0;
 	// 設定開始（チェックする項目を設定してください）
 	if(document.form1.question1.length) { // 選択肢が複数ある場合
@@ -18,20 +16,20 @@ function check(){
 			flag = 1;
 		}
 	}
-
+*/
 	// 設定終了
 	ret;
-	check1 = document.form1.question1.checked;
-	check2 = document.form1.question2.checked;
-	check3 = document.form1.question3.checked;
-	if (check1 == true){
-		ret = "hogehoge";
-	}if else {
-		ret = "piyopiyo";
-	}if else {
+	name_6= document.form1.question1.checked;
+	name_8= document.form1.question2.checked;
+	name_0= document.form1.question3.checked;
+	if (name_6 == true){
+		ret = "134070";
+	}if else (name_8 == true){
+		ret = "63966";
+	}else {
 		ret = "pakapaka;"
 	}
-	URL = "http://make.dmm.com/item/";
+	URL = "http://make.dmm.com/item/" + ret +"/";
 
-	window.location.herf = URL + ret +"/"; 
+	document.location.herf = URL;
 }
