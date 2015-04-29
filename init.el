@@ -21,6 +21,9 @@
 	helm
 	init-loader
 	magit
+	popwin
+	popup
+	shell-pop
 	open-junk-file
 	yasnippet))
 

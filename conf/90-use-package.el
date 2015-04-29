@@ -19,6 +19,17 @@
 
   )
 
+
+(use-package auto-complete
+  :commands (find-file)
+  :config
+  (require 'auto-complete-config)
+  (require 'yasnippet)
+
+  (global-auto-complete-mode)
+
+  )
+
 (use-package magit
   :commands (magit-status)
   :config
