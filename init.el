@@ -16,6 +16,7 @@
 
 (defvar my-package-list
   '(auto-complete
+	exec-path-from-shell
 	direx
 	helm
 	init-loader

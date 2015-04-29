@@ -72,9 +72,6 @@
 (set-face-background 'show-paren-match-face nil)
 (set-face-underline-p 'show-paren-match-face "yellow")
 
-(set-frame-height (next-frame) 35)
-(set-frame-width (next-frame) 120)
-
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode t)
 
