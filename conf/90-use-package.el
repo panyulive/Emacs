@@ -1,5 +1,12 @@
-(require 'use-package)
-(require 'bind-key)
+(eval-when-compile
+  (require 'use-package))
+  (require 'bind-key)
+
+(use-package web-mode
+  :mode ((web-mode))
+  :init
+  :config
+  )
 
 (use-package shell-pop
   :commands (shell-pop)
@@ -9,26 +16,23 @@
 	:config
 	(exec-path-from-shell-initialize)
 	)
-
+  
   (add-hook 'eshell-mode-hook
-		  '(lambda()
-			 (progn
-			   (define-key eshell-mode-map (kbd "C-f") 'find-file-other-window)
-			   ;;(define-key eshell-mode-map (kbd "<left>"))
-			   )))
-
+			'(lambda()
+			   (progn
+				 (define-key eshell-mode-map (kbd "C-f") 'find-file-other-window)
+				 ;;(define-key eshell-mode-map (kbd "<left>"))
+				 )))
+  
   )
 
 
 (use-package auto-complete
-  :commands (find-file)
   :config
   (require 'auto-complete-config)
   (require 'yasnippet)
-
-  (global-auto-complete-mode)
-
   )
+
 
 (use-package magit
   :commands (magit-status)
@@ -38,15 +42,16 @@
 
 (use-package howm
   :commands (howm-menu)
-  :config
-  ;;howm Config
+  :bind (("C-c ,," . howm-menu))
 
+  :init
+  ;;howm Config
   (setq howm-menu-lang 'ja)
-  
   ;; howm directoryの場所
   (setq howm-directory "~/Dropbox/emacs/howm/")
+
+  :config
   
-  (global-set-key "\C-c,," 'howm-menu)
   (mapc
    (lambda (f)
 	 (autoload f

@@ -1,10 +1,10 @@
 ##Emacs gitgnore
-
+/tramp
 .DS_Store
 /backup/
 /elpa/
 /clone-package/
 /eshell/
 *~
-/elscreen
+/elscreen*
 *.elc

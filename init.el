@@ -25,6 +25,8 @@
 	popup
 	shell-pop
 	open-junk-file
+	web-mode
+	ace-jump-mode
 	yasnippet))
 
 (let ((not-installed
@@ -35,7 +37,6 @@
     (package-refresh-contents)
     (dolist (package not-installed)
       (package-install package))))
-
 
 
 (setq make-backup-files t)
@@ -64,4 +65,4 @@
 (custom-set-faces
   '(howm-mode-title-face ((t (:foreground "Yellow")))))
 
-(require 'use-package)
+(server-start)

@@ -36,12 +36,15 @@
 (setq custom-theme-directory "~/.emacs.d/themes/")
 (load-theme 'sunburst t)
 
+;;行列表示
 (column-number-mode)
 (line-number-mode)
 
+;;行番号表示
 (global-linum-mode t)
 (setq linum-format " %d")
 
+;;文字数カウント
 (defun count-lines-and-chars ()
   (if mark-active
       (format "[%d,%d] "
@@ -51,8 +54,10 @@
 (add-to-list 'default-mode-line-format
              '(:eval (count-lines-and-chars)))
 
+;;タイトルをパスに変更
 (setq frame-title-format "%f")
 
+;;下線表示
 (defface hlline-facea
   '((((class color)
       (background dark))

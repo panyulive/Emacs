@@ -9,15 +9,15 @@
 (require 'elscreen)
 (elscreen-start)
 
-(require 'elscreen-persist)
-
-(elscreen-persist-mode t)
+;;タブの状態永続化
+;;(require 'elscreen-persist)
+;;(elscreen-persist-mode t)
 
 (setq elscreen-prefix-key (kbd "C-z"))
 ;;タブの設定に[X]を表示しない
 (setq elscreen-tab-display-kill-screen nil)
 ;;header-lineに[<->]を表示しない
-(setq elscreen-tab-display-control nil)
+(setq elscreen-tab-display-control t)
 
 (defmacro elscreen-create-automatically (ad-do-it)
   `(if (not (elscreen-one-screen-p))
@@ -36,4 +36,33 @@
   (elscreen-create-automatically ad-do-it))
 
 ;; タブ移動を簡単に
-(define-key global-map (kbd "C-o") 'elscreen-next)
+(global-set-key (kbd "C-o") 'elscreen-next)
+
+
+(defun my:elscreen-current-directory ()
+  (let* (current-dir
+         (active-file-name
+          (with-current-buffer
+              (let* ((current-screen (car (elscreen-get-conf-list 'screen-history)))
+                     (property (cadr (assoc current-screen
+                                            (elscreen-get-conf-list 'screen-property)))))
+                (marker-buffer (nth 2 property)))
+            (progn
+              (setq current-dir (expand-file-name (cadr (split-string (pwd)))))
+              (buffer-file-name)))))
+    (if active-file-name
+        (file-name-directory active-file-name)
+      current-dir)))
+(defun my:non-elscreen-current-directory ()
+  (let* (current-dir
+         (current-buffer
+          (nth 1 (assoc 'buffer-list
+                        (nth 1 (nth 1 (current-frame-configuration))))))
+         (active-file-name
+          (with-current-buffer current-buffer
+            (progn
+              (setq current-dir (expand-file-name (cadr (split-string (pwd)))))
+              (buffer-file-name)))))
+    (if active-file-name
+        (file-name-directory active-file-name)
+      current-dir)))

@@ -1,6 +1,5 @@
 ;;(require 'rcodetools)
 
-
 ;; Ruby-Mode
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
