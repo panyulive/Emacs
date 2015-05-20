@@ -27,6 +27,11 @@
   (other-window 1))
 (global-set-key (kbd "C-t") 'other-window-or-split)
 
+; Dired用にウィンドウ切り替え設定
+(add-hook 'dired-mode-hook
+      (lambda ()
+        (define-key dired-mode-map (kbd "C-t") 'other-window)))
+
 (setq windmove-wrap-around t)
 (windmove-default-keybindings)
 
