@@ -20,12 +20,9 @@
  ;; (add-to-list 'auto-mode-alist '("\\.djhtml\\'"    . web-mode))
 
   (defun web-mode-hook ()
-	(setq web-mode-html-offset  4)
-	(setq web-mode-css-offset  4)
-	(setq web-mode-script-offset  4)
-	(setq indent-tabs-mode t)
-	(setq tab-width 4))
-
+	  (setq web-mode-markup-indent-offset   2)
+	  (setq indent-tabs-mode t)
+	  )
   :config
   (add-hook 'web-mode-hook 'web-mode-hook)
   )
