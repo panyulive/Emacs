@@ -1,3 +1,4 @@
+
 ;; C-z c    |新規スクリーンを作成して移動
 ;; C-z k    |現在のスクリーンを閉じる
 ;; C-z p    |前のスクリーンへ
@@ -6,14 +7,20 @@
 ;; C-z [0-9]|番号のスクリーンへ
 ;; C-z ?    |ヘルプ
 
+(global-unset-key "\C-z")
+
 (require 'elscreen)
+(setq elscreen-prefix-key (kbd "C-z"))
 (elscreen-start)
 
 ;;タブの状態永続化
 ;;(require 'elscreen-persist)
+
 ;;(elscreen-persist-mode t)
 
-(setq elscreen-prefix-key (kbd "C-z"))
+
+
+
 ;;タブの設定に[X]を表示しない
 (setq elscreen-tab-display-kill-screen nil)
 ;;header-lineに[<->]を表示しない

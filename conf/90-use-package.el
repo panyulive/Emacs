@@ -69,7 +69,7 @@
 	  (kill-buffer nil)))
   
   ;; C-c C-cでメモの保存と同時にバッファを閉じる
-  (define-key howm-mode-map (kbd "C-c C-c") 'howm-save-buffer-and-kill)
+  ;;(define-key howm-mode-map (kbd "C-c ") 'howm-save-buffer-and-kill)
   
   )
 
