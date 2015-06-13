@@ -39,7 +39,7 @@
 
 
 (setq custom-theme-directory "~/.emacs.d/themes/")
-(load-theme 'sunburst t)
+(load-theme 'atom-dark t)
 
 ;;行列表示
 (column-number-mode)

@@ -11,3 +11,4 @@
 (setq read-file-name-completion-ignore-case t)
 
 (fset 'yes-or-no-p 'y-or-n-p)
+

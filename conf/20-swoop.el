@@ -3,7 +3,7 @@
 (global-set-key (kbd "C-M-;") 'swoop-multi)
 (global-set-key (kbd "M-;")   'swoop-pcre-regexp)
 (global-set-key (kbd "C-S-;") 'swoop-back-to-last-position)
-(global-set-key (kbd "H-6")   'swoop-migemo) ;; Option for Japanese match
+(global-set-key (kbd "M-6")   'swoop-migemo) ;; Option for Japanese match
 
 ;; 検索の移行
 ;; isearch     > press [C-;] > swoop

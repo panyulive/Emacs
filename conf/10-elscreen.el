@@ -43,7 +43,7 @@
   (elscreen-create-automatically ad-do-it))
 
 ;; タブ移動を簡単に
-(global-set-key (kbd "C-o") 'elscreen-next)
+(global-set-key (kbd "C-t") 'elscreen-next)
 
 
 (defun my:elscreen-current-directory ()
@@ -73,3 +73,4 @@
     (if active-file-name
         (file-name-directory active-file-name)
       current-dir)))
+

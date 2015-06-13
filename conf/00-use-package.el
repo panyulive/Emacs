@@ -3,14 +3,14 @@
   (require 'bind-key)
 
 (use-package web-mode
-  :mode ((web-mode))
+
   :init
   :config
   )
 
 (use-package shell-pop
   :commands (shell-pop)
-  :bind (("C-p" . shell-pop))
+  :bind (("C-:" . shell-pop))
   :config
   (use-package exec-path-from-shell
 	:config
@@ -31,6 +31,7 @@
   :config
   (require 'auto-complete-config)
   (require 'yasnippet)
+  (auto-complete)
   )
 
 
