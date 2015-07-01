@@ -1,4 +1,6 @@
 
+
+
 ;; Window 分割を画面サイズに従って計算する
 (defun split-window-vertically-n (num_wins)
   (interactive "p")
@@ -25,12 +27,12 @@
         (split-window-horizontally-n 3)
       (split-window-horizontally)))
   (other-window 1))
-(global-set-key (kbd "C-t") 'other-window-or-split)
+(global-set-key (kbd "C-o") 'other-window-or-split)
 
 ; Dired用にウィンドウ切り替え設定
 (add-hook 'dired-mode-hook
       (lambda ()
-        (define-key dired-mode-map (kbd "C-t") 'other-window)))
+        (define-key dired-mode-map (kbd "C-o") 'other-window)))
 
 (setq windmove-wrap-around t)
 (windmove-default-keybindings)
@@ -39,7 +41,7 @@
 
 
 (setq custom-theme-directory "~/.emacs.d/themes/")
-(load-theme 'atom-dark t)
+(load-theme 'atom-one-dark t)
 
 ;;行列表示
 (column-number-mode)
@@ -82,7 +84,30 @@
 (set-face-background 'show-paren-match-face nil)
 (set-face-underline-p 'show-paren-match-face "yellow")
 
-(setq-default tab-width 4)
-(setq-default indent-tabs-mode t)
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
 
 
+
+;;コピペの設定
+;(setq x-select-enable-clipboard nil)
+;(setq x-select-enable-primary t)
+;(setq mouse-drag-copy-region t)
+
+
+
+;(setq default-directory "~/") 
+;(setq command-line-default-directory "~/")
+; 
+; 
+;(defun mac-selected-keyboard-input-source-change-hook-func ()
+;  ;; 入力モードが英語の時はカーソルの色をfirebrickに、日本語の時はblackにする
+;  (set-cursor-color (if (string-match "\\.US$" (mac-input-source))
+;                        "firebrick" "white")))
+; 
+;(add-hook 'mac-selected-keyboard-input-source-change-hook
+;          'mac-selected-keyboard-input-source-change-hook-func)
+; 
+;(require 'mac-win)
+;(mac-auto-ascii-mode t)
+;(setq default-imput-method "MacOS")

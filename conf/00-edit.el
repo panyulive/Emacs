@@ -1,4 +1,4 @@
-(require 'mac-win)
+;(require 'mac-win)
 
 ;; cua-modeの設定
 (cua-mode t)  ; cua-modeをオン
@@ -11,4 +11,6 @@
 ;; .zshrc* を shell-script-mode に
 (add-to-list 'auto-mode-alist
         '("\\.zshrc" . shell-script-mode))
+
+
 

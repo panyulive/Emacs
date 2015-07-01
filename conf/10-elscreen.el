@@ -44,7 +44,9 @@
 
 ;; タブ移動を簡単に
 (global-set-key (kbd "C-t") 'elscreen-next)
-
+(add-hook 'dired-mode-hook '
+          (lambda ()
+            (global-set-key (kbd "C-t") 'elscreen-next)))
 
 (defun my:elscreen-current-directory ()
   (let* (current-dir

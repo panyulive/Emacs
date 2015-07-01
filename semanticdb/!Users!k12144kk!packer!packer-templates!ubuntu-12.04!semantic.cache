@@ -1,0 +1,16 @@
+;; Object ubuntu-12.04/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ubuntu-12.04/"
+  :tables
+  (list
+    (semanticdb-table "template.json"
+      :major-mode 'js-mode
+      :tags nil
+      :file "template.json"
+      :pointmax 4150
+      :fsize 4149
+      :lastmodtime '(21906 38844 0 0)
+      :unmatched-syntax nil))
+  :file "!Users!k12144kk!packer!packer-templates!ubuntu-12.04!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

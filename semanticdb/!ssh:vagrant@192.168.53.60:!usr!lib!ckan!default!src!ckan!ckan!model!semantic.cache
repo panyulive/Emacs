@@ -1,0 +1,516 @@
+;; Object model/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "model/"
+  :tables
+  (list
+    (semanticdb-table "package.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("datetime" include nil nil [1 16])
+            ("calendar" include nil nil [17 44])
+            ("logging" include nil nil [45 59])
+            ("logger" variable nil nil [60 96])
+            ("sqlalchemy.sql" include nil nil [98 149])
+            ("sqlalchemy" include nil nil [150 176])
+            ("sqlalchemy" include nil nil [177 220])
+            ("pylons" include nil nil [221 246])
+            ("vdm.sqlalchemy" include nil nil [247 268])
+            ("meta" include nil nil [270 281])
+            ("core" include nil nil [282 293])
+            ("license" include nil nil [294 320])
+            ("types" include nil nil [321 343])
+            ("domain_object" include nil nil [344 364])
+            ("activity" include nil nil [365 380])
+            ("extension" include nil nil [381 397])
+            ("ckan.lib.maintain" include nil nil [399 435])
+            ("ckan.lib.dictization" include nil nil [436 478])
+            ("__all__" variable nil nil [480 716])
+            ("PACKAGE_NAME_MAX_LENGTH" variable nil nil [719 748])
+            ("PACKAGE_NAME_MIN_LENGTH" variable nil nil [749 776])
+            ("PACKAGE_VERSION_MAX_LENGTH" variable nil nil [777 809])
+            ("package_table" variable nil nil [839 1839])
+            ("vdm" code nil nil [1842 1891])
+            ("package_revision_table" variable nil nil [1892 1958])
+            ("Package" type
+               (:superclasses ("vdm.sqlalchemy.RevisionedObjectMixin" "vdm.sqlalchemy.StatefulObjectMixin" "domain_object.DomainObject")
+                :members 
+                  ( ("text_search_fields" variable nil (reparse-symbol indented_block_body) [2140 2178])
+                    ("__init__" function
+                       (:suite 
+                          ( ("ckan" include nil (reparse-symbol indented_block_body) [2218 2240])
+                            ("super" code nil (reparse-symbol indented_block_body) [2249 2284]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2197 2201])
+                            ("kw" variable nil (reparse-symbol function_parameters) [2203 2207]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2184 2285])
+                    ("search_by_name" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [2326 2329])
+                            ("text_query" variable nil (reparse-symbol function_parameters) [2331 2341]))                          )
+                        (reparse-symbol indented_block_body) [2290 2461])
+                    ("get" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [2491 2494])
+                            ("reference" variable nil (reparse-symbol function_parameters) [2496 2505]))                          )
+                        (reparse-symbol indented_block_body) [2466 2755])
+                    ("resources" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2867 2871]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2839 2998])
+                    ("related_packages" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3024 3028]))                          )
+                        (reparse-symbol indented_block_body) [3003 3053])
+                    ("add_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3075 3079])
+                            ("url" variable nil (reparse-symbol function_parameters) [3081 3084])
+                            ("format" variable nil (reparse-symbol function_parameters) [3086 3092])
+                            ("description" variable nil (reparse-symbol function_parameters) [3098 3109])
+                            ("hash" variable nil (reparse-symbol function_parameters) [3115 3119])
+                            ("kw" variable nil (reparse-symbol function_parameters) [3125 3129]))                          )
+                        (reparse-symbol indented_block_body) [3058 3377])
+                    ("add_tag" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3394 3398])
+                            ("tag" variable nil (reparse-symbol function_parameters) [3400 3403]))                          )
+                        (reparse-symbol indented_block_body) [3382 3619])
+                    ("add_tags" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3638 3642])
+                            ("tags" variable nil (reparse-symbol function_parameters) [3644 3648]))                          )
+                        (reparse-symbol indented_block_body) [3625 3706])
+                    ("add_tag_by_name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3731 3735])
+                            ("tag_name" variable nil (reparse-symbol function_parameters) [3737 3745])
+                            ("vocab" variable nil (reparse-symbol function_parameters) [3747 3752])
+                            ("autoflush" variable nil (reparse-symbol function_parameters) [3759 3768]))                          
+                        :documentation "Add a tag with the given name to this package's tags.
+
+        By default the given tag_name will be searched for among the free tags
+        (tags which do not belong to any vocabulary) only. If the optional
+        argument `vocab` is given then the named vocab will be searched for the
+        tag name instead.
+
+        If no tag with the given name is found, one will be created. If the
+        optional argument vocab is given and there is no tag with the given
+        name in the given vocabulary, then a new tag will be created and added
+        to the vocabulary.
+
+        ")
+                        (reparse-symbol indented_block_body) [3711 4821])
+                    ("get_tags" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4839 4843])
+                            ("vocab" variable nil (reparse-symbol function_parameters) [4845 4850]))                          
+                        :documentation "Return a sorted list of this package's tags
+
+        Tags are sorted by their names.
+
+        ")
+                        (reparse-symbol indented_block_body) [4826 5559])
+                    ("remove_tag" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5579 5583])
+                            ("tag" variable nil (reparse-symbol function_parameters) [5585 5588]))                          )
+                        (reparse-symbol indented_block_body) [5564 5905])
+                    ("isopen" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5921 5925]))                          )
+                        (reparse-symbol indented_block_body) [5910 6024])
+                    ("get_average_rating" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6052 6056]))                          )
+                        (reparse-symbol indented_block_body) [6029 6254])
+                    ("as_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6271 6275])
+                            ("ref_package_by" variable nil (reparse-symbol function_parameters) [6277 6291])
+                            ("ref_group_by" variable nil (reparse-symbol function_parameters) [6300 6312]))                          )
+                        (reparse-symbol indented_block_body) [6259 7872])
+                    ("add_relationship" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7898 7902])
+                            ("type_" variable nil (reparse-symbol function_parameters) [7904 7909])
+                            ("related_package" variable nil (reparse-symbol function_parameters) [7911 7926])
+                            ("comment" variable nil (reparse-symbol function_parameters) [7928 7935]))                          )
+                        (reparse-symbol indented_block_body) [7877 9253])
+                    ("get_relationships" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9280 9284])
+                            ("with_package" variable nil (reparse-symbol function_parameters) [9286 9298])
+                            ("type" variable nil (reparse-symbol function_parameters) [9305 9309])
+                            ("active" variable nil (reparse-symbol function_parameters) [9316 9322])
+                            ("direction" variable nil (reparse-symbol function_parameters) [9355 9364]))                          )
+                        (reparse-symbol indented_block_body) [9258 10790])
+                    ("get_relationships_with" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10822 10826])
+                            ("other_package" variable nil (reparse-symbol function_parameters) [10828 10841])
+                            ("type" variable nil (reparse-symbol function_parameters) [10843 10847])
+                            ("active" variable nil (reparse-symbol function_parameters) [10854 10860]))                          )
+                        (reparse-symbol indented_block_body) [10795 11036])
+                    ("get_relationships_printable" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11073 11077]))                          )
+                        (reparse-symbol indented_block_body) [11041 13036])
+                    ("get_license_register" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [13158 13161]))                          )
+                        (reparse-symbol indented_block_body) [13116 13314])
+                    ("get_license_options" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [13360 13363]))                          )
+                        (reparse-symbol indented_block_body) [13319 13472])
+                    ("get_license" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13493 13497]))                          )
+                        (reparse-symbol indented_block_body) [13477 13740])
+                    ("set_license" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13761 13765])
+                            ("license" variable nil (reparse-symbol function_parameters) [13767 13774]))                          )
+                        (reparse-symbol indented_block_body) [13745 14068])
+                    ("license" variable nil (reparse-symbol indented_block_body) [14073 14117])
+                    ("all_related_revisions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14163 14167]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [14123 15571])
+                    ("latest_related_revision" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15618 15622]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [15576 15764])
+                    ("diff" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15778 15782])
+                            ("to_revision" variable nil (reparse-symbol function_parameters) [15784 15795])
+                            ("from_revision" variable nil (reparse-symbol function_parameters) [15802 15815]))                          )
+                        (reparse-symbol indented_block_body) [15769 18366])
+                    ("" code nil (reparse-symbol indented_block_body) [18405 18530])
+                    ("is_private" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18550 18554]))                          
+                        :documentation "
+        DEPRECATED in 2.1
+
+        A package is private if belongs to any private groups
+        ")
+                        (reparse-symbol indented_block_body) [18535 18698])
+                    ("is_in_group" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18719 18723])
+                            ("group" variable nil (reparse-symbol function_parameters) [18725 18730]))                          )
+                        (reparse-symbol indented_block_body) [18703 18775])
+                    ("get_groups" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18795 18799])
+                            ("group_type" variable nil (reparse-symbol function_parameters) [18801 18811])
+                            ("capacity" variable nil (reparse-symbol function_parameters) [18818 18826]))                          )
+                        (reparse-symbol indented_block_body) [18780 19627])
+                    ("metadata_created" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19667 19671]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [19632 19974])
+                    ("get_fields" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("core_only" variable nil (reparse-symbol function_parameters) [20012 20021])
+                            ("fields_to_ignore" variable nil (reparse-symbol function_parameters) [20029 20045]))                          
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [19979 20825])
+                    ("activity_stream_item" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20855 20859])
+                            ("activity_type" variable nil (reparse-symbol function_parameters) [20861 20874])
+                            ("revision" variable nil (reparse-symbol function_parameters) [20876 20884])
+                            ("user_id" variable nil (reparse-symbol function_parameters) [20886 20893]))                          )
+                        (reparse-symbol indented_block_body) [20830 22305])
+                    ("activity_stream_detail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22337 22341])
+                            ("activity_id" variable nil (reparse-symbol function_parameters) [22343 22354])
+                            ("activity_type" variable nil (reparse-symbol function_parameters) [22356 22369]))                          )
+                        (reparse-symbol indented_block_body) [22310 22953])
+                    ("set_rating" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22973 22977])
+                            ("user_or_ip" variable nil (reparse-symbol function_parameters) [22979 22989])
+                            ("rating" variable nil (reparse-symbol function_parameters) [22991 22997]))                          )
+                        (reparse-symbol indented_block_body) [22958 24538]))                  
+                :type "class")
+                nil [2002 24538])
+            ("RatingValueException" type
+               (:superclasses ("Exception")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [24583 24587]))                  
+                :type "class")
+                nil [24540 24588])
+            ("tag" include nil nil [24630 24640])
+            ("meta" code nil nil [24642 25462])
+            ("vdm" code nil nil [25464 25540])
+            ("PackageRevision" variable nil nil [25541 25649])
+            ("related_packages" function
+               (:parent "dummy"
+                :arguments 
+                  ( ("self" variable nil (reparse-symbol function_parameters) [25672 25676]))                  )
+                nil [25651 25708])
+            ("PackageRevision" variable nil nil [25709 25760])
+            ("vdm" code nil nil [25763 25846])
+            ("PackageTagRevision" variable nil nil [25847 25973])
+            ("PackageTagRevision" variable nil nil [25975 26051]))          
+      :file "package.py"
+      :pointmax 26052
+      :fsize 26051
+      :lastmodtime '(21750 64771)
+      :unmatched-syntax '((NAME 7591 . 7596) (IF 7667 . 7669) (ELSE 7692 . 7696) (NAME 7469 . 7474) (IF 7547 . 7549) (ELSE 7573 . 7577) (NAME 6485 . 6490) (IF 6523 . 6525) (ELSE 6539 . 6543) (NAME 7591 . 7596) (IF 7667 . 7669) (ELSE 7692 . 7696) (NAME 7469 . 7474) (IF 7547 . 7549) (ELSE 7573 . 7577) (NAME 6485 . 6490) (IF 6523 . 6525) (ELSE 6539 . 6543)))
+    (semanticdb-table "user.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("datetime" include nil nil [1 16])
+            ("re" include nil nil [17 26])
+            ("os" include nil nil [27 36])
+            ("hashlib" include nil nil [37 66])
+            ("passlib.utils" include nil nil [68 88])
+            ("passlib.hash" include nil nil [89 127])
+            ("sqlalchemy.sql.expression" include nil nil [128 169])
+            ("sqlalchemy.orm" include nil nil [170 204])
+            ("sqlalchemy" include nil nil [205 248])
+            ("vdm.sqlalchemy" include nil nil [249 270])
+            ("meta" include nil nil [272 283])
+            ("core" include nil nil [284 295])
+            ("types" include nil nil [296 318])
+            ("domain_object" include nil nil [319 339])
+            ("user_table" variable nil nil [342 1141])
+            ("vdm" code nil nil [1143 1189])
+            ("User" type
+               (:superclasses ("vdm.sqlalchemy.StatefulObjectMixin" "domain_object.DomainObject")
+                :members 
+                  ( ("VALID_NAME" variable nil (reparse-symbol indented_block_body) [1284 1335])
+                    ("DOUBLE_SLASH" variable nil (reparse-symbol indented_block_body) [1340 1378])
+                    ("by_openid" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1415 1418])
+                            ("openid" variable nil (reparse-symbol function_parameters) [1420 1426]))                          )
+                        (reparse-symbol indented_block_body) [1384 1536])
+                    ("by_email" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1571 1574])
+                            ("email" variable nil (reparse-symbol function_parameters) [1576 1581]))                          )
+                        (reparse-symbol indented_block_body) [1541 1652])
+                    ("get" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1682 1685])
+                            ("user_reference" variable nil (reparse-symbol function_parameters) [1687 1701]))                          )
+                        (reparse-symbol indented_block_body) [1657 2261])
+                    ("all" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [2291 2294]))                          )
+                        (reparse-symbol indented_block_body) [2266 2474])
+                    ("display_name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2510 2514]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2479 2648])
+                    ("email_hash" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2682 2686]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2653 2819])
+                    ("get_reference_preferred_for_uri" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2860 2864]))                          )
+                        (reparse-symbol indented_block_body) [2824 3417])
+                    ("_set_password" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3440 3444])
+                            ("password" variable nil (reparse-symbol function_parameters) [3446 3454]))                          )
+                        (reparse-symbol indented_block_body) [3422 4017])
+                    ("_get_password" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4040 4044]))                          )
+                        (reparse-symbol indented_block_body) [4022 4077])
+                    ("_verify_and_upgrade_from_sha1" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4116 4120])
+                            ("password" variable nil (reparse-symbol function_parameters) [4122 4130]))                          )
+                        (reparse-symbol indented_block_body) [4082 4693])
+                    ("_verify_and_upgrade_pbkdf2" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4729 4733])
+                            ("password" variable nil (reparse-symbol function_parameters) [4735 4743]))                          )
+                        (reparse-symbol indented_block_body) [4698 4932])
+                    ("validate_password" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4959 4963])
+                            ("password" variable nil (reparse-symbol function_parameters) [4965 4973]))                          )
+                        (reparse-symbol indented_block_body) [4937 5952])
+                    ("password" variable nil (reparse-symbol indented_block_body) [5957 6006])
+                    ("check_name_valid" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [6050 6053])
+                            ("name" variable nil (reparse-symbol function_parameters) [6055 6059]))                          )
+                        (reparse-symbol indented_block_body) [6012 6215])
+                    ("check_name_available" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [6262 6265])
+                            ("name" variable nil (reparse-symbol function_parameters) [6267 6271]))                          )
+                        (reparse-symbol indented_block_body) [6220 6315])
+                    ("as_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6332 6336]))                          )
+                        (reparse-symbol indented_block_body) [6320 6447])
+                    ("number_of_edits" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6472 6476]))                          )
+                        (reparse-symbol indented_block_body) [6452 6724])
+                    ("number_created_packages" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6757 6761])
+                            ("include_private_and_draft" variable nil (reparse-symbol function_parameters) [6763 6788]))                          )
+                        (reparse-symbol indented_block_body) [6729 7207])
+                    ("activate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7225 7229]))                          )
+                        (reparse-symbol indented_block_body) [7212 7305])
+                    ("set_pending" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7326 7330]))                          )
+                        (reparse-symbol indented_block_body) [7310 7413])
+                    ("is_deleted" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7433 7437]))                          )
+                        (reparse-symbol indented_block_body) [7418 7488])
+                    ("is_pending" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7508 7512]))                          )
+                        (reparse-symbol indented_block_body) [7493 7563])
+                    ("is_in_group" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7584 7588])
+                            ("group_id" variable nil (reparse-symbol function_parameters) [7590 7598]))                          )
+                        (reparse-symbol indented_block_body) [7568 7649])
+                    ("is_in_groups" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7671 7675])
+                            ("group_ids" variable nil (reparse-symbol function_parameters) [7677 7686]))                          )
+                        (reparse-symbol indented_block_body) [7654 7914])
+                    ("get_group_ids" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7937 7941])
+                            ("group_type" variable nil (reparse-symbol function_parameters) [7943 7953])
+                            ("capacity" variable nil (reparse-symbol function_parameters) [7960 7968]))                          )
+                        (reparse-symbol indented_block_body) [7919 8158])
+                    ("get_groups" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8178 8182])
+                            ("group_type" variable nil (reparse-symbol function_parameters) [8184 8194])
+                            ("capacity" variable nil (reparse-symbol function_parameters) [8201 8209]))                          )
+                        (reparse-symbol indented_block_body) [8163 8950])
+                    ("search" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [8983 8986])
+                            ("querystr" variable nil (reparse-symbol function_parameters) [8988 8996])
+                            ("sqlalchemy_query" variable nil (reparse-symbol function_parameters) [8998 9014])
+                            ("user_name" variable nil (reparse-symbol function_parameters) [9021 9030]))                          )
+                        (reparse-symbol indented_block_body) [8955 9664])
+                    ("user_ids_for_name_or_id" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9714 9718])
+                            ("user_list" variable nil (reparse-symbol function_parameters) [9720 9729]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [9669 10070]))                  
+                :type "class")
+                nil [1192 10070])
+            ("meta" code nil nil [10072 10201]))          
+      :file "user.py"
+      :pointmax 10202
+      :fsize 10201
+      :lastmodtime '(21750 64771)
+      :unmatched-syntax nil))
+  :file "!ssh:vagrant@192.168.53.60:!usr!lib!ckan!default!src!ckan!ckan!model!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

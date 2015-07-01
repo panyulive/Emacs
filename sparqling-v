@@ -1,0 +1,51 @@
+#!/usr/bin/perl -w
+use strict;
+use File::Basename;
+use URI::Escape;
+use LWP::UserAgent;
+my $program = basename $0;
+my $usage=
+"Usage: $program SERVER FORMAT SPARQL
+";
+
+# make sure to tokenize the first argument
+my $first_arg = shift @ARGV;
+my @first_arg = split(/\s+/, $first_arg);
+my ($server, $format, $file, @argv) = (@first_arg, @ARGV);
+
+unless ($file and -f $file) {
+    die $usage;
+}
+
+my $query = `cat $file`;
+$query =~ s/\$ARG(\d+)/$argv[$1]/g; # replaced by command line arguments
+my $query_escaped = uri_escape($query);
+$query_escaped =~ s/%20/+/g;
+
+my $header = "";
+if ($format eq "xml") {
+    $header = "application/sparql-results+xml";
+} elsif ($format eq "json") {
+    $header = "application/sparql-results+json";
+} elsif ($format eq "html") {
+    $header = "text/html";
+} elsif ($format eq "rdfxml") {
+    $header = "application/rdf+xml";
+} elsif ($format eq "rdfjson") {
+    $header = "application/rdf+json";
+} elsif ($format eq "turtle") {
+    $header = "text/rdf+n3";
+}
+
+my $req = HTTP::Request->new(POST => "http://$server/sparql");
+$req->content("query=" . $query_escaped);
+$req->content_type('application/x-www-form-urlencoded');
+$req->header('accept' => $header);
+
+my $ua = new LWP::UserAgent;
+my $res = $ua->request($req);
+if ($res->is_success) {
+    print $res->content, "\n";
+} else {
+    print STDERR $res->status_line, "\n";
+}

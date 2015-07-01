@@ -1,0 +1,33 @@
+;; Object data_go_jp_01/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "data_go_jp_01/"
+  :tables
+  (list
+    (semanticdb-table "plugin.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("ckan.plugins" include nil nil [1 31])
+            ("ckan.plugins.toolkit" include nil nil [32 70])
+            ("DataGoJp01Plugin" type
+               (:superclasses ("plugins.SingletonPlugin")
+                :members 
+                  ( ("'''plugin for customizing frontend of data.go.jp.
+
+    '''" code nil (reparse-symbol indented_block_body) [125 183])
+                    ("plugins" code nil (reparse-symbol indented_block_body) [242 281])
+                    ("update_config" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [305 309])
+                            ("config" variable nil (reparse-symbol function_parameters) [311 317]))                          )
+                        (reparse-symbol indented_block_body) [287 1073]))                  
+                :type "class")
+                nil [72 1073]))          
+      :file "plugin.py"
+      :pointmax 1075
+      :fsize 1074
+      :lastmodtime '(21903 29826 0 0)
+      :unmatched-syntax nil))
+  :file "!Users!k12144kk!Downloads!20150330 2!ckanext-data_go_jp_01!ckanext!data_go_jp_01!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

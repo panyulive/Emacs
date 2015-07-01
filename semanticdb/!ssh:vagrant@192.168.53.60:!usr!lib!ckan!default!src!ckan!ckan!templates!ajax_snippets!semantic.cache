@@ -1,0 +1,36 @@
+;; Object ajax_snippets/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ajax_snippets/"
+  :tables
+  (list
+    (semanticdb-table "api_info.html"
+      :major-mode 'html-mode
+      :tags 
+        '( ("{{ _('CKAN Data API') }}" section (:members 
+              ( ("{{ datastore_root_url }}/datastore_search?resource_id={{resource_id}}&limit=5" anchor nil nil [2848 2851])
+                ("{{ datastore_root_url }}/datastore_search?resource_id={{resource_id}}&q=jones" anchor nil nil [3170 3173])
+                ("{{sql_example_url}}" anchor nil nil [3495 3498]))              ) nil [575 5078]))          
+      :file "api_info.html"
+      :pointmax 5078
+      :fsize 5077
+      :lastmodtime '(21750 64771)
+      :unmatched-syntax nil)
+    (semanticdb-table "follow_button.html"
+      :major-mode 'html-mode
+      :tags nil
+      :file "follow_button.html"
+      :pointmax 32
+      :fsize 31
+      :lastmodtime '(21750 64771)
+      :unmatched-syntax nil)
+    (semanticdb-table "related-item.html"
+      :major-mode 'html-mode
+      :tags nil
+      :file "related-item.html"
+      :pointmax 187
+      :fsize 186
+      :lastmodtime '(21750 64771)
+      :unmatched-syntax nil))
+  :file "!ssh:vagrant@192.168.53.60:!usr!lib!ckan!default!src!ckan!ckan!templates!ajax_snippets!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

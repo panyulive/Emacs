@@ -1,0 +1,27 @@
+;; Object ckan/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ckan/"
+  :tables
+  (list
+    (semanticdb-table "websetup.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"Setup the ckan application\"\"\"" code nil nil [1 33])
+            ("logging" include nil nil [34 48])
+            ("ckan.config.environment" include nil nil [50 102])
+            ("log" variable nil nil [104 137])
+            ("setup_app" function
+               (:documentation "Place any commands to setup ckan here"
+                :arguments 
+                  ( ("command" variable nil (reparse-symbol function_parameters) [153 160])
+                    ("conf" variable nil (reparse-symbol function_parameters) [162 166])
+                    ("vars" variable nil (reparse-symbol function_parameters) [168 172]))                  )
+                nil [139 412]))          
+      :file "websetup.py"
+      :pointmax 413
+      :fsize 412
+      :lastmodtime '(21750 64771)
+      :unmatched-syntax nil))
+  :file "!ssh:vagrant@192.168.53.60:!usr!lib!ckan!default!src!ckan!ckan!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

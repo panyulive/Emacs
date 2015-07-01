@@ -13,3 +13,5 @@
 ;(define-key evil-motion-state-map (kbd "C-;") 'swoop-from-evil-search)
 (define-key swoop-map (kbd "C-;") 'swoop-multi-from-swoop)
 
+(setq sqoop-font-size-change: nil)
+

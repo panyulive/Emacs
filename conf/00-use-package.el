@@ -2,11 +2,6 @@
   (require 'use-package))
   (require 'bind-key)
 
-(use-package web-mode
-
-  :init
-  :config
-  )
 
 (use-package shell-pop
   :commands (shell-pop)
@@ -31,7 +26,8 @@
   :config
   (require 'auto-complete-config)
   (require 'yasnippet)
-  (auto-complete)
+  (global-auto-complete-mode 1)
+
   )
 
 

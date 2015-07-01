@@ -1,0 +1,22 @@
+;; Object env/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "env/"
+  :tables
+  (list
+    (semanticdb-table "helloworld.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("wsgiref.simple_server" include nil nil [1 46])
+            ("pyramid.config" include nil nil [47 88])
+            ("pyramid.response" include nil nil [89 126])
+            ("helloworld" function (:arguments 
+              ( ("request" variable nil (reparse-symbol function_parameters) [143 150]))              ) nil [128 212])
+            ("if" code nil nil [213 472]))          
+      :file "helloworld.py"
+      :pointmax 472
+      :fsize 471
+      :lastmodtime '(21904 8073 0 0)
+      :unmatched-syntax nil))
+  :file "!Users!k12144kk!python!env!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
