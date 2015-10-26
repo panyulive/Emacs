@@ -44,6 +44,8 @@
   (cons (cons "\\.*$" (expand-file-name "~/.emacs.d/backup"))
 	backup-directory-alist))
 
+
+
 (defun add-to-load-path (&rest paths)
   (let (path)
     (dolist (path paths paths)

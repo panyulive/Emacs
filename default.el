@@ -6,9 +6,6 @@
 (require 'cl)
 (setq exec-path (cons "/usr/local/bin"exec-path))
 
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
-
 (defvar user-emacs-directory "~/.emacs.d/")
 
 (setq make-backup-files t)
@@ -132,7 +129,7 @@
 (set-face-background 'show-paren-match-face nil)
 (set-face-underline-p 'show-paren-match-face "yellow")
 
-(setq-default tab-width 4)
+(setq-default tab-width 2)
 (setq-default indent-tabs-mode t)
 
 

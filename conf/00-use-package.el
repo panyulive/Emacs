@@ -2,25 +2,23 @@
   (require 'use-package))
   (require 'bind-key)
 
-
 (use-package shell-pop
   :commands (shell-pop)
   :bind (("C-:" . shell-pop))
   :config
   (use-package exec-path-from-shell
-	:config
-	(exec-path-from-shell-initialize)
-	)
-  
+    :config
+    (exec-path-from-shell-initialize)
+    )
+
   (add-hook 'eshell-mode-hook
-			'(lambda()
-			   (progn
-				 (define-key eshell-mode-map (kbd "C-f") 'find-file-other-window)
-				 ;;(define-key eshell-mode-map (kbd "<left>"))
-				 )))
+            '(lambda()
+               (progn
+                 (define-key eshell-mode-map (kbd "C-f") 'find-file-other-window)
+                 ;;(define-key eshell-mode-map (kbd "<left>"))
+                 )))
   
   )
-
 
 (use-package auto-complete
   :config

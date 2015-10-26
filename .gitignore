@@ -9,3 +9,4 @@
 /elscreen*
 *.elc
 mac-win.el
+semanticdb/

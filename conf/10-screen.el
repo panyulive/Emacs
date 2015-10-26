@@ -18,7 +18,7 @@
       (split-window-horizontally
        (- (window-width) (/ (window-width) num_wins)))
       (split-window-horizontally-n (- num_wins 1)))))
-
+ 
 ;; Window 分割・移動を C-t で
 (defun other-window-or-split ()
   (interactive)
@@ -49,7 +49,9 @@
 
 ;;行番号表示
 (global-linum-mode t)
-(setq linum-format " %d")
+(setq linum-format " %d ")
+
+(text-scale-set 1)
 
 ;;文字数カウント
 (defun count-lines-and-chars ()

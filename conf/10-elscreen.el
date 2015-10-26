@@ -7,7 +7,7 @@
 ;; C-z [0-9]|番号のスクリーンへ
 ;; C-z ?    |ヘルプ
 
-(global-unset-key "\C-z")
+(global-unset-key (kbd "C-z"))
 
 (require 'elscreen)
 (setq elscreen-prefix-key (kbd "C-z"))
