@@ -1,0 +1,5 @@
+(add-to-list 'exec-path (expand-file-name "/usr/local/bin"))
+(add-to-list 'exec-path (expand-file-name "/Users/k12144kk/.go/bin"))
+(require 'go-autocomplete)
+(require 'auto-complete-config)
+(require 'go-flycheck)
