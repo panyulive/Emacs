@@ -1,3 +1,33 @@
+(require 'use-package)
+(require 'bind-key)
+
+(add-to-list 'auto-mode-alist
+        '("\\.zshrc" . shell-script-mode))
+
+(add-to-list 'exec-path (expand-file-name "/usr/local/bin"))
+(add-to-list 'exec-path (expand-file-name "/Users/k12144kk/.go/bin"))
+
+(use-package go-autocomplete)
+(use-package auto-complete-config)
+(use-package go-flycheck)
+;; js2-mode
+;; https://github.com/mooz/js2-mode/tree/
+(use-package js2-mode
+  :init
+  (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+  (custom-set-variables
+   '(js2-auto-indent-p t)
+   '(js2-indent-tabs-mode nil) ; indent is space
+   '(js2-basic-offset 2)
+   '(js2-enter-indents-newline t)
+   '(js2-indent-on-enter-key t)
+   '(js2-mirror-mode t))
+  )
+
+(setq js2-mode-hook
+      '(lambda() (progn
+                   (set-variable 'indent-tabs-mode nil))))
+
 ;;Install
 ;;PC$ brew install ctags
 ;;PC$ git clone https://github.com/jixiuf/helm-etags-plus
@@ -67,6 +97,43 @@
 
   
   )
-  
-  
 
+(autoload 'sparqling-mode "sparqling-mode" "Mode for editing SPARQL files" t)
+(setq auto-mode-alist
+      (cons (cons "\\.rq$" 'sparqling-mode) auto-mode-alist))
+(use-package web-mode
+
+  :mode (
+		 "\\.phtml\\'"    
+		 "\\.tpl\\.php\\'"
+		 "\\.[agj]sp\\'"  
+		 "\\.as[cp]x\\'"  
+		 "\\.erb\\'"      
+		 "\\.mustache\\'" 
+		 "\\.djhtml\\'"   
+		 )
+
+  :config
+  (defun web-mode-hook ()
+	  (setq web-mode-markup-indent-offset   2)
+	  (setq indent-tabs-mode t)
+	  )
+
+  (add-hook 'web-mode-hook 'web-mode-hook)
+  )
+
+
+(use-package markdown-mode
+  :mode (("\\.md\\'" . gfm-mode)
+         ("\\.txt\\'". gfm-mode))
+  :init
+  (require 'livedown)
+  (custom-set-variables
+   '(livedown:autostart nil) ; automatically open preview when opening markdown files 
+   '(livedown:open t)        ; automatically open the browser window
+   '(livedown:port 1337))    ; port for livedown server
+
+  :config
+  (bind-keys :map gfm-mode-map
+             ("ESC C-p" . livedown:preview))
+  )

@@ -8,3 +8,8 @@
             (byte-recompile-directory (concat user-emacs-directory "conf") 0)
             )
 )
+(text-scale-set 1)
+;;行番号表示
+(global-linum-mode t)
+(setq linum-format " %d ")
+

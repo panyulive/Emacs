@@ -15,19 +15,178 @@
 (package-initialize)
 
 (defvar my-package-list
-  '(auto-complete
-	exec-path-from-shell
-	direx
-	helm
-	init-loader
-	magit
-	popwin
-	popup
-	shell-pop
-	open-junk-file
-	web-mode
-	ace-jump-mode
-	yasnippet))
+  '(
+    ac-cider
+    ace-isearch
+    ace-jump-mode
+    ace-link
+    ace-window
+    adaptive-wrap
+    aggressive-indent
+    anzu
+    ;;archives
+    async
+    atom-dark-theme
+    atom-one-dark-theme
+    auto-complete
+    auto-dictionary
+    auto-highlight-symbol
+    avy
+    bind-key
+    browse-url-dwim
+    buffer-move
+    ccc
+    cdb
+    cider
+    clean-aindent-mode
+    clojure-cheatsheet
+    clojure-mode
+    coffee-mode
+    csv-mode
+    dash
+    ddskk
+    deferred
+    define-word
+    diminish
+    dired+
+    dired-avfs
+    dired-details+
+    dired-details
+    dired-dups
+    dired-efap
+    dired-fdclone
+    dired-filter
+    dired-hacks-utils
+    dired-imenu
+    dired-k
+    dired-open
+    dired-rainbow
+    dired-ranger
+    dired-single
+    dired-sort
+    dired-sort-menu+
+    dired-sort-menu
+    dired-subtree
+    dired-toggle
+    direx
+    direx-grep
+    dirtree
+    elisp-slime-nav
+    elscreen
+    elscreen-persist
+    epl
+    espresso-theme
+    eval-sexp-fu
+    exec-path-from-shell
+    expand-region
+    fancy-battery
+    fill-column-indicator
+    flx
+    flx-ido
+    flycheck
+    flymake-easy
+    flymake-php
+    ;git-commit-mod
+    ;git-rebase-mode
+    ;gnupg
+    go-eldoc
+    go-mode
+    golden-ratio
+    google-translate
+    goto-chg
+    haml-mode
+    helm
+    helm-ag
+    helm-core
+    helm-descbinds
+    helm-make
+    helm-migemo
+    helm-mode-manager
+    helm-projectile
+    helm-rails
+    helm-swoop
+    helm-themes
+    highlight
+    highlight-indentation
+    highlight-numbers
+    highlight-parentheses
+    ht
+    hungry-delete
+    hydra
+    ido-vertical-mode
+    iedit
+    indent-guide
+    inflections
+    info+
+    init-loader
+    let-alist
+    leuven-theme
+    linum-relative
+    list-utils
+    macrostep
+    magit
+    markdown-mode
+    migemo
+    monokai-theme
+    move-text
+    multi-eshell
+    neotree
+    open-junk-file
+    osx-browse
+    package-build
+    page-break-lines
+    pager
+    paradox
+    parent-mode
+    pcre2el
+    php-mode
+    pkg-info
+    popup
+    popwin
+    powerline
+    projectile
+    pyflakes
+    pymacs
+    python-environment
+    python-mode
+    quelpa
+    queue
+    rainbow-delimiters
+    redo+
+    revive
+    s
+    sass-mode
+    sbt-mode
+    scala-mode2
+    seq
+    shell-pop
+    slamhound
+    smartparens
+    smooth-scrolling
+    spacemacs-theme
+    sparql-mode
+    spinner
+    spray
+    ssh-agency
+    ssh-file-modes
+    string-utils
+    swoop
+    tree-mode
+    undo-tree
+    use-package
+    vi-tilde-fringe
+    volatile-highlights
+    web-mode
+    which-key
+    windata
+    window-jump
+    window-numbering
+    yasnippet
+    yatex
+    zenburn
+    zenburn-theme
+    
+  ))
 
 (let ((not-installed
        (loop for package in my-package-list
@@ -55,34 +214,15 @@
         (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
             (normal-top-level-add-subdirs-to-load-path))))))
 
-(add-to-load-path "clone-package" "themes")
+(add-to-load-path "clone-package" "themes" "elpa")
 
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/conf")
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-	("357d5abe6f693f2875bb3113f5c031b7031f21717e8078f90d9d9bc3a14bcbd8" "12722541c8998f056b761bf63a92216aaf4610e4eb1afe7991842a31fa28b6d8" "90d329edc17c6f4e43dbc67709067ccd6c0a3caa355f305de2041755986548f2" "3dafeadb813a33031848dfebfa0928e37e7a3c18efefa10f3e9f48d1993598d3" "05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default)))
- '(helm-mode t)
- '(js2-auto-indent-p t)
- '(js2-basic-offset 2)
- '(js2-enter-indents-newline t)
- '(js2-indent-on-enter-key t)
- '(js2-indent-tabs-mode nil)
- '(js2-mirror-mode t)
- '(shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell)))))
- '(yas-trigger-key "TAB"))
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(howm-mode-title-face ((t (:foreground "Yellow")))))
+;; load environment value
+(load-file (expand-file-name "~/.emacs.d/shellenv.el"))
+(dolist (path (reverse (split-string (getenv "PATH") ":")))
+  (add-to-list 'exec-path path))
 
 (server-start)
