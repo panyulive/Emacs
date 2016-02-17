@@ -32,23 +32,83 @@
   
   )
 
+(use-package highlight-symbol
+  :bind
+  ("C-c C-h" . highlight-symbol)
+  
+  :config
+  (bind-key "C-c C-n" 'highlight-symbol-next highlight-symbol-mode)
+  (bind-key "C-c C-p" 'highlight-symbol-prev highlight-symbol-mode)
+  (bind-key "C-c M-%" 'highlight-symbol-query-replace highlight-symbol-mode)
+  
+  )
+
+(use-package company
+  :config
+  ;(global-company-mode t)
+  )
+
 (use-package auto-complete
   :init
   (require 'auto-complete-config)
   (require 'yasnippet)
   (require 'fuzzy)
-
   
   :config
-  (global-auto-complete-mode 1)
+  (global-auto-complete-mode nil)
   (ac-config-default)
   
   (setq ac-use-menu-map t)
   (setq ac-use-fuzzy t)
+  (setq ac-use-comphist t)
 
-  (define-key ac-completing-map (kbd "C-j") 'ac-expand)
-
+  ;(bind-key "return" 'nil ac-menu-map)
+  ;(bind-key "return" 'nil ac-completing-map)
+  ;(bind-key  "C-j" 'ac-expand ac-completing-map)
+  
   )
+
+
+(use-package gtags
+  :config
+  
+  )
+
+(eval-after-load 'eshell
+  '(require 'eshell-z nil t))
+
+(use-package smartparens
+  :config
+  (smartparens-global-mode t)
+  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+  
+  )
+
+(use-package zop-to-char
+  :bind
+  ("M-z" . zop-up-to-char)
+  :config
+  )
+
+(use-package annotate
+  :init
+  (setq annotate-file "~/.emacs.d/annotations")
+  :config
+  (defun annotate-editing-text-property (&rest them)
+    (let ((bmp (buffer-modified-p))
+          (inhibit-read-only t))
+      (apply them)
+      (set-buffer-modified-p bmp)))
+  (advice-add 'annotate-change-annotation :around 'annotate-editing-text-property)
+  (advice-add 'annotate-create-annotation :around 'annotate-editing-text-property)
+;;; 規約違反なキーバインドを矯正
+  (define-key annotate-mode-map (kbd "C-c C-a") nil)
+  (define-key annotate-mode-map (kbd "C-c a") 'annotate-annotate)
+  
+;;; 常に使えるようにする
+  (add-hook 'find-file-hook 'annotate-mode)
+  )
+
 
 (use-package magit
   :commands (magit-status)
