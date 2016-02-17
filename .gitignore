@@ -12,3 +12,4 @@ mac-win.el
 semanticdb/
 annotations
 undohist/
+ac-comphist.dat
