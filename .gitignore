@@ -10,3 +10,5 @@
 *.elc
 mac-win.el
 semanticdb/
+annotations
+undohist/
