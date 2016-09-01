@@ -6,6 +6,48 @@
 (setq elscreen-prefix-key (kbd "C-z"))
 (elscreen-start)
 
+(delete-selection-mode t)
+
+(use-package package
+  :config
+    
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+  (add-to-list 'package-archives	'("marmalade" . "http://marmalade-repo.org/packages/"))
+  
+  ;(package-refresh-contents)
+  (package-initialize)
+             
+  )
+
+
+
+
+(defun switch-to-just-before-buffer ()
+  (interactive)
+  (switch-to-buffer (other-buffer)))
+  
+(bind-key "C-h" 'isearch-del-char isearch-mode-map)
+
+(bind-key "M-[" 'switch-to-prev-buffer)
+(bind-key "M-]" 'switch-to-next-buffer)
+
+(bind-key "C-^" 'switch-to-just-before-buffer)
+
+;; for json format
+(defun jq-format (beg end)
+  (interactive "r")
+  (shell-command-on-region beg end "jq ." nil t))
+
+
+(require 'tramp)
+(add-to-list 'tramp-default-proxies-alist
+             '(nil "\\`root\\'" "/scp:%h:"))
+(add-to-list 'tramp-default-proxies-alist
+             '("localhost" nil nil))
+(add-to-list 'tramp-default-proxies-alist
+             '((regexp-quote (system-name)) nil nil))
+
+
 (use-package multi-eshell
   :bind ("C-c c t" . elscreen-esh)
   :init 
@@ -24,7 +66,6 @@
 
 (add-hook 'after-init-hook
 		  (lambda()
-			(global-auto-complete-mode)
 				 (message "init time: %.3f sec"
 						  (float-time (time-subtract after-init-time before-init-time))))
 		  )
@@ -138,6 +179,7 @@
 
 (text-scale-set 1)
 
+(require 'powerline)
 (powerline-default-theme)
 
 ;;文字数カウント

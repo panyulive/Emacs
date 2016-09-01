@@ -1,6 +1,10 @@
 (require 'use-package)
 (require 'bind-key)
 
+(use-package yasnippet
+  :config
+  )
+
 
 (use-package ruby-mode
   :mode "\\.rb\\'"
@@ -17,13 +21,20 @@
   (require 'rcodetools)
   (setq rct-find-tag-if-available nil)
   
-  ;(require 'inf-ruby)
+  (require 'inf-ruby)
   
   ;;(require 'highlight-thing nil)
 ;;; 現在の関数のみをハイライト対象にする
   ;(setq highlight-thing-limit-to-defun t)
   ;(set-face-background 'highlight-thing "#ffffff")
 
+  (require 'rbenv)
+  (global-rbenv-mode)
+  
+  (require 'robe)
+  (add-hook 'ruby-mode-hook 'robe-mode)
+  (add-hook 'robe-mode-hook 'ac-robe-setup)
+  
   (require 'highlight-symbol)
   
   :config
@@ -134,9 +145,13 @@
   
   )
 
-(autoload 'sparqling-mode "sparqling-mode" "Mode for editing SPARQL files" t)
-(setq auto-mode-alist
-      (cons (cons "\\.rq$" 'sparqling-mode) auto-mode-alist))
+(use-package sparql-mode
+  :mode(
+        "\\.sparql\\'"
+        "\\.sq\\'"
+        )
+  :config
+  )
 (use-package web-mode
 
   :mode (
@@ -146,7 +161,8 @@
 		 "\\.as[cp]x\\'"  
 		 "\\.erb\\'"      
 		 "\\.mustache\\'" 
-		 "\\.djhtml\\'"   
+		 "\\.djhtml\\'"
+     "\\.php\\'"
 		 )
 
   :config
@@ -158,6 +174,19 @@
   (add-hook 'web-mode-hook 'web-mode-hook)
   )
 
+
+
+(use-package php-mode
+  :config
+  (auto-complete-mode t)
+  (require 'ac-php)
+  (setq ac-sources  '(ac-source-php ) )
+  (yas-global-mode 1)
+  
+  (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
+  (define-key php-mode-map  (kbd "C--") 'ac-php-location-stack-back   ) ;go back
+  )
+  
 
 (use-package markdown-mode
   :mode (("\\.md\\'" . gfm-mode)

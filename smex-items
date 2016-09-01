@@ -1,0 +1,63 @@
+
+;; ----- smex-history -----
+(
+ howm-menu
+ howm-mode
+ text-mode
+ grep
+ moccur-grep-find
+ web-mode
+ open-junk-file
+)
+
+;; ----- smex-data -----
+(
+ (cd . 1)
+ (howm-menu . 102)
+ (eshell . 1)
+ (package-install . 6)
+ (livedown:preview . 6)
+ (moccur-grep-find . 36)
+ (php-mode . 4)
+ (table-insert . 3)
+ (list-packages . 11)
+ (go-direx-pop-to-buffer . 3)
+ (go-direx-switch-to-buffer . 2)
+ (skk-mode . 3)
+ (ido-mode . 2)
+ (copyit-ssh . 1)
+ (copyit-file-pathname . 1)
+ (gtags-mode . 1)
+ (helm-M-x . 1)
+ (gtags-find-tag . 3)
+ (helm-mini . 1)
+ (mini-header-line-mode . 2)
+ (query-replace . 2)
+ (delete-trailing-whitespace . 3)
+ (shell-pop . 1)
+ (magit-status . 1)
+ (moccur-edit-mode-in . 2)
+ (load-file . 2)
+ (helm-mode . 2)
+ (text-mode . 10)
+ (tramp-cleanup-connection . 2)
+ (open-junk-file . 6)
+ (auto-complete . 4)
+ (ac-php-remake-tags . 5)
+ (ac-php-show-tip . 2)
+ (ac-php-remake-tags-all . 1)
+ (company-mode . 1)
+ (ac-php-mode . 1)
+ (auto-complete-mode . 1)
+ (windmove-default-keybindings . 1)
+ (org-mode . 7)
+ (undo-tree-mode . 1)
+ (undo-tree-visualize . 1)
+ (yas/prev-field . 1)
+ (load-theme . 2)
+ (robe-start . 1)
+ (howm-mode . 4)
+ (markdown-mode . 1)
+ (web-mode . 4)
+ (grep . 2)
+)

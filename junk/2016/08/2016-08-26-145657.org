@@ -1,0 +1,29 @@
+カタログサイトデザイン依頼について
+カタログサイトはDKAN(Drupal)で構築されており、
+Drupalのテーマを適応することでサイト全体のデザインを適応することが出来ます。
+
+貴社にはこのDrupalテーマを作成する形でデザインを納品していただけると幸いです。
+
+今回カタログサイトの画面仕様書を下記に掲載いたします。
+
+■添付
+attachment:資料名
+
+また、テーマに関しては貴社でDKANをインストールしていただき
+テーマ作成を行っていただけると幸いです。
+
+■installing DKAN
+http://docs.getdkan.com/dkan-documentation/dkan-developers-guide/installing-dkan
+
+■Drupalのテーマインストール方法
+https://drupal.studio-umi.jp/blog/Drupal-7-how-to-install-themes
+
+またテーマの作成に関して参考となる日本語の資料を掲載致します。
+
+■テーマ作成参考URL
+* テーマの作成方法
+https://drupal.studio-umi.jp/blog/Drupal-theme-development-introduction-01
+* テーマの命名規則について
+https://drupal.studio-umi.jp/blog/Drupal-7-template-files
+
+以上、よろしくお願いします。

@@ -2,6 +2,12 @@
   (require 'use-package))
   (require 'bind-key)
 
+(use-package open-junk-file
+  :config
+  (setq open-junk-file-format "~/.emacs.d/junk/%Y/%m/%Y-%m-%d-%H%M%S.")
+  
+  )
+
 (use-package undo-tree
   :config
   (global-set-key (kbd "C--") 'undo-tree-undo)
@@ -10,19 +16,23 @@
   (global-set-key (kbd "C-x u") 'undo-tree-mode)
   )
 
-(use-package undohist
-  :ensure t
-  :config
-  (setq undohist-ignored-files '("/tmp" "COMMIT_EDITMSG"))
-  (undohist-initialize)
-  )
+;(use-package undohist
+;  :ensure t
+;  :config
+;  (setq undohist-ignored-files '("/tmp" "COMMIT_EDITMSG"))
+;  (undohist-initialize)
+;  )
+
+
 
 (use-package shell-pop
-  :commands (shell-pop)
   :bind (("C-:" . shell-pop))
+  :init
+   (setq shell-pop-shell-type '("eshell" "*eshell*" (lambda () (eshell))))
+  
   :config
-  (require 'exec-path-from-shell)
-  (exec-path-from-shell-initialize)
+
+
   (add-hook 'eshell-mode-hook
             '(lambda()
                (progn
@@ -45,7 +55,51 @@
 
 (use-package company
   :config
-  ;(global-company-mode t)
+ 
+  ;(global-company-mode)
+  
+  ;; 自動補完を offにしたい場合は, company-idle-delayを nilに設定する
+  ;; auto-completeでいうところの ac-auto-start にあたる.
+  (custom-set-variables
+   '(company-idle-delay nil))
+  
+  (set-face-attribute 'company-tooltip nil
+                      :foreground "black" :background "lightgrey")
+  (set-face-attribute 'company-tooltip-common nil
+                      :foreground "black" :background "lightgrey")
+  (set-face-attribute 'company-tooltip-common-selection nil
+                      :foreground "white" :background "steelblue")
+  (set-face-attribute 'company-tooltip-selection nil
+                      :foreground "black" :background "steelblue")
+  (set-face-attribute 'company-preview-common nil
+                      :background nil :foreground "lightgrey" :underline t)
+  (set-face-attribute 'company-scrollbar-fg nil
+                      :background "orange")
+  (set-face-attribute 'company-scrollbar-bg nil
+                      :background "gray40")
+ 
+  (global-set-key (kbd "C-M-i") 'company-complete)
+ 
+  ;; C-n, C-pで補完候補を次/前の候補を選択
+  (define-key company-active-map (kbd "C-n") 'company-select-next)
+  (define-key company-active-map (kbd "C-p") 'company-select-previous)
+  (define-key company-search-map (kbd "C-n") 'company-select-next)
+  (define-key company-search-map (kbd "C-p") 'company-select-previous)
+ 
+  ;; C-sで絞り込む
+  (define-key company-active-map (kbd "C-s") 'company-filter-candidates)
+ 
+  ;; TABで候補を設定
+  (define-key company-active-map (kbd "C-i") 'company-complete-selection)
+ 
+  ;; 各種メジャーモードでも C-M-iで company-modeの補完を使う
+  (define-key emacs-lisp-mode-map (kbd "C-M-i") 'company-complete)
+ 
+  (require 'company-quickhelp)
+  (company-quickhelp-mode +1)
+
+  (require 'company-php)
+  (add-hook 'php-mode-hook 'company-mode)
   )
 
 (use-package auto-complete
@@ -61,7 +115,7 @@
   (setq ac-use-menu-map t)
   (setq ac-use-fuzzy t)
   (setq ac-use-comphist t)
-
+  (setq ac-quick-help-delay 0.5)
   ;(bind-key "return" 'nil ac-menu-map)
   ;(bind-key "return" 'nil ac-completing-map)
   ;(bind-key  "C-j" 'ac-expand ac-completing-map)
@@ -90,6 +144,7 @@
   :config
   )
 
+;コードリーディング支援　コメント挿入
 (use-package annotate
   :init
   (setq annotate-file "~/.emacs.d/annotations")
@@ -104,11 +159,15 @@
 ;;; 規約違反なキーバインドを矯正
   (define-key annotate-mode-map (kbd "C-c C-a") nil)
   (define-key annotate-mode-map (kbd "C-c a") 'annotate-annotate)
-  
+                                       ;
+  ;色変更
+  (set-face-foreground 'annotate-annotation "brack")
+  (set-face-background 'annotate-annotation "yellow")
+
+  (setq annotate-use-messages nil)
 ;;; 常に使えるようにする
   (add-hook 'find-file-hook 'annotate-mode)
   )
-
 
 (use-package magit
   :commands (magit-status)
@@ -117,8 +176,7 @@
  )
 
 (use-package howm
-  :commands (howm-menu)
-  :bind (("C-c ,," . howm-menu))
+  :bind (("C-c , ," . howm-menu))
   :init
   ;;howm Config
   (setq howm-menu-lang 'ja)
@@ -212,7 +270,12 @@
         (file-name-directory active-file-name)
       current-dir)))
 
-(require 'powerline)
+(use-package powerline
+  :config
+  (setq ns-use-srgb-colorspace nil)
+  (powerline-default-theme)
+  
+  )
 
 ;; Window 分割を画面サイズに従って計算する
 (defun split-window-vertically-n (num_wins)
@@ -328,9 +391,22 @@
 
 (use-package helm
   :config
-  (require 'helm-swoop)
-  (require 'helm-migemo)
+  (helm-mode)
+  )
 
-  (helm-mode t)
-  
+(use-package helm-swoop
+  :config
+  )
+(use-package  helm-migemo
+  :config
+  )
+
+(use-package smex
+  :bind (("M-x" . smex))
+  :config
+  )
+
+(use-package visual-regexp
+  :bind (("M-%" . vr/query-replace))
+  :config
   )

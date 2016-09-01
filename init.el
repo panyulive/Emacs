@@ -6,13 +6,6 @@
 
 (defvar user-emacs-directory "~/.emacs.d/")
 
-(require 'package)
-;; MELPAを追加
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-;; Marmaladeを追加
-(add-to-list 'package-archives  '("marmalade" . "http://marmalade-repo.org/packages/"))
-;; 初期化
-(package-initialize)
 
 
 (setq make-backup-files t)
@@ -36,6 +29,9 @@
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/conf")
 
+(require 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
+
 
 ;; load environment value
 (load-file (expand-file-name "~/.emacs.d/shellenv.el"))
@@ -43,3 +39,27 @@
   (add-to-list 'exec-path path))
 
 (server-start)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-idle-delay nil)
+ '(custom-safe-themes
+   (quote
+    ("5dd70fe6b64f3278d5b9ad3ff8f709b5e15cd153b0377d840c5281c352e8ccce" "a1289424bbc0e9f9877aa2c9a03c7dfd2835ea51d8781a0bf9e2415101f70a7e" "4904daa168519536b08ca4655d798ca0fb50d3545e6244cefcf7d0c7b338af7e" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
+ '(js2-auto-indent-p t)
+ '(js2-basic-offset 2)
+ '(js2-enter-indents-newline t)
+ '(js2-indent-on-enter-key t)
+ '(js2-indent-tabs-mode nil)
+ '(js2-mirror-mode t)
+ '(livedown:autostart nil)
+ '(livedown:open t)
+ '(livedown:port 1337))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
