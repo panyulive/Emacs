@@ -7,9 +7,11 @@
 
 
 ;; HTTP 系のリポジトリ
-;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-;(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(setq package-archives
+      '(("melpa" . "https://melpa.org/packages/")
+        ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ("org" . "https://orgmode.org/elpa/")
+        ("gnu" . "https://elpa.gnu.org/packages/")))
 
 (package-initialize) ; インストールx済みのElispを読み込む
 
@@ -20,6 +22,8 @@
 (setq auto-save-list-file-prefix nil)
 
 (setq backup-directory-alist '((".*" . "~/.emacs.d/back")))
+
+(prefer-coding-system 'utf-8)
 
 ;; 長いファイルを開く場合でも行番号を常に表示
 (setq line-number-display-limit-width 100000)
@@ -60,7 +64,7 @@
 (setq tab-bar-tab-name-function #'tab-bar-tab-name-truncated)
 
 ;; 現在のタブを見やすくする
-(face-spec-set 'tab-bar-tab '((((background light)) (:background "gold")) (((background dark)) (:background "orange"))))
+(face-spec-set 'tab-bar-tab '((((background light)) (:background "gold")) (((background dark)) (:background "silver"))))
 
 ;;=====================================================
 ;;      Init use-package.el
@@ -72,15 +76,55 @@
     (doom-themes-enable-italic t)
     (doom-themes-enable-bold t)
     :custom-face
-    (doom-modeline-bar ((t (:background "#6272a4"))))
+    ;(doom-modeline-bar ((t (:background "#6272a4"))))
     :config
-    (load-theme 'doom-bluloco-light t)
+    (load-theme 'doom-one t)
     (doom-themes-neotree-config)
-    (doom-themes-org-config))
+    (doom-themes-org-config)
+
+    )
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
+
+(add-hook 'go-mode-hook
+	  (lambda ()
+	    (setq-default)
+	    (setq tab-width 4)
+	    (setq standard-indent 4)
+	    (setq indent-tabs-mode nil)))
 
 ;; ++++++++++++++++++++++++++++
 ;; Qiita Companyからcorufへ移行するhttps://qiita.com/nobuyuki86/items/7c65456ad07b555dd67d
 ;; ++++++++++++++++++++++++++++
+
+;; eglot(LSP)
+(use-package eglot
+  :ensure t
+  :hook
+  (c++-mode . eglot-ensure)
+  (sh-mode . eglot-ensure)
+  (python-mode . eglot-ensure)
+  (html-mode . eglot-ensure)
+  (cmake-mode . eglot-ensure)
+  (bitbake-mode . eglot-ensure)
+  :config(
+  (add-to-list 'eglot-server-programs '((bitbake-mode) "bitbake-language-server"))
+  (add-to-list 'eglot-server-programs '(ruby-mode . ("solargraph" "socket" "--port" "0")))
+  (add-hook 'ruby-mode-hook 'eglot-ensure))
+  :bind (("M-t" . xref-find-definitions)
+     ("M-r" . xref-find-references)
+     ("C-t" . xref-go-back)))
+ 
+;; optionally if you want to use debugger
+(use-package dap-mode)
+;; (use-package dap-LANGUAGE) to load the dap adapter for your language
+ 
+;; optional if you want which-key integration
+(use-package which-key
+    :config
+    (which-key-mode))
 
 (use-package corfu
   :custom ((corfu-auto t)
@@ -116,17 +160,6 @@
     (setq lsp-completion-provider :none)))
 
 ;;error now 
-(use-package tabnine
-  :hook ((prog-mode . tabnine-mode)
-         (text-mode . tabnine-mode)
-         (kill-emacs . tabnine-kill-process))
-  :bind (:map  tabnine-completion-map
-	     ("TAB" . nil)
-         ("<tab>" . nil))
-  :init
-  ;(tabnine-start-process)
-  (global-tabnine-mode +1))
-
 (use-package cape
   :hook (((prog-mode
            text-mode
@@ -146,14 +179,12 @@
                               arg
                             (car completion-at-point-functions))
                           #'tempel-complete
-                          #'tabnine-completion-at-point
                           #'cape-dabbrev
                           #'cape-file)
                          :sort t
                          :exclusive 'no))))))
 
   (add-to-list 'completion-at-point-functions #'tempel-complete)
-  (add-to-list 'completion-at-point-functions #'tabnine-completion-at-point)
   (add-to-list 'completion-at-point-functions #'cape-file t)
   (add-to-list 'completion-at-point-functions #'cape-tex t)
   (add-to-list 'completion-at-point-functions #'cape-dabbrev t)
@@ -197,11 +228,15 @@
   :after corfu
   :custom (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
   :config
-(add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+
+(use-package nerd-icons
+  :config
+  )
 
 ;; error now
 (use-package corfu-popupinfo
-  :straight nil
+  ;:straight nil
   :after corfu
   :hook (corfu-mode . corfu-popupinfo-mode))
 
@@ -216,26 +251,103 @@
            ("M-}" . yas-next-field-or-maybe-expand)
            ("M-{" . yas-prev-field))
     :init
-    (yas-global-mode +1))
+    )
 
  (use-package tempel
     :bind (("M-+" . tempel-complete) ;; Alternative tempel-expand
            ("M-*" . tempel-insert)))
 
+(use-package web-mode
+  :ensure t
+  :mode ("\\.html?\\'" "\\.erb\\'" "\\.ejs\\'" "\\.css\\'" "\\.scss\\'")
+  :config
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-enable-auto-pairing t)
+  (setq web-mode-enable-css-colorization t)
+  (setq web-mode-enable-current-element-highlight t)
+  (setq web-mode-enable-current-column-highlight t)
+  (setq web-mode-tag-auto-close-style 2)
+  (setq web-mode-enable-auto-expanding t))
+
+(use-package undo-fu
+  :config
+  (global-unset-key (kbd "C-z"))
+  (global-set-key (kbd "C-z")   'undo-fu-only-undo)
+  (global-set-key (kbd "C-S-z") 'undo-fu-only-redo))
+
+(use-package undo-fu-session
+  :config
+  (undo-fu-session-global-mode 1)
+  )
+
+(use-package vundo
+  :config
+  (with-eval-after-load 'meow
+    (meow-leader-define-key
+     '("u" . vundo))))
+
+(use-package swiper
+  :ensure t
+  :config
+  (defun isearch-forward-or-swiper (use-swiper)
+    (interactive "p")
+    ;; (interactive "P") ;; 大文字のPだと，C-u C-sでないと効かない
+    (let (current-prefix-arg)
+      (call-interactively (if use-swiper 'swiper 'isearch-forward))))
+  (global-set-key (kbd "C-s") 'isearch-forward-or-swiper)
+  )
+
+(use-package ivy
+  :ensure t
+  ;; :config
+  ;; (fset 'ivy--regex 'identity)
+  )
+
+(use-package counsel
+  :config
+
+  )
+
+
+;(use-package copilot
+;  :ensure t
+;  :config
+;  )
+
+(use-package direx
+  :config
+  )
+
+
+
 ;;=====================================================
 ;;      Init leaf.el
 ;;=====================================================
 (require 'leaf)
+
+
+;;====================================================
+;;      Develop.el
+;;====================================================
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("88f7ee5594021c60a4a6a1c275614103de8c1435d6d08cc58882f920e0cec65e" default))
  '(package-selected-packages
-   '(tabnine all-the-icons yasnippet cape corfu kind-icon lsp-mode orderless prescient tempel use-package neotree modus-themes leaf doom-themes)))
+   '(nerd-icons-ivy-rich direx counsel editorconfig ## copilot swiper undo-fu undo-fu-session vundo nerd-icons-dired nerd-icons-corfu doom-modeline tabnine dap-mode which-key go-mode go web-mode all-the-icons yasnippet cape corfu kind-icon lsp-mode orderless prescient tempel use-package neotree modus-themes leaf doom-themes))
+ '(tab-bar-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Hack" :foundry "outline" :slant normal :weight regular :height 102 :width normal)))))
